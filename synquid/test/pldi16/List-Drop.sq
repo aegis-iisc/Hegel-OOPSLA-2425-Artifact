@@ -1,0 +1,37 @@
+type Nat = {Int | _v >= 0}
+
+data List a where
+	Nil :: List a
+	Cons :: x: a -> xs: List a -> List a
+  
+termination measure len :: List a -> {Int | _v >= 0} where
+  Nil -> 0
+  Cons x xs -> 1 + len xs  
+  
+zero :: {Int | _v == 0}
+inc :: x:Int -> {Int | _v == x + 1}
+dec :: x:Int -> {Int | _v == x - 1}
+leq :: x: Int -> y: Int -> {Bool | _v == (x <= y)}
+neq :: x: Int -> y: Int -> {Bool | _v == (x != y)}  
+	
+drop :: n: Nat -> xs: {List a | len _v >= n} -> {List a | len _v == len xs - n}
+drop = ??
+
+	
+
+
+
+member :: ns : NS -> n : String -> u : String -> {Bool | (_v = True) <=> nlmem ns n u = True && (_v = False) <=> nlmem _v n u = False}
+
+
+confirmS :: ns : NS -> n : String -> u : String -> {NS | confirmedS _v n u = True}
+confirmU :: ns : NS -> n : String -> u : String -> {NS | confirmedU _v n u = True}
+
+
+subscribe :: n: String -> u: String -> ns : {NS | nlmem _v n u = True && confirmedS _v n s = True && subscribed ns n u = False}  ->  {NS | (nlmem _v n u)  = True && subscribed ns n u = True && confirmedS _v n s = False}
+
+unsubscribe :: n: String -> u: String -> ns : {NS | nlmem _v n u = True && confirmedS _v n s = True && }  ->  {NS | (nlmem _v n u)  = True && subscribed ns n u = False && confirmed _v n s = False}
+
+
+goal :: ns:NS -> n:String -> u:String -> {NS | nlmem _v n u = True && subscribed _v n u = False} 
+goal = ??

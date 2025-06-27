@@ -1,0 +1,54 @@
+data String 
+
+data NLR  where 
+		NLR :: nletter: String ->  user: String -> subscribed: Bool -> NLR 
+
+
+data NSRow where 
+	Empty :: NSRow
+	NonEmpty :: NLR -> NSRow 
+
+data NS where 
+	Nil :: NS
+	Cons :: x : NLR  -> xs : NS -> NS
+
+
+data Pair a b where 
+	Pair :: fst : a -> snd : b -> Pair a b
+
+
+measure fst :: Pair a b -> a where 
+	Pair x y -> x
+
+measure snd :: Pair a b -> b where 
+	Pair x y -> y	
+
+
+predicate nlmem :: NS -> String  -> String -> Bool 
+predicate confirmed :: NS -> String -> String -> Bool
+predicate subscribed :: NS -> String -> String -> Bool
+predicate empty :: NS -> Bool
+predicate size :: NS -> Int 
+
+fresh :: ns: NS -> n: String -> u: String -> {NS | (nlmem _v n u) == False && (subscribed _v n u) == False} 
+
+add :: n: String -> u: String -> ns: {NS | (nlmem _v n u) == False}->  {NS | (nlmem _v n u) == True && size _v == size ns + 1}
+
+remove :: n: String -> u: String ->  ns : {NS | nlmem _v n u == True} -> {NS | (nlmem _v n u) == False}
+
+mem :: ns : NS -> n: String -> u: String ->   {Bool | (_v == True || nlmem ns n u == False) && (_v == False || nlmem ns n u == True)}
+
+authorizeS :: n : String -> u : String -> ns : {NS | (subscribed _v n u) == False} -> {NS | confirmed _v n u == True && subscribed _v n u == False && nlmem _v n u == True}
+
+authorizeU :: n : String -> u : String -> ns : {NS | (subscribed _v n u) ==True} -> {NS | confirmed _v n u == True && subscribed _v n u ==True && nlmem _v n u == True && size _v == size ns}
+
+subscribe :: n: String -> u: String -> ns : {NS | (nlmem _v n u) == True}  ->  {NS | (nlmem _v n u) == True && (subscribed _v n u) == True && (confirmed _v n u) == False && size _v == size ns}
+
+clear ::  ns : NS -> {NS | empty ns == True}
+
+unsubscribe :: n: String -> u: String -> ns : {NS | (nlmem _v n u) == True && (confirmed _v n u) == True && (subscribed _v n u) == True}  ->  {NS | (nlmem _v n u) == True && (subscribed _v n u) == False && (confirmed _v n u) == False && size _v == size ns}
+
+goal :: n : String -> u : String -> 
+ns : {NS |  (nlmem _v n u) == False} -> 
+{NS | (nlmem _v n u) == True && (subscribed _v n u) == False && size _v == size ns + 1}
+goal = ??

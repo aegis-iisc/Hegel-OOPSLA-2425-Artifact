@@ -1,0 +1,52 @@
+ Data.List
+ foldr, foldr', foldr1,
+foldl, foldl', foldl1,
+   null, length, elem, notElem,
+   maximum, minimum, sum, product, and, or, any, all,
+
+   -- Other functions
+   foldl1', concat, concatMap,
+   map, (++), filter, lookup,
+   head, last, tail, init, uncons, (!!),
+   scanl, scanl1, scanl', scanr, scanr1,
+   iterate, iterate', repeat, replicate, cycle,
+   take, drop, splitAt, takeWhile, dropWhile, span, break, reverse,
+   zip, zip3, zipWith, zipWith3, unzip, unzip3,
+   errorEmptyList,
+
+
+   Total functions 102
+   Higher-Order functions : 29
+
+This also includes
+   Data.String : 4, 0 
+   Data.Set : 5, 0
+
+   Ordered List 3, 
+
+
+Data.String : 6, 0 
+Data.Tuple : 5, 2
+
+
+GHC.Integer : 20, 0 
+
+Data.Bool : 5, 0
+
+Data.Function : 9, 7
+
+
+Data.byteString : 70, 18 
+
+
+Data.Trees 6, 3
+Cobalt.Table 
+
+Cobalt.DataBase : 40, 9
+Cobalt.Vocal : 105, 22
+
+
+
+
+
+

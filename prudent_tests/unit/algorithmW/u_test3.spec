@@ -1,0 +1,31 @@
+type apair;
+type plist;
+
+qualifier llen : [a] :-> int;
+qualifier pllen : [apair] :-> int;
+
+qualifier lmem : [a] :-> a :-> bool;
+qualifier lhd : [a] :-> a;
+qualifier plhd : [apair] :-> apair;
+
+qualifier last  : [a] :-> a;
+qualifier pllast  : [apair] :-> apair;
+
+qualifier ppr1  : apair :-> a;
+qualifier ppr2  : apair :-> a;
+
+
+qualifier nth : [a] :-> int :-> a;
+qualifier lsnd : [a] :-> a;
+qualifier pen : [a] :-> a;
+
+qualifier fst : plist :-> [a];
+qualifier snd : plist :-> [a];
+
+qualifier slen : [a] :-> int;
+
+
+add : (x : a) -> (z : [a]) -> {v : [a] | llen (v) == llen (z) + 1};
+
+    
+goal : (el : a) -> (z : {v : [a] | true}) -> { v : [a] | llen (v) == llen(z) + 2};

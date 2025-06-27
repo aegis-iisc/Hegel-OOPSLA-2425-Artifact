@@ -1,0 +1,52 @@
+
+data Float
+
+data Tbl where 
+	Nil :: Tbl
+	Cons :: x : Int -> xs : Tbl -> Tbl
+
+
+data Pair where 
+	Pair :: fst : Int -> snd : Tbl -> Pair
+
+data PairF where 
+	PairF :: fst : Float -> snd : Tbl -> PairF
+
+
+measure fst :: Pair -> Int where 
+	Pair x y -> x
+
+measure snd :: Pair -> Tbl where 
+	Pair x y -> y	
+
+
+measure fstPF :: PairF -> Float where 
+	PairF x y -> x
+
+measure sndPF :: PairF -> Tbl where 
+	PairF x y -> y	
+
+predicate minmax :: Float -> Bool
+predicate member :: Tbl -> Int -> Bool 
+
+proj1 :: p:Pair -> {Int | fst p == _v}  
+
+proj2 :: p:Pair -> {Tbl | snd p == _v}  
+          
+measure size :: Tbl -> {Int | _v >= 0} where
+  Nil -> 0
+  Cons x xs -> size xs + 1
+
+ 
+freshInt :: t:Tbl -> {Int | (member t _v) == False}
+
+add :: s:Int -> t: {Tbl | (member _v s) == False} -> {Tbl | (member _v s) == True && size _v == size t + 1} 
+
+remove :: s:Int -> t: {Tbl | (member _v s) == True} -> {Pair | (member (snd _v) s) == False && size (snd _v) == size t - 1 && fst _v == s} 
+
+head :: t: {Tbl | (size _v) > 0} -> {Pair | (member (snd _v) (fst _v)) == False && size (snd _v) == size t - 1}
+
+averageLen :: t :{Tbl | size _v >  0} -> {Float | minmax _v}
+
+goal :: s:Int -> t:{Tbl | (member _v s) == True} -> {PairF| minmax (fstPF _v) && (member (sndPF _v) s) == True && size (sndPF _v) == size t + 1}
+goal = ??

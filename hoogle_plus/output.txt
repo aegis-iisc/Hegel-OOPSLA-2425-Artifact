@@ -1,0 +1,1 @@
+RESULTS:{"outCandidates":[],"outDocs":[],"outError":"user interrupt"}

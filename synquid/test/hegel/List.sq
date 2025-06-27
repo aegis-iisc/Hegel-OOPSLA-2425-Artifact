@@ -1,0 +1,15 @@
+data List where 
+    Nil :: List 
+    Cons :: x : Int -> xs : List -> List 
+
+measure len :: List -> {Int | _v >= 0} where
+  Nil -> 0
+  Cons x xs -> len xs + 1
+
+int_gen :: n:Int -> {Int | _v >= 0 && _v < n}
+sizez :: n:Int -> {Bool | _v == (n == 0)}
+sizegtz :: n:Int -> {Bool | _v == (n > 0)}
+subs :: n1:Int -> n2:Int -> {Int | _v == n1 - n2}
+
+list_gen :: s:{Int | _v >= 0} -> { List | (len _v) == s}
+list_gen = ??

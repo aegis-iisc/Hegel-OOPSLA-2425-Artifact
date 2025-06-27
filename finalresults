@@ -1,0 +1,71 @@
+
+ ********************************
+ ********************************./prudent_tests/hegel/Hoogle+/json/nth, 0.85, 3, 4, 0
+ ******************************** 
+./prudent_tests/hegel/Hoogle+/json/nth, 0.50, 3, 4, 0
+ ******************************** 
+./prudent_tests/hegel/Hoogle+/nth, 1000.00, 3, 4, 0./synquid/test/hegel/nth, 1.03, 3, 4, 0./prudent_tests/hegel/Hoogle+/json/nth, 0.89, 3, 4, 0
+ ******************************** 
+./prudent_tests/hegel/Hoogle+/nth, 1000.00, 3, 4, 0
+./synquid/test/hegel/nth, 1.04, 3, 4, 0
+./prudent_tests/hegel/Hoogle+/json/nth, 0.91, 3, 4, 0
+
+ ******************************** 
+./synquid/test/hegel/nth, 2.30, 3, 4, 0
+
+ ******************************** 
+./synquid/test/hegel/nth, 2.22, 3, 4, 0
+
+ ******************************** 
+./synquid/test/hegel/nth, 2.36, 3, 4, 0
+./synquid/test/hegel/u_test1, 1000.00, 3, 4, 0
+./synquid/test/hegel/u_test3, 1000.00, 3, 4, 0
+
+ ******************************** 
+./prudent_tests/unit/algorithmW/u_test1, 2.15, 3, 4, 0
+./prudent_tests/unit/algorithmW/u_test2, 0.41, 3, 4, 0
+./prudent_tests/unit/algorithmW/u_test3, 0.55, 3, 4, 0
+./prudent_tests/unit/algorithmW/u_test_failed, 0.24, 3, 4, 0
+./synquid/test/hegel/nth, 3.46, 3, 4, 0
+./synquid/test/hegel/u_test1, 1000.00, 3, 4, 0
+./synquid/test/hegel/u_test2, 1000.00, 3, 4, 0
+./synquid/test/hegel/u_test3, 1000.00, 3, 4, 0
+
+ ******************************** 
+./prudent_tests/hegel/Hoogle+/json/nth, 0.37, 3, 4, 0
+
+ ******************************** 
+./prudent_tests/hegel/Hoogle+/json/nth, 0.31, 3, 4, 0
+
+ ******************************** 
+./prudent_tests/hegel/Hoogle+/json/nth, 0.32, 3, 4, 0
+
+ ******************************** 
+./prudent_tests/hegel/Hoogle+/json/nth, 0.33, 3, 4, 0
+
+ ******************************** 
+./prudent_tests/hegel/Hoogle+/json/nth, 0.60, 3, 4, 0
+
+ ******************************** 
+./prudent_tests/hegel/Hoogle+/json/nth, 0.64, 3, 4, 0
+
+ ******************************** 
+./prudent_tests/hegel/Hoogle+/json/nth, 0.63, 3, 4, 0
+
+ ******************************** 
+./prudent_tests/hegel/Hoogle+/json/nth, 1.20, 3, 4, 0
+
+ ******************************** 
+./prudent_tests/hegel/Hoogle+/json/nth, 1.22, 3, 4, 0
+
+ ******************************** 
+./prudent_tests/hegel/Hoogle+/json/nth, 1.28, 3, 4, 0
+
+ ******************************** 
+./prudent_tests/hegel/Hoogle+/json/nth, 1.28, 3, 4, 0
+
+ ******************************** 
+./prudent_tests/hegel/Hoogle+/json/nth, 1000.00, 3, 4, 0
+./prudent_tests/hegel/Hoogle+/json/u_test1, 1000.00, 3, 4, 0
+./prudent_tests/hegel/Hoogle+/json/u_test2, 1000.00, 3, 4, 0
+./prudent_tests/hegel/Hoogle+/json/u_test3, 14.81, 3, 4, 0

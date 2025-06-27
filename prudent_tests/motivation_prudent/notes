@@ -1,0 +1,337 @@
+Challenges: 
+1.
+we have paths like copy => clear => length => clear => length => clear etc.
+Problem : Syntactic restriction like f * does not restrict longer regular expressions 
+lile (ab)* or (abc)* etc.
+e.g. 
+path1  Checking DeduceR on the Path  { do locbound25 <- apply copy  (, a1 ) => do locbound61 <- apply clear  (, a1 ) => do locbound183 <- apply length  (, a1 ) => do locbound424 <- apply copy  (, a1 ) => do locbound659 <- apply clear  (, a1 ) =>  }
+
+
+
+Conservatively  restriction all such patter will lead to incompleteness, e.g. a function lile 
+clear is has the property of involution but copy does not, similrly, there are many such functions
+like create, make, etc which change the state (currently we again cause incompleteness by 
+giving an upper limit on the state change chain, apart from being incomplete this also 
+is infeasible in many cases for the programmer to give this query.)
+
+2. The pathes like length a => copy a and copy a => length a lead to same following states, thus exploration of both leads to redundant explorations of all .
+   However this cannot be generalized as copy a => clear a is not equivalent to clear a => copy a
+
+
+Failing scenario in Timeout of 20 mins 
+  EXPLORED Args.parser output 
+ EXPLORED learningOn  true
+ EXPLORED bidirectionality  false
+ EXPLORED effect-filter  false
+ EXPLORED specfile :: synth_tests/unit/motivation_prudent/temp1.spec
+ EXPLORED goal Number :: 0typewhitespace var: vec
+ EXPLORED & Show Calling Synthesis for Effectful Bool Function, Clearning Bidirectional
+ EXPLORED learningOn  true
+ EXPLORED bidirectionality  false
+ EXPLORED :: Show ***********Bidirection FALSE : Calling CDCL***************
+  EXPLORED ::  {  }
+ EXPLORED & Show Back from Boolean Search, Resetting Bidirectional
+ EXPLORED learningOn  true
+ EXPLORED bidirectionality  false
+ EXPLORED :: Show ***********Bidirection FALSE : Calling CDCL***************
+  EXPLORED ::  {  }
+  Show EXPLORED  :: Checking DeduceR on the Path  { do locbound37 <- apply copy  (, a1 ) =>  }
+  Show EXPLORED  :: Checking DeduceR on the Path  { do locbound37 <- apply copy  (, a1 ) => do locbound74 <- apply copy  (, a1 ) =>  }
+  Show EXPLORED  :: Checking DeduceR on the Path  { do locbound37 <- apply copy  (, a1 ) => do locbound74 <- apply copy  (, a1 ) => do locbound144 <- apply clear  (, a1 ) =>  }
+  Show EXPLORED Skipped Using Hypothesis for f* clear
+  Show EXPLORED  :: Checking DeduceR on the Path  { do locbound37 <- apply copy  (, a1 ) => do locbound74 <- apply copy  (, a1 ) => do locbound144 <- apply clear  (, a1 ) => do locbound447 <- apply length  (, a1 ) =>  }
+  Show EXPLORED  :: Checking DeduceR on the Path  { do locbound37 <- apply copy  (, a1 ) => do locbound74 <- apply copy  (, a1 ) => do locbound144 <- apply clear  (, a1 ) => do locbound447 <- apply length  (, a1 ) => do locbound686 <- apply clear  (, a1 ) =>  }
+  Show EXPLORED Skipped Using Hypothesis for f* clear
+  Show EXPLORED  :: Checking DeduceR on the Path  { do locbound37 <- apply copy  (, a1 ) => do locbound74 <- apply copy  (, a1 ) => do locbound144 <- apply clear  (, a1 ) => do locbound447 <- apply length  (, a1 ) => do locbound686 <- apply clear  (, a1 ) => do locbound1237 <- apply length  (, a1 ) =>  }
+  Show EXPLORED  :: Checking DeduceR on the Path  { do locbound37 <- apply copy  (, a1 ) => do locbound74 <- apply copy  (, a1 ) => do locbound144 <- apply clear  (, a1 ) => do locbound447 <- apply length  (, a1 ) => do locbound686 <- apply clear  (, a1 ) => do locbound1237 <- apply length  (, a1 ) => do locbound1762 <- apply clear  (, a1 ) =>  }
+
+
+
+3. The idea is that the synthesized solution space is so sparse that a) finding these solution is hard b) looking only at failing terms will prune this space too 
+   slowly.
+
+
+4. The CDCL approach alone is insufficient for the pruning of the search space.   
+
+
+
+Discussion with Ben:
+
+1. A way to quantify the savings done by smarter edge addition compared to the original.
+2. Multi step addition of edges, may be by first doing a faster less precise check and if that succeeds only then do the 
+   costly more presice check. The second thing could be to run an incomplete procedure like running examples first and then depending on the results do the complete precise check.
+
+
+
+Patterns like, insert_left_zl and remove_left_zl and push and pop etc. are 
+Involution examples: 
+
+
+
+Slides:
+1. CDCL Synthesis finds equivalent modulo stuckness terms during the exploration of
+   effectful terms:
+   e.g. 
+2. However very often, synthesized solution space is so sparse that a) finding these solution is hard b) looking only at failing terms will prune this space too slowly.
+   
+3. The CDCL approach alone is insufficient for the pruning of the search space.   
+
+
+3.1 Examples and Motivation
+We created a query over a library of Vectors and ZipperList. The following query requirs a solution which simply gets the current value of a mutable Vector stored in a reference a1 and an index n and update the value at the index m. it uses method predicates like vlen and select to specify this query.
+
+
+goal :  (n : int) -> 
+        (m : int) -> 
+        (a1 : ref vec) -> 
+       State {\(h : heap).
+                  \(V1: vec).
+                  vdom (h, a1) = true /\ 
+                  vsel (h, a1) = V1 /\
+                  vlen (V1) > n 
+             } 
+			     v : { v : unit | true} 
+            {\(h : heap), (v : unit), (h' : heap). 
+		        \(V1: vec), (V1' : vec). 
+                    vsel (h, a1) = V1 /\ 
+                    vsel (h', a1) = V1' /\
+                    (vlen (V1') > m \/ vlen (V1') = m) 
+                    select (V1', m) = select (V1, n) 
+                    
+                };
+
+3.2 Giving this query to the cobalt engine leads to timeout with around 20 mins.
+
+3.3 The problem lies in the fact that the specification is too weak to guide the search process, thus it explores many useless paths. However, these explorations have many overlapping patterns:
+
+
+Pattern description                      |    Example                       | repeated explorations?
+                                                                                Cobalt | Cobalt No-cdcl | Neo 
+1. Weak syntactic heuristics             |  a*, (b.b)*, (a.b.c)*...             Y      |   Y            | Y     
+2. Equivalent Commutative operations     |  a.b.(f.g.h) and b.a.(f.g.h)         Y      |   Y            | Y   we will need a better explanation
+3. Local Equivalent Failing terms        |  a.b..fail and  a.c.fails           N      |   Y            | N
+4. Distant Equivalent Failing terms      |  a.b.c.d.fail   e.dfail              Y      |   Y            | Y
+5. Incompleteness due to heuristics      |  Maximum number of allowed calls
+                                             causes to miss solution            Y      | Y              | ?
+6. Equivalent Complementing operations   |  \e.a.b is equivalent to \e.b.a but  Y      |  Y             | Y
+                                             both are explored       
+7. Equivalent Involutionary operations   |  \e.a.a is equivalent to \e
+8. Idempotent operations                 | \e.a* is equivalent to \e.a           N     | N              | Y
+9. Equivament Modulo theory              |  add (a, b) is equivalent to add 
+                                                          (b, a)                 Y     | Y              | Y
+
+
+10. There are many equivalent terms in program space and given that the space of solutions is sparse, finding a finite number of solutions in sufficient.
+
+11. Thus, our aim is to find equivalent terms againts the given spec and club them together in some form of equivalent classes so as to explore only k number of elements in this class.
+
+
+TODO: Suresh suggested to also look for a motivating example where the complexity of the query causes large search times. For example, one case can be when we are looking for terms in two branches of conditionals can we use the common patterns in one to avoid redundant check in other without loosing completeness.
+
+
+TODO : Scalability can be solved by using a modal analysis, two step first solve it approximately or in an underapproximate way and then for those where it feels useful, apply precise reasoning. This is what Oracle guided synthesis approaches do as well as what Ben suggested.
+
+
+
+Note : Zhe, coverage types synthesis: Look for protocols in 
+ - Databases 
+ - Protocols like lock/unlock 
+ - CTL/LTL model checking
+Find out this weekend and help Zhe
+
+
+
+The library used in Hoogle+
+
+Data.Maybe, 
+Data.Either, 
+Data.Int, Data.Bool, Data.Tuple, GHC.List, Text.Show, GHC.Char, Data.Int, Data.Function, Data.ByteString.Lazy, Data.ByteString.Lazy.Builder. 
+
+
+Libraries for which specs exists in LH.
+
+
+
+Discussion with Suresh:
+1. Counter example guided progress towards goal using the results from Z3
+2. Similarities between the queries send to the solver to compare equivalence between two nodes of the tree if they have overlapping subtrees, just find the Quotient of the formulas between the formulas.
+So 
+3. A hybrid search strategy, which can efficiently utilize these features and defined over the proof-tree automaton.
+
+The algorithm will look like something as follows:
+Synthesis (S, Goal, \phi')
+  /*search in depth*/
+  t <- null /*empty tree*/
+DSFExplore t =
+  progress = true;
+  while (progress)
+    t <- next-dfs
+    SMTres <- checkSMT (S,G, t, \phi') 
+    if (SMTres.sat == true) then 
+      return t 
+    else 
+      if (SMTres.sat == false) then 
+         if (SMTres.ce is useful)
+            progress = true 
+         else 
+            progress = false;   
+  /*no more progress*/
+  BFSExplore (t)
+
+BFSExplore t =   
+   t' <- backtrack t 
+   \psi_(t, t') <- phi (t)\phi(t')
+   [t''] <- next-dfs
+   for each t''
+      eq <- findEquivalece (t', t'', \psi_t_t' ) 
+      if (eq) then skip
+      else
+         DFSExplore (t'') 
+
+
+
+- Following the above discussion, I looked into some details about the SAT solvers and found following new concepts used in efficient SAT solving.
+   - Backdoor Variables help to find the most efficient choice of the variable to assign a truth value.
+   - Incremental equality checking and the concept of assumptions : From the Ginsberg, Matthew L. and Kroneing book
+   - Also read about DPLL(T)
+   - After reading this we found, we need something like CEGPS (T) but we will just use the idea of finding progressing elements based on CEs.
+   - There are a lot of optimizations defined in the DP book, we can use them as and when required.
+
+
+Let us consider the example in Motivation6
+
+We have shown how we can use the results from the SMT (check the output of the SMT) to in someways rank between the choices (i.e. giving high rank to functions which may take the current state to the goal, this is captured by the *progress-predicate*).
+
+
+language_for_defining_progress_predicates
+      *these will always be of the form*
+         variable := x, y, z...
+         rel := < | > | == | \in  (*relations are ranged over Set<a>, Int, Bool)
+         constants :=  v | True | false | 0 | c   
+         ppred := constants | mpred (\overline {v} 
+                                 | ppred rel ppred 
+                                 | ppred /\ ppred 
+                                 | ppred \/ ppred
+                                 | not ppred
+
+
+
+                  
+goal : {v : [a] | llen (v) == llen (z) - y + 1
+                  /\ ord, mem properties /\
+                  last (v) == last z}
+
+x : int *not a correct return type so given low rank*
+
+
+y : int 
+
+
+
+z : [a] : check-SMT (len v' = len z /\ ord v' = ord z /\.. last v' = last z => goal)
+           satisfying assignemn for the satifybility
+           find the core of the unsat 
+              -  len v = len v' - (y + 1)
+               - given y > 0 , we learn the following *progress-predicate* 
+               - (len v' <  len v) 
+               - so we use this to make the next choice
+
+
+z : [a]  ---> scan  (\forall l. len v < l)  
+         ---> copy 
+         ---> rev  
+
+        /**ranked lower as does not 
+        satisfy the *progress-predicate
+        **/ 
+         ----> cons (x :: xs) (....) 
+
+
+         /*
+         ranked higher, 
+         we can use PDR to 
+         find functions
+         */
+ z:[a]   ----> init 
+            check *progress-predicate*, successful 
+            checkSMT (len v = len z - 1 =>  len v' = len z - (y + 1)
+                           (* len v > len v' *)
+                     not  last (z) \in mem (v) /\ \forall l. last (l) \in mem (l) => 
+                           last (v') == last (z)
+                           (* last (z) \in  mem (v') \*) 
+                           (*len v > len v /\ last (z) \in  mem (v') *) 
+z : [a]  -----> init (z) ----> 
+                                 /*multiple options, but none of these will satisfy the progress-predicate*/  
+                                 
+                                 tail (init z )
+                                 splitAt 
+                                 copy 
+                                 scan 
+                                 /*so backtrack*/
+
+
+         -----> tail (z)  
+            check *progress-predicate*, successful 
+            checkSMT (len v = len z - 1 =>  len v' = len z - (y + 1)
+                     (* len v > len v'*)
+                     /*low rank */
+                     cons ()
+                     /*equivalent at this point, found ony through incremental check*/
+                     scan, 
+                     copy, 
+                     rev, 
+
+                     /*take the more 'general' function
+                        
+                        */
+                     tail  : [a] -> {v : [a] | len (v) = len l - 1}
+                     splitAt : n -> [a] -> {v : ([], []) | len (v1) = len n /\ len (v2 ) = len (l) - n}  
+                       
+      -----> splitAt x 
+      -----> splitAt y 
+
+
+
+
+Let us define a tree automata for our exploration
+
+
+1. we too define a tree automata for all the libraries, such that for each node, we not only record the type information but also the refinements, this gives rise to the new intersection and union operations (\AM{define these}).
+
+
+2. These operations, will define a more precise way of filtering incorrect programs which will require refinement types.
+
+3. The ECTA paper gives a dynamic reduction algorithm using a transition system, which gives a more declarative way of defining the exploration of the graph/(tree-automata), we can either give a more operational algorithm, or a more declarative algorithm, operational algorithm will not make much sens as it cannot access information which are not local, as compared to this, we can think of declarative rules as being applied over the explored subtree in the automata.
+
+
+So, we can define the above given algorithm in declarative fashion, as this will include a data structure underlying.
+The main steps now are:
+- Revise the definitions for the proof tree automata (a graph, start with an assumption of a dag).
+- Define the enumeration strategy, over this automata.
+  (*create an algorithm for this*)
+  - Adding Hyper edges and collapsing the graph will give first kind of optimization, allowing the use of proof-tree to find equivalent terms early on.
+- 
+  - The algorithms mentioned above gives the second optimization.
+
+
+- 
+
+
+
+
+
+
+
+
+\date{16/11}
+\SJ{
+Deductive synthesis requires precise specifications to guide the synthesis procedure. In lack of such a precise specifications, most of these techniques are either not useful or inefficient.
+The limitations become visible particularly when these deductive synthesis techniques are applied to component based synthesis with large libraries. For instance, running a purely deductive synthesis, like a refinement type guided synthesis over a medium sized library does not scale.}
+
+\SJ{There have been recent attempts to smartly prune this search space using goal directed  synthesis to aid the exploration along with a SAT solver inspires CDCL search strategy which learns from failing paths and avoiding equivalent paths modulo the failure.}
+
+\SJ{Although useful, this has a fundamental limitation, since the exploration only learns from failing terms, this strategy provides limited pruning. We found this is due to the following main reasons; a) Since equivalences are based on failing paths only, it misses out on possible equivalences available between exponential number of terms which have still not failed only to later find all of these failing later.
+b) Since, it performs a top down search in a depth first manner, a failure may occur at a deep term with a big enclosing context. Unfortunately, relating this failure information with another a term in a different context(at a different level) is challenging, thus the verifier is unable to prove the equivalence.
+c) The explorartion and heuristics to prune the search space is adhoc, keeping only limited information about explored paths, compared to this we propose a more principled approach, where in we provided a proof tree automata, compactly representing all possible program terms for a given spec. We use this automaton to perform equivalence reductions between trees/terms and do an efficient search.}
+
+https://www.idrbt.ac.in/careers/

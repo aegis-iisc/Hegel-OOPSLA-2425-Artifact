@@ -1,0 +1,15 @@
+
+data Stack a where 
+    Empty :: Stack a
+    NonEmpty :: top : a -> tail : Stack a -> Stack a  
+
+
+predicate  mem :: Stack a -> a -> Bool
+predicate  hd :: Stack a -> a -> Bool
+predicate  empty :: Stack a -> Bool
+
+is_empty :: s: Stack a -> {Bool | _v == (empty s)} 
+
+top :: s: Stack a -> {a | (mem s _v == True) && (hd s _v == True)}
+
+tail :: s: Stack a -> {Stack a | True }
