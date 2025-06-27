@@ -1,15 +1,15 @@
 # OOPSLA 2025 Artifact (README.md)
 ## Introduction/Overview
 This document is an overview of the Artifact for the paper: **Close is Good Enough: Component-Based Synthesis Modulo Logical Similarty**.
-The Artifact is distributed as a source control repository link.
+The Artifact is distributed as a source code repository link.
 
 The file contains two sections: The __Getting Started__ section gives the main steps for 
-installing the dependencies using OCaml package manager (opam) followed by introducing small scripts for building and running `Hegel` on some sample test case.
+installing the dependencies and sub-modules, using OCaml package manager (opam) and `stack`, followed by introducing small scripts for building and running `Hegel` on some sample test case.
 
 The second section __Step-by-step Instructions__ explains the structure of the directory, how to run Hegel (and other baseline tools) on all the benchmarks in the paper (Both RQ1 and RQ2 in the paper), understanding the results and how to run Hegel on an individual synthesis task in different ablation modes?
 
 ## Hardware Dependencies
-- OS: Linux x86-machine
+- OS: Linux x86-64 machine
 - Memory : > 8GB
 
 ## Getting Started
@@ -187,11 +187,11 @@ Finally, the generated programs are at `output/nth.spec`, for `nth.spec` it gene
 
 ### Outline of the Artifact Source
 
--  `./main/prudent` : Main entry for the tool.
--  `./synlang/` :  The Synthesis language definitions $$\lambda_{syn}$$ in the paper.
--  `./synthesis/ : The Synthesis Algoirthm(s)
--  `./speclang`  : The specifcation language of Refinement Types.
--  `prudent_tests/`: Tests and Benchmarks contains benhcmarks in Figure 11.
+-  `./main/prudent.ml` : Main entry for the tool.
+-  `./synlang/**` :  The Synthesis language definitions $$\lambda_{syn}$$ in the paper.
+-  `./synthesis/**` : The Synthesis Algoirthm(s)
+-  `./speclang/**`  : The specifcation language of Refinement Types.
+-  `prudent_tests/**`: Tests and Benchmarks contains benhcmarks in Figure 11.
 
 
 
@@ -216,10 +216,8 @@ $ ./prudent.native -bi -k <maximum-path-length> file.spec
 ```
 - To run Hegel in Hegel(-ALL) mode ($\textcolor{red}{red}$ bar in Fig 14):
 ```
-$  effsynth.native -k <maximum-path-length> file.spec
+$  ./prudent.native -k <maximum-path-length> file.spec
 ``` 
 
-
 ### Note about the paper under Major Revision
-*********** A similar note is needed about our revision *************
-
+The paper is under `major revision` and we will be subnitting a new version of the artifact with experiments showing the number of SMT queries and size reductions for QTAs.

@@ -1,0 +1,13 @@
+
+ ********************************
+ ********************************
+ ./prudent_tests/unit/algorithmW/u_test1.spec_Hegel : 1.736599
+ ********************************
+ ./prudent_tests/unit/algorithmW/u_test2.spec_Hegel : 0.35665900000000006
+ ********************************
+ ./prudent_tests/unit/algorithmW/u_test3.spec_Hegel : 0.5367000000000002
+ ********************************
+ ./prudent_tests/unit/algorithmW/u_test_failed.spec_Hegel : 0.1451239999999996
+ ********************************
+ ./synquid/test/hegel/nth.sq_Synquid : 2.789261
+ ********************************

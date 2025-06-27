@@ -315,8 +315,7 @@ if __name__ == '__main__':
   os.environ['PATH'] = synquid_loc + os.pathsep + os.environ['PATH']
   os.environ['PATH'] = hoogle_loc + os.pathsep + os.environ['PATH']
 
-  print("Updated PATH:", os.environ['PATH'])
-
+  
   if os.path.isfile(RESULTS):        
     os.remove(RESULTS)
     
@@ -325,8 +324,8 @@ if __name__ == '__main__':
   synquid_test = Synquid_BENCHMARKS
   hoogle_test = Hplus_BENCHMARKS
   csvres = dict()
-  #csvres = csvres | test_hegel()
-  #csvres = csvres | test_synquid()
+  csvres = csvres | test_hegel()
+  csvres = csvres | test_synquid()
   csvres = csvres | test_hoogle ()
   with open(FINALRESULTS, 'a') as f:
     f.write("\n ******************************** \n")
@@ -335,3 +334,4 @@ if __name__ == '__main__':
       f.write ('\n')
     f.close ()    
 
+TODO:: Update the initial numbers to just show the timings

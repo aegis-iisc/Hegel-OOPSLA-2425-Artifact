@@ -39,31 +39,31 @@ class BenchmarkGroup:
 #TODO:: Updtae the benchmarks
 ALL_BENCHMARKS = [
   BenchmarkGroup("Hegel",  [
-    # RQ2 
-    # Benchmark('hegel/Cobalt+/NLRRemove', 'NLR Remove'),
-    # Benchmark('hegel/Cobalt+/FWInvertDel', 'FW Invert Del'),
-    # Benchmark('hegel/Cobalt+/FWInsert', 'FW Insert'),
-    # Benchmark('hegel/Cobalt+/FWInvert', 'FW Invert'),
-    # Benchmark('hegel/Cobalt+/NLInsert', 'NL Insert'),
-    # Benchmark('hegel/Cobalt+/FWMkCentral', 'FW Mk Central'),
-    # Benchmark('hegel/Cobalt+/NLInv', 'NL Inv'),
-    # Benchmark('hegel/Cobalt+/NLRemove', 'NL Remove'),
-    # Benchmark('hegel/Cobalt+/FWInsCons', 'FW Ins Cons'),
-    #  #RQ1 
-   # Benchmark('hegel/Hoogle+/revAppend', 'Rev Append'),
-    #Benchmark('hegel/Hoogle+/nthIcr', 'Nth Incr'),
-    # Benchmark('hegel/Hoogle+/applyList', 'Apply List'),
-     Benchmark('hegel/Hoogle+/nth', 'Nth'),
-    # Benchmark('hegel/Hoogle+/map', 'Map'),
-    # Benchmark('hegel/Hoogle+/applyNInv', 'Apply N Inv'),
-    # Benchmark('hegel/Hoogle+/mapDouble', 'Map Double'),
-    # Benchmark('hegel/Hoogle+/applyNAdd', 'Apply N Add'),
-    # Benchmark('hegel/Hoogle+/containsEdge', 'Contains Edge'),
-    # Benchmark('hegel/Hoogle+/splitAt', 'Split At'),
-    # Benchmark('hegel/Hoogle+/splitStr', 'Split Str'),
-    # Benchmark('hegel/Hoogle+/revZip', 'Rev Zip'),
-    # Benchmark('hegel/Hoogle+/appendN', 'Append N'),
-    # Benchmark('hegel/Hoogle+/lookUpRange', 'Look Up Range'),
+     #RQ2 
+     Benchmark('hegel/Cobalt+/NLRRemove', 'NLR Remove'),
+     Benchmark('hegel/Cobalt+/FWInvertDel', 'FW Invert Del'),
+     Benchmark('hegel/Cobalt+/FWInsert', 'FW Insert'),
+     Benchmark('hegel/Cobalt+/FWInvert', 'FW Invert'),
+     Benchmark('hegel/Cobalt+/NLInsert', 'NL Insert'),
+     Benchmark('hegel/Cobalt+/FWMkCentral', 'FW Mk Central'),
+     Benchmark('hegel/Cobalt+/NLInv', 'NL Inv'),
+     Benchmark('hegel/Cobalt+/NLRemove', 'NL Remove'),
+     Benchmark('hegel/Cobalt+/FWInsCons', 'FW Ins Cons'),
+      #RQ1 
+    Benchmark('hegel/Hoogle+/revAppend', 'Rev Append'),
+    Benchmark('hegel/Hoogle+/nthIcr', 'Nth Incr'),
+    Benchmark('hegel/Hoogle+/applyList', 'Apply List'),
+    Benchmark('hegel/Hoogle+/nth', 'Nth'),
+    Benchmark('hegel/Hoogle+/map', 'Map'),
+    Benchmark('hegel/Hoogle+/applyNInv', 'Apply N Inv'),
+    Benchmark('hegel/Hoogle+/mapDouble', 'Map Double'),
+    Benchmark('hegel/Hoogle+/applyNAdd', 'Apply N Add'),
+    Benchmark('hegel/Hoogle+/containsEdge', 'Contains Edge'),
+    Benchmark('hegel/Hoogle+/splitAt', 'Split At'),
+    Benchmark('hegel/Hoogle+/splitStr', 'Split Str'),
+    Benchmark('hegel/Hoogle+/revZip', 'Rev Zip'),
+     Benchmark('hegel/Hoogle+/appendN', 'Append N'),
+     Benchmark('hegel/Hoogle+/lookUpRange', 'Look Up Range'),
    
    ]),    
 ]
@@ -338,8 +338,8 @@ if __name__ == '__main__':
   hoogle_test = Hplus_BENCHMARKS
   csvres = dict()
   csvres = csvres | test_hegel()
-  # csvres = csvres | test_synquid()
-  # csvres = csvres | test_hoogle ()
+  csvres = csvres | test_synquid()
+  csvres = csvres | test_hoogle ()
   with open(FINALRESULTS, 'a') as f:
     for row in csvres:
       f.write (str(csvres[row]))   

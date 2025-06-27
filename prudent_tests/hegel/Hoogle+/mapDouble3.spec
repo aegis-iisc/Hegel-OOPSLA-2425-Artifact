@@ -107,13 +107,36 @@ take : (n : int) -> (l : [int]) -> { v : [int] | \(u : int).
                                             llen (v) == n /\ 
                                             (lmem (v, u) = true) => lmem (l, u) = true}; 
 
+
+
 qualifier slen : [a] :-> int;
 qualifier ord : int :-> int :-> [int] :-> bool;
 
 
-goal : (z : [int]) -> 
-    {v : [int] | \(u : int), (w : int). lmem (v, u) = true => lmem (z, u) = true /\
-                        llen (v) == llen (z) +  llen (z) /\
-                        ord (u, w, z) = true => 
-                        (ord (u, w, v) = true /\ ord (w, u, v) = true)
-                        };
+
+goal: p, q : (f : (x : int) -> { v : int | p}) -> 
+            (g : (x : int) -> { v : int | q}) -> 
+            (l : [int]) -> 
+              {v : [int] | \(u : int). mem (u , v) = true => 
+                            \( w : int ). mem (w, l) = true => 
+                            \(z : int).   p (z) = true /\ q (w) = true  
+              }
+
+    goal: p, q : (f : (x : int) -> { v : int | p}) -> 
+                (g : (x : int) -> { v : int | q}) -> 
+                (l : [int]) -> 
+                  {v : [int] | \(u : int). mem (u , v) = true => 
+                                \( w : int ). mem (w, l) = true => 
+                                \ (z : int).  q (z) = true /\ p (w) = true  
+                  }
+    
+
+
+    goal: p, q : (f : (x : int) -> { v : int | p}) -> 
+                    (g : (x : int) -> { v : int | q}) -> 
+                    (l : [int]) -> 
+                      {v : [int] | \(u : int). mem (u , v) = true => 
+                                    \( w : int ). mem (w, l) = true => 
+                                    \ (z : int).  q (z) = true /\ p (w) = true  
+                      }
+                          

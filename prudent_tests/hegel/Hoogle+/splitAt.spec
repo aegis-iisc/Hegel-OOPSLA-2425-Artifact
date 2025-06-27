@@ -109,9 +109,11 @@ take : (n : int) -> (l : [int]) -> { v : [int] | \(u : int).
 
 goal : (x:int) 
 -> (y : int) 
--> (xs : [a]) 
--> { v : ([a], [a]) | 
-len (fst (v)) <= x 
-/\ (len (snd (v)) <= len (xs) - y \/ len (snd (v) = 0)) 
-/\ \(u : a). mem (fst (v). u) = true => mem (xs, u) 
-/\ \(u : a). mem (snd (v), u) = true => mem (xs, u)};
+-> (xs : [int]) 
+-> { v : plist | 
+\(f : [int]), (sn : [int]). 
+f = fst (v) /\ sn = snd (v) => 
+(not (len (f) > x) 
+/\ not (len (sn) >  len (xs) - y) \/ len (sn) == 0 
+/\ \(u : a). mem (f, u) = true => mem (xs, u) = true 
+/\ \(u : a). mem (sn, u) = true => mem (xs, u) = true)};

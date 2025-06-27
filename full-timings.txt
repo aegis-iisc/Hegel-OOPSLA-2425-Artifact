@@ -89,3 +89,58 @@
  ********************************
  ********************************
  ./prudent_tests/hegel/Hoogle+/nth.spec_Hegel : 6.973712
+ ********************************
+ ./prudent_tests/hegel/Hoogle+/nth.spec_Hegel : 5.220721
+ ********************************
+ ./prudent_tests/hegel/Cobalt+/NLRRemove.spec_Hegel : 0.001961
+ ********************************
+ ./prudent_tests/hegel/Cobalt+/FWInvertDel.spec_Hegel : 0.004091
+ ********************************
+ ./prudent_tests/hegel/Cobalt+/FWInsert.spec_Hegel : 0.020907000000000002
+ ********************************
+ ./prudent_tests/hegel/Cobalt+/FWInvert.spec_Hegel : 0.0
+ ********************************
+ ./prudent_tests/hegel/Cobalt+/NLInsert.spec_Hegel : 0.694959
+ ********************************
+ ./prudent_tests/hegel/Cobalt+/FWMkCentral.spec_Hegel : 0.014649000000000023
+ ********************************
+ ./prudent_tests/hegel/Cobalt+/NLInv.spec_Hegel : 0.0
+ ********************************
+ ./prudent_tests/hegel/Cobalt+/NLRemove.spec_Hegel : 0.749233
+ ********************************
+ ./prudent_tests/hegel/Cobalt+/FWInsCons.spec_Hegel : 0.008931000000000022
+ ********************************
+ ./prudent_tests/hegel/Hoogle+/revAppend.spec_Hegel : 0.5282319999999998
+ ********************************
+ ./prudent_tests/hegel/Hoogle+/nthIcr.spec_Hegel : 0.09077400000000013
+ ********************************
+ ./prudent_tests/hegel/Hoogle+/applyList.spec_Hegel : 0.02074700000000007
+ ********************************
+ ./prudent_tests/hegel/Hoogle+/nth.spec_Hegel : 5.315002
+ ********************************
+ ./prudent_tests/hegel/Hoogle+/map.spec_Hegel : 0.00974399999999953
+ ********************************
+ ./prudent_tests/hegel/Hoogle+/applyNInv.spec_Hegel : 0.0
+ ********************************
+ ./prudent_tests/hegel/Hoogle+/mapDouble.spec_Hegel : 0.005354000000000525
+ ********************************
+ ./prudent_tests/hegel/Hoogle+/applyNAdd.spec_Hegel : 0.005823999999999607
+ ********************************
+ ./prudent_tests/hegel/Hoogle+/containsEdge.spec_Hegel : 0.004054000000000002
+ ********************************
+ ./prudent_tests/hegel/Hoogle+/splitAt.spec_Hegel : 0.11902400000000046
+ ********************************
+ ./prudent_tests/hegel/Hoogle+/splitStr.spec_Hegel : 0.008408999999999445
+ ********************************
+ ./prudent_tests/hegel/Hoogle+/revZip.spec_Hegel : 0.0
+ ********************************
+ ./prudent_tests/hegel/Hoogle+/appendN.spec_Hegel : 0.01844300000000043
+ ********************************
+ ./prudent_tests/hegel/Hoogle+/lookUpRange.spec_Hegel : 0.010161000000000087
+ ********************************
+ ./synquid/test/hegel/nth.sq_Synquid : 2.178167
+ ********************************
+ ./synquid/test/hegel/u_test1.sq_Synquid : 1000
+ ********************************
+ ./synquid/test/hegel/u_test2.sq_Synquid : 1000
+ ********************************

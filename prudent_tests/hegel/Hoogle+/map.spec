@@ -107,18 +107,15 @@ take : (n : int) -> (l : [int]) -> { v : [int] | \(u : int).
                                             llen (v) == n /\ 
                                             (lmem (v, u) = true) => lmem (l, u) = true}; 
 
- goal p : (f : (x : int) -> { v : int | p}) -> 
-                      (l : [int]) -> {v : [int] | \(u : int). mem (u , v) = true => 
-                            p (u-1) }
+qualifier slen : [a] :-> int;
+qualifier ord : int :-> int :-> [int] :-> bool;
+qualifier p : int :-> int :-> bool;
+qualifier q : int :-> int :-> bool;
 
-  goal p : (f : (x : int) -> { v : int | p v}) -> 
-                              (l : [int]) -> {v : [int] | \(u : int). mem (u , v) = true => 
-                                    p (u+1) }
 
- goal p : (f : (x : int) -> { v : int | p v}) -> 
-            (l : [int]) -> {v : [int] | \(u : int). mem (u , v) = true => 
-                                            p (u-1) /\ 
-                                          \(u1 : int), (u2 : int). order (u1, u2, l) = true => 
-                                          u1' = u1 - 1 /\ u2' = u2 - 1
-                                          order (u1', u2', v) = true}
-        
+
+ goal : (f : (x : int) -> { v1 : int | p (x, v1) = true}) -> 
+                      (l : [int]) -> {v : [int] | \(u : int), (u1 : int), (lel : int). 
+                      (lmem (lel, l) = true /\ lmem (u , v) = true /\ u1 == u -- 1)=> 
+                            p (lel, u1) = true };
+

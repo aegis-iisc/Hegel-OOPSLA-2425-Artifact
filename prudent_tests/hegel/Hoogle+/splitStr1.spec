@@ -107,13 +107,15 @@ take : (n : int) -> (l : [int]) -> { v : [int] | \(u : int).
                                             llen (v) == n /\ 
                                             (lmem (v, u) = true) => lmem (l, u) = true}; 
 
-qualifier slen : [a] :-> int;
-qualifier ord : int :-> int :-> [int] :-> bool;
 
+type spair;
+qualifier sfst : spair :-> string;
+qualifier ssnd : spair :-> string;
+qualifier smem : char :-> string :-> bool;
 
-goal : (z : [int]) -> 
-    {v : [int] | \(u : int), (w : int). lmem (v, u) = true => lmem (z, u) = true /\
-                        llen (v) == llen (z) +  llen (z) /\
-                        ord (u, w, z) = true => 
-                        (ord (u, w, v) = true /\ ord (w, u, v) = true)
-                        };
+goal : (s : string) -> (c : char) -> { v : spair |
+                                      f = sfst (v) /\ sn = ssnd (v) /\
+                                       smem (c, f) = true  /\
+                                \(u : char). smem (u, f) = true => smem (u , s) = true /\
+                                \(u : char). smem (u, sn) = true => smem (u, s) = true };
+

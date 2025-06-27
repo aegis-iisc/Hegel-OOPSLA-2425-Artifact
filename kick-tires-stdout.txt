@@ -1,0 +1,3641 @@
+
+  EXPLORED Args.parser output 
+ EXPLORED learningOn  true
+ EXPLORED bidirectionality  true
+ EXPLORED effect-filter  false
+ EXPLORED specfile :: ./prudent_tests/unit/algorithmW/u_test1.spec
+ EXPLORED goal Number :: 0
+ EXPLORED Max path length :: 2
+ EXPLORED Nested If :: 1typewhitespace var: apair
+semicolon
+typewhitespace var: plist
+semicolon
+stexcwhitespace var: llen
+whitespace colon
+whitespace lbrace
+var: a
+rbrace
+whitespace colon
+whitespace var: int
+semicolon
+stexcwhitespace var: pllen
+whitespace colon
+whitespace lbrace
+var: apair
+rbrace
+whitespace colon
+whitespace var: int
+semicolon
+stexcwhitespace var: lmem
+whitespace colon
+whitespace lbrace
+var: a
+rbrace
+whitespace colon
+whitespace var: a
+whitespace colon
+whitespace var: bool
+semicolon
+stexcwhitespace var: lhd
+whitespace colon
+whitespace lbrace
+var: a
+rbrace
+whitespace colon
+whitespace var: a
+semicolon
+stexcwhitespace var: plhd
+whitespace colon
+whitespace lbrace
+var: apair
+rbrace
+whitespace colon
+whitespace var: apair
+semicolon
+stexcwhitespace var: last
+whitespace colon
+whitespace lbrace
+var: a
+rbrace
+whitespace colon
+whitespace var: a
+semicolon
+stexcwhitespace var: pllast
+whitespace colon
+whitespace lbrace
+var: apair
+rbrace
+whitespace colon
+whitespace var: apair
+semicolon
+stexcwhitespace var: ppr1
+whitespace colon
+whitespace var: apair
+whitespace colon
+whitespace var: a
+semicolon
+stexcwhitespace var: ppr2
+whitespace colon
+whitespace var: apair
+whitespace colon
+whitespace var: a
+semicolon
+stexcwhitespace var: nth
+whitespace colon
+whitespace lbrace
+var: a
+rbrace
+whitespace colon
+whitespace var: int
+whitespace colon
+whitespace var: a
+semicolon
+stexcwhitespace var: lsnd
+whitespace colon
+whitespace lbrace
+var: a
+rbrace
+whitespace colon
+whitespace var: a
+semicolon
+stexcwhitespace var: pen
+whitespace colon
+whitespace lbrace
+var: a
+rbrace
+whitespace colon
+whitespace var: a
+semicolon
+stexcwhitespace var: fst
+whitespace colon
+whitespace var: plist
+whitespace colon
+whitespace lbrace
+var: a
+rbrace
+semicolon
+stexcwhitespace var: snd
+whitespace colon
+whitespace var: plist
+whitespace colon
+whitespace lbrace
+var: a
+rbrace
+semicolon
+var: ep
+whitespace colon
+whitespace var: a
+semicolon
+var: length
+whitespace colon
+whitespace lparen
+var: x
+whitespace colon
+whitespace lbrace
+var: a
+rbrace
+rparen
+whitespace arrow
+whitespace lcurly
+var: v
+whitespace colon
+whitespace var: int
+whitespace pipe
+whitespace var: llen
+whitespace lparen
+var: x
+rparen
+whitespace equalopwhitespace var: v
+rcurly
+semicolon
+whitespace var: init
+whitespace colon
+whitespace lparen
+var: l
+whitespace colon
+whitespace lbrace
+var: a
+rbrace
+rparen
+whitespace arrow
+whitespace lcurly
+whitespace var: v
+whitespace colon
+whitespace lbrace
+var: a
+rbrace
+whitespace pipe
+whitespace var: llen
+whitespace lparen
+var: v
+rparen
+whitespace equalopwhitespace var: llen
+whitespace lparen
+var: l
+rparen
+whitespace ar-minusint: 1
+rcurly
+semicolon
+whitespace var: take
+whitespace colon
+whitespace lparen
+var: n
+whitespace colon
+whitespace var: int
+rparen
+whitespace arrow
+whitespace lparen
+var: l
+whitespace colon
+whitespace lbrace
+var: a
+rbrace
+rparen
+whitespace arrow
+whitespace lcurly
+whitespace var: v
+whitespace colon
+whitespace lbrace
+var: a
+rbrace
+whitespace pipe
+whitespace lambdalparen
+var: u
+whitespace colon
+whitespace var: a
+rparen
+dotwhitespace whitespace var: llen
+whitespace lparen
+var: v
+rparen
+whitespace equalopwhitespace var: n
+whitespace conjwhitespace whitespace var: lmem
+whitespace lparen
+var: v
+comma
+whitespace var: u
+rparen
+whitespace equalopwhitespace truewhitespace implieswhitespace var: lmem
+whitespace lparen
+var: z
+comma
+whitespace var: u
+rparen
+whitespace equalopwhitespace truercurly
+semicolon
+whitespace var: goal
+whitespace colon
+whitespace lparen
+var: n
+colon
+var: int
+rparen
+whitespace arrow
+whitespace lparen
+var: z
+whitespace colon
+whitespace lcurly
+var: v
+whitespace colon
+whitespace lbrace
+var: a
+rbrace
+whitespace pipe
+whitespace truercurly
+rparen
+whitespace arrow
+whitespace lcurly
+whitespace var: v
+whitespace colon
+whitespace lbrace
+var: a
+rbrace
+whitespace pipe
+whitespace var: llen
+whitespace lparen
+var: v
+rparen
+whitespace equalopwhitespace var: n
+whitespace ar-minuswhitespace int: 1
+rcurly
+semicolon
+whitespace whitespace RelSpec {  SRs ;  PRs ;  TSs  
+ Assume false
+ name ep : 
+ params :
+ Type {var_v0:int a | true} 
+ Assume false
+ name length : 
+ params :
+ Type  Arrow ( ( x : {var_v1:Ty_list int a | true} ) -> {v:int | (llen)(x) ==(v)} 
+ Assume false
+ name init : 
+ params :
+ Type  Arrow ( ( l : {var_v2:Ty_list int a | true} ) -> {v:Ty_list int a | (llen)(v) ==((llen)(l) -- (1))} 
+ Assume false
+ name take : 
+ params :
+ Type  Arrow ( ( n : {var_v3:int | true} ) ->  Arrow ( ( l : {var_v4:Ty_list int a | true} ) -> {v:Ty_list int a | Forall 
+ 	 
+ Key =u Value = int a{ 
+ 	 Conj <c (llen)(v) ==(n)
+ 	 , 
+ 	 Impl < (lmem)( , v, u ) = (true)
+ 	 (lmem)( , z, u ) = (true) > >c  }} 
+ Assume false
+ name goal : 
+ params :
+ Type  Arrow ( ( n : {var_v5:int | true} ) ->  Arrow ( ( z : {v:Ty_list int a | true} ) -> {v:Ty_list int a | (llen)(v) ==((n) -- (1))};  Formulas  }
+ INITIAL GAMMA 
+ 
+ goal :  Arrow ( ( n : {var_v5:int | true} ) ->  Arrow ( ( z : {v:Ty_list int a | true} ) -> {v:Ty_list int a | (llen)(v) ==((n) -- (1))}
+ take :  Arrow ( ( n : {var_v3:int | true} ) ->  Arrow ( ( l : {var_v4:Ty_list int a | true} ) -> {v:Ty_list int a | Forall 
+ 	 
+ Key =u Value = int a{ 
+ 	 Conj <c (llen)(v) ==(n)
+ 	 , 
+ 	 Impl < (lmem)( , v, u ) = (true)
+ 	 (lmem)( , z, u ) = (true) > >c  }}
+ init :  Arrow ( ( l : {var_v2:Ty_list int a | true} ) -> {v:Ty_list int a | (llen)(v) ==((llen)(l) -- (1))}
+ length :  Arrow ( ( x : {var_v1:Ty_list int a | true} ) -> {v:int | (llen)(x) ==(v)}
+ ep : {var_v0:int a | true}
+ INITIAL SIGMA 
+ 
+ TypeNames 
+ 
+ plist
+ apair
+ Qualifiers 
+ 
+ Qual llen :  :-> Ty_list int a :-> int
+ Qual pllen :  :-> Ty_list int apair :-> int
+ Qual lmem :  :-> Ty_list int a :-> int a :-> Ty_bool
+ Qual lhd :  :-> Ty_list int a :-> int a
+ Qual plhd :  :-> Ty_list int apair :-> int apair
+ Qual last :  :-> Ty_list int a :-> int a
+ Qual pllast :  :-> Ty_list int apair :-> int apair
+ Qual ppr1 :  :-> int apair :-> int a
+ Qual ppr2 :  :-> int apair :-> int a
+ Qual nth :  :-> Ty_list int a :-> int :-> int a
+ Qual lsnd :  :-> Ty_list int a :-> int a
+ Qual pen :  :-> Ty_list int a :-> int a
+ Qual fst :  :-> int plist :-> Ty_list int a
+ Qual snd :  :-> int plist :-> Ty_list int a
+ Show ***********Calling S-FUNC synthesize***************
+ Show Uncurried , n:{var_v5:int | true}, z:{v:Ty_list int a | true} -> {v:Ty_list int a | (llen)(v) ==((n) -- (1))}
+ Decreasing Measure n
+ Decreasing Type {var_v5:int | true}
+ Calculated Decreasing Predicate n > var_v5
+ Calculated Decreased Goal Type  Arrow ( ( n1 : {var_v5:int | 
+ 	 Conj <c true
+ 	 , n > var_v5 >c } ) ->  Arrow ( ( z : {v:Ty_list int a | true} ) -> {v:Ty_list int a | (llen)(v) ==((n1) -- (1))}
+ Show Trying :: Top-level Match
+ Show :: Synthesize Match {v:Ty_list int a | (llen)(v) ==((n) -- (1))}
+ Show :: List int
+ Show :: Non List Case
+ Match-case failed :: Try Top-level If-then-else 
+ **********************************************
+ iSynthesize If-THEN-ELSE {v:Ty_list int a | (llen)(v) ==((n) -- (1))}
+ **********************************************
+  *********************Synthesizing the Guard*******************
+ iSynthesize Boolean Guard {var_v6:Ty_bool | true}
+  *********************Synthesizing the Guard*******************
+ esynthesizeScalar for {var_v6:Ty_bool | true}
+  Entering Pure Fun Application: esynthesizePureApp 
+ ############################################################
+ Max depth reached
+ ############################################################
+ >>>>>>>>>>>>>>>>>>  No pureApp found, Call esynthesizeConsApp <<<<<<<<<<<<<< 
+  *********************Guard Synthesized*******************
+ iSynthesize Following Boolean Guards Found 
+  ********************Guard Synthesized*******************
+  If then else Failed :: Try without subdivision
+ 
+  Entering Pure Fun Application: esynthesizePureApp 
+ Show Potential Functions
+  , 
+ goal, 
+ take, 
+ init
+ ############################################################
+  Synthesizing the Function application Pure Component goal
+  *************** Trying Arrow Component ************goal :  Arrow ( ( n1 : {var_v5:int | 
+ 	 Conj <c true
+ 	 , n > var_v5 >c } ) ->  Arrow ( ( z : {v:Ty_list int a | true} ) -> {v:Ty_list int a | (llen)(v) ==((n1) -- (1))}
+  *************** Synthesizing Args ei : ti for ************goal
+ ##################################################################################
+  Synthesizing the 1th argument for Function goal
+  Trying Arguments in Scalars 
+ esynthesizeScalar for {var_v5:int | 
+ 	 Conj <c true
+ 	 , n > var_v5 >c }
+ 
+ Enumerating a Scalar Term n
+ 
+ Type of the Scalar Term {var_v5:int | true}     
+# of Final Z3 expressions 2
+ OutBuf:sat
+:sat
+
+ $$$$$$$$$$$$ Returned $$$$$$$$$$$$$$$$$$$
+ $$$$$$$$$$$$$ Failed SMT $$$$$$$$$$$$$$
+ 
+ FaileD the subtype check T_vi <: T_goal
+  Entering Pure Fun Application: esynthesizePureApp 
+ Show Potential Functions
+  , 
+ length
+ ############################################################
+  Synthesizing the Function application Pure Component length
+  *************** Trying Arrow Component ************length :  Arrow ( ( x : {var_v1:Ty_list int a | true} ) -> {v:int | (llen)(x) ==(v)}
+  *************** Synthesizing Args ei : ti for ************length
+ ##################################################################################
+  Synthesizing the 1th argument for Function length
+  Trying Arguments in Scalars 
+ esynthesizeScalar for {var_v1:Ty_list int a | true}
+ 
+ Enumerating a Scalar Term z
+ 
+ Type of the Scalar Term {v:Ty_list int a | true}
+# of Final Z3 expressions 2
+ OutBuf:unsat
+:unsat
+
+ $$$$$$$$$$$$ Returned $$$$$$$$$$$$$$$$$$$
+ $$$$$$$$$$$$$ Success SMT $$$$$$$$$$$$$$
+ Show :: Found a Few Macthing Scalars 
+ ##################################################################################
+  Next Trying Arguments of the form f (ei...) 
+ ##################################################################################
+  Entering Pure Fun Application: esynthesizePureApp 
+ ############################################################
+ Max depth reached
+ ############################################################
+ >>>>>>>>>>>>>>>>>>> 1th Args option for length : z
+  DEPTH vs MAX  1 vs 2
+ ##################################################################################
+  *************** Successfully Synthesized Args ei Forall i 
+ 1 th Argument Options for length
+ EI z
+ # of Possible Argument Options for length 1
+ # of Possible Argument Options for length 1
+ Possible Arg Options 
+ EI z
+ Apply Single Argument Case : f (ei) Case length
+  Case : f (ei) Case length z
+ Finding Already seen tree for apply length  (, z )
+ Typechecking apply length  (, z )
+ Against {var_v5:int | 
+ 	 Conj <c true
+ 	 , n > var_v5 >c }
+ Typechecking the Term apply length  (, z )
+ Against {var_v5:int | 
+ 	 Conj <c true
+ 	 , n > var_v5 >c }
+ Argument z :: {v:Ty_list int a | true} | true
+ AppType Type {v:int | (llen)(z) ==(v)}     
+# of Final Z3 expressions 3
+ OutBuf:sat
+:sat
+
+ $$$$$$$$$$$$ Returned $$$$$$$$$$$$$$$$$$$
+ $$$$$$$$$$$$$ Failed SMT $$$$$$$$$$$$$$
+  FAILED Typechecking PURE APP For apply length  (, z )
+  ###################################################
+  The Choice of Function length Was Ill Fated Try Next Choice of function
+ >>>>>>>>>>>>>>>>>>  No pureApp found, Call esynthesizeConsApp <<<<<<<<<<<<<< 
+ Found Constructors with required return type
+  
+ ********************** HERE BEFORE 
+ Show No more choices for ConsApp
+ ##################################################################################
+  Next Trying Arguments of the form f (ei...) 
+ ##################################################################################
+  Entering Pure Fun Application: esynthesizePureApp 
+ Show Potential Functions
+  , 
+ length
+ ############################################################
+  Synthesizing the Function application Pure Component length
+  *************** Trying Arrow Component ************length :  Arrow ( ( x : {var_v1:Ty_list int a | true} ) -> {v:int | (llen)(x) ==(v)}
+  *************** Synthesizing Args ei : ti for ************length
+ ##################################################################################
+  Synthesizing the 1th argument for Function length
+  Trying Arguments in Scalars 
+ esynthesizeScalar for {var_v1:Ty_list int a | true}
+ 
+ Enumerating a Scalar Term z
+ 
+ Type of the Scalar Term {v:Ty_list int a | true}
+# of Final Z3 expressions 2
+ OutBuf:unsat
+:unsat
+
+ $$$$$$$$$$$$ Returned $$$$$$$$$$$$$$$$$$$
+ $$$$$$$$$$$$$ Success SMT $$$$$$$$$$$$$$
+ 
+ Enumerating a Scalar Term x
+ 
+ Type of the Scalar Term {var_v1:Ty_list int a | true}
+ ################################################
+ Skipping Variable x As this a  Formal Parameter to the current function Call
+ Outer Function calls length
+ ################################################
+ Show :: Found a Few Macthing Scalars 
+ ##################################################################################
+  Next Trying Arguments of the form f (ei...) 
+ ##################################################################################
+  Entering Pure Fun Application: esynthesizePureApp 
+ ############################################################
+ Max depth reached
+ ############################################################
+ >>>>>>>>>>>>>>>>>>> 1th Args option for length : z
+  DEPTH vs MAX  1 vs 2
+ ##################################################################################
+  *************** Successfully Synthesized Args ei Forall i 
+ 1 th Argument Options for length
+ EI z
+ # of Possible Argument Options for length 1
+ # of Possible Argument Options for length 1
+ Possible Arg Options 
+ EI z
+ Apply Single Argument Case : f (ei) Case length
+  Case : f (ei) Case length z
+ Finding Already seen tree for apply length  (, z )
+ Typechecking apply length  (, z )
+ Against {var_v5:int | 
+ 	 Conj <c true
+ 	 , n > var_v5 >c }
+ Typechecking the Term apply length  (, z )
+ Against {var_v5:int | 
+ 	 Conj <c true
+ 	 , n > var_v5 >c }
+ Argument z :: {v:Ty_list int a | true} | true
+ AppType Type {v:int | (llen)(z) ==(v)}     
+# of Final Z3 expressions 3
+ OutBuf:sat
+:sat
+
+ $$$$$$$$$$$$ Returned $$$$$$$$$$$$$$$$$$$
+ $$$$$$$$$$$$$ Failed SMT $$$$$$$$$$$$$$
+  FAILED Typechecking PURE APP For apply length  (, z )
+  ###################################################
+  The Choice of Function length Was Ill Fated Try Next Choice of function
+  DEPTH vs MAX  0 vs 2
+ ##################################################################################
+  Synthesizing the 2th argument for Function goal
+  Trying Arguments in Scalars 
+ esynthesizeScalar for {v:Ty_list int a | true}
+ 
+ Enumerating a Scalar Term z
+ 
+ Type of the Scalar Term {v:Ty_list int a | true}
+# of Final Z3 expressions 2
+ OutBuf:unsat
+:unsat
+
+ $$$$$$$$$$$$ Returned $$$$$$$$$$$$$$$$$$$
+ $$$$$$$$$$$$$ Success SMT $$$$$$$$$$$$$$
+ 
+ Enumerating a Scalar Term x
+ 
+ Type of the Scalar Term {var_v1:Ty_list int a | true}
+ ################################################
+ Skipping Variable x as it is bound variable for Cons constructor
+ ################################################
+ Show :: Found a Few Macthing Scalars 
+ ##################################################################################
+  Next Trying Arguments of the form f (ei...) 
+ ##################################################################################
+  Entering Pure Fun Application: esynthesizePureApp 
+ Show Potential Functions
+  , 
+ goal, 
+ take, 
+ init
+ ############################################################
+  Synthesizing the Function application Pure Component goal
+ ################################################
+ Skipping Variable goal As Outer Function Call is goal
+ ################################################
+ ############################################################
+  Synthesizing the Function application Pure Component take
+  *************** Trying Arrow Component ************take :  Arrow ( ( n : {var_v3:int | true} ) ->  Arrow ( ( l : {var_v4:Ty_list int a | true} ) -> {v:Ty_list int a | Forall 
+ 	 
+ Key =u Value = int a{ 
+ 	 Conj <c (llen)(v) ==(n)
+ 	 , 
+ 	 Impl < (lmem)( , v, u ) = (true)
+ 	 (lmem)( , z, u ) = (true) > >c  }}
+  *************** Synthesizing Args ei : ti for ************take
+ ##################################################################################
+  Synthesizing the 1th argument for Function take
+  Trying Arguments in Scalars 
+ esynthesizeScalar for {var_v3:int | true}
+ 
+ Enumerating a Scalar Term n
+ 
+ Type of the Scalar Term {var_v5:int | true}
+ ################################################
+ Skipping Variable n As this a  Formal Parameter to the current function Call
+ Outer Function calls take
+ ################################################
+ 
+ Enumerating a Scalar Term n1
+ 
+ Type of the Scalar Term {var_v5:int | 
+ 	 Conj <c true
+ 	 , n > var_v5 >c }
+# of Final Z3 expressions 2
+ OutBuf:unsat
+:unsat
+
+ $$$$$$$$$$$$ Returned $$$$$$$$$$$$$$$$$$$
+ $$$$$$$$$$$$$ Success SMT $$$$$$$$$$$$$$
+ Show :: Found a Few Macthing Scalars 
+ ##################################################################################
+  Next Trying Arguments of the form f (ei...) 
+ ##################################################################################
+  Entering Pure Fun Application: esynthesizePureApp 
+ ############################################################
+ Max depth reached
+ ############################################################
+ >>>>>>>>>>>>>>>>>>> 1th Args option for take : n1
+  DEPTH vs MAX  1 vs 2
+ ##################################################################################
+  Synthesizing the 2th argument for Function take
+  Trying Arguments in Scalars 
+ esynthesizeScalar for {var_v4:Ty_list int a | true}
+ 
+ Enumerating a Scalar Term z
+ 
+ Type of the Scalar Term {v:Ty_list int a | true}
+# of Final Z3 expressions 2
+ OutBuf:unsat
+:unsat
+
+ $$$$$$$$$$$$ Returned $$$$$$$$$$$$$$$$$$$
+ $$$$$$$$$$$$$ Success SMT $$$$$$$$$$$$$$
+ 
+ Enumerating a Scalar Term x
+ 
+ Type of the Scalar Term {var_v1:Ty_list int a | true}
+ ################################################
+ Skipping Variable x as it is bound variable for Cons constructor
+ ################################################
+ Show :: Found a Few Macthing Scalars 
+ ##################################################################################
+  Next Trying Arguments of the form f (ei...) 
+ ##################################################################################
+  Entering Pure Fun Application: esynthesizePureApp 
+ ############################################################
+ Max depth reached
+ ############################################################
+ >>>>>>>>>>>>>>>>>>> 2th Args option for take : z
+  DEPTH vs MAX  1 vs 2
+ ##################################################################################
+  *************** Successfully Synthesized Args ei Forall i 
+ 1 th Argument Options for take
+ EI n1
+ 2 th Argument Options for take
+ EI z
+ # of Possible Argument Options for take 1
+ # of Possible Argument Options for take 1
+ Possible Arg Options 
+ EI n1
+ EI z
+ Show f (ei, e2, ....en) Case
+ Finding Already seen tree for apply take  (, n1 ), z )
+ Typechecking apply take  (, n1 ), z )
+ Against {v:Ty_list int a | true}
+ Typechecking the Term apply take  (, n1 ), z )
+ Against {v:Ty_list int a | true}
+ Argument n1 :: {var_v5:int | 
+ 	 Conj <c true
+ 	 , n > var_v5 >c } | 
+ 	 Conj <c true
+ 	 , n > n1 >c 
+ Argument z :: {v:Ty_list int a | true} | true
+ AppType Type {v:Ty_list int a | Forall 
+ 	 
+ Key =u Value = int a{ 
+ 	 Conj <c (llen)(v) ==(n1)
+ 	 , 
+ 	 Impl < (lmem)( , v, u ) = (true)
+ 	 (lmem)( , z, u ) = (true) > >c  }}
+# of Final Z3 expressions 2
+ OutBuf:unsat
+:unsat
+
+ $$$$$$$$$$$$ Returned $$$$$$$$$$$$$$$$$$$
+ $$$$$$$$$$$$$ Success SMT $$$$$$$$$$$$$$
+  Show *************** TypeChecking Succsessful {v:Ty_list int a | Forall 
+ 	 
+ Key =u Value = int a{ 
+ 	 Conj <c (llen)(v) ==(n1)
+ 	 , 
+ 	 Impl < (lmem)( , v, u ) = (true)
+ 	 (lmem)( , z, u ) = (true) > >c  }}
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ let _lbv0 = apply take  (, n1 ), z )
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  ###################################################
+  The Choice of Function take Was Successfull for {v:Ty_list int a | true} Continuing for completeness
+  ###################################################
+ >>>>>>>>>>>>>>>>>>> 2th Args option for goal : z
+ >>>>>>>>>>>>>>>>>>> 2th Args option for goal : apply take  (, n1 ), z )
+  DEPTH vs MAX  0 vs 2
+ ##################################################################################
+  *************** Synthesizing Args ei : Failed for some  arg
+ ############################################################
+  Synthesizing the Function application Pure Component take
+  *************** Trying Arrow Component ************take :  Arrow ( ( n : {var_v3:int | true} ) ->  Arrow ( ( l : {var_v4:Ty_list int a | true} ) -> {v:Ty_list int a | Forall 
+ 	 
+ Key =u Value = int a{ 
+ 	 Conj <c (llen)(v) ==(n)
+ 	 , 
+ 	 Impl < (lmem)( , v, u ) = (true)
+ 	 (lmem)( , z, u ) = (true) > >c  }}
+  *************** Synthesizing Args ei : ti for ************take
+ ##################################################################################
+  Synthesizing the 1th argument for Function take
+  Trying Arguments in Scalars 
+ esynthesizeScalar for {var_v3:int | true}
+ 
+ Enumerating a Scalar Term n1
+ 
+ Type of the Scalar Term {var_v5:int | 
+ 	 Conj <c true
+ 	 , n > var_v5 >c }
+# of Final Z3 expressions 2
+ OutBuf:unsat
+:unsat
+
+ $$$$$$$$$$$$ Returned $$$$$$$$$$$$$$$$$$$
+ $$$$$$$$$$$$$ Success SMT $$$$$$$$$$$$$$
+ 
+ Enumerating a Scalar Term n
+ 
+ Type of the Scalar Term {var_v3:int | true}
+ ################################################
+ Skipping Variable n As this a  Formal Parameter to the current function Call
+ Outer Function calls take
+ ################################################
+ Show :: Found a Few Macthing Scalars 
+ ##################################################################################
+  Next Trying Arguments of the form f (ei...) 
+ ##################################################################################
+  Entering Pure Fun Application: esynthesizePureApp 
+ Show Potential Functions
+  , 
+ length
+ ############################################################
+  Synthesizing the Function application Pure Component length
+  *************** Trying Arrow Component ************length :  Arrow ( ( x : {var_v1:Ty_list int a | true} ) -> {v:int | (llen)(x) ==(v)}
+  *************** Synthesizing Args ei : ti for ************length
+ ##################################################################################
+  Synthesizing the 1th argument for Function length
+  Trying Arguments in Scalars 
+ esynthesizeScalar for {var_v1:Ty_list int a | true}
+ 
+ Enumerating a Scalar Term x
+ 
+ Type of the Scalar Term {var_v1:Ty_list int a | true}
+ ################################################
+ Skipping Variable x As this a  Formal Parameter to the current function Call
+ Outer Function calls length
+ ################################################
+ 
+ Enumerating a Scalar Term l
+ 
+ Type of the Scalar Term {var_v4:Ty_list int a | true}
+# of Final Z3 expressions 2
+ OutBuf:unsat
+:unsat
+
+ $$$$$$$$$$$$ Returned $$$$$$$$$$$$$$$$$$$
+ $$$$$$$$$$$$$ Success SMT $$$$$$$$$$$$$$
+ 
+ Enumerating a Scalar Term _lbv0
+ 
+ Type of the Scalar Term {v:Ty_list int a | Forall 
+ 	 
+ Key =u Value = int a{ 
+ 	 Conj <c (llen)(v) ==(n1)
+ 	 , 
+ 	 Impl < (lmem)( , v, u ) = (true)
+ 	 (lmem)( , z, u ) = (true) > >c  }}
+ standardized VC STANDARD VC_BEGIN TyDBINDS  
+
+ 	 ANTE False 
+ 	 ------------------------
+
+	 CONS True
+ 
+VC_END
+# of Final Z3 expressions 2
+ OutBuf:unsat
+:unsat
+
+ $$$$$$$$$$$$ Returned $$$$$$$$$$$$$$$$$$$
+ $$$$$$$$$$$$$ Success SMT $$$$$$$$$$$$$$
+ Returned Successfully
+ 
+ Enumerating a Scalar Term z
+ 
+ Type of the Scalar Term {v:Ty_list int a | true}
+# of Final Z3 expressions 2
+ OutBuf:unsat
+:unsat
+
+ $$$$$$$$$$$$ Returned $$$$$$$$$$$$$$$$$$$
+ $$$$$$$$$$$$$ Success SMT $$$$$$$$$$$$$$
+ Show :: Found a Few Macthing Scalars 
+ ##################################################################################
+  Next Trying Arguments of the form f (ei...) 
+ ##################################################################################
+  Entering Pure Fun Application: esynthesizePureApp 
+ ############################################################
+ Max depth reached
+ ############################################################
+ >>>>>>>>>>>>>>>>>>> 1th Args option for length : z
+ >>>>>>>>>>>>>>>>>>> 1th Args option for length : apply take  (, n1 ), z )
+ >>>>>>>>>>>>>>>>>>> 1th Args option for length : l
+  DEPTH vs MAX  1 vs 2
+ ##################################################################################
+  *************** Successfully Synthesized Args ei Forall i 
+ 1 th Argument Options for length
+ EI z
+ EI apply take  (, n1 ), z )
+ EI l
+ # of Possible Argument Options for length 3
+ # of Possible Argument Options for length 3
+ Possible Arg Options 
+ EI z
+ Possible Arg Options 
+ EI apply take  (, n1 ), z )
+ Possible Arg Options 
+ EI l
+ Apply Single Argument Case : f (ei) Case length
+  Case : f (ei) Case length z
+ Finding Already seen tree for apply length  (, z )
+ Typechecking apply length  (, z )
+ Against {var_v3:int | true}
+ Typechecking the Term apply length  (, z )
+ Against {var_v3:int | true}
+ Argument z :: {v:Ty_list int a | true} | true
+ AppType Type {v:int | (llen)(z) ==(v)}
+# of Final Z3 expressions 2
+ OutBuf:unsat
+:unsat
+
+ $$$$$$$$$$$$ Returned $$$$$$$$$$$$$$$$$$$
+ $$$$$$$$$$$$$ Success SMT $$$$$$$$$$$$$$
+  Show *************** TypeChecking Succsessful {v:int | (llen)(z) ==(v)}
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ let _lbv1 = apply length  (, z )
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  Case : f (ei) Case length _lbv0
+ Finding Already seen tree for apply length  (, _lbv0 )
+ Typechecking apply length  (, apply take  (, n1 ), z ) )
+ Against {var_v3:int | true}
+ Typechecking the Term apply length  (, _lbv0 )
+ Against {var_v3:int | true}
+ Argument _lbv0 :: {v:Ty_list int a | Forall 
+ 	 
+ Key =u Value = int a{ 
+ 	 Conj <c (llen)(v) ==(n1)
+ 	 , 
+ 	 Impl < (lmem)( , v, u ) = (true)
+ 	 (lmem)( , z, u ) = (true) > >c  }} | Forall 
+ 	 
+ Key =u Value = int a{ 
+ 	 Conj <c (llen)(_lbv0) ==(n1)
+ 	 , 
+ 	 Impl < (lmem)( , _lbv0, u ) = (true)
+ 	 (lmem)( , z, u ) = (true) > >c  }
+ AppType Type {v:int | (llen)(_lbv0) ==(v)}
+# of Final Z3 expressions 2
+ OutBuf:unsat
+:unsat
+
+ $$$$$$$$$$$$ Returned $$$$$$$$$$$$$$$$$$$
+ $$$$$$$$$$$$$ Success SMT $$$$$$$$$$$$$$
+  Show *************** TypeChecking Succsessful {v:int | (llen)(_lbv0) ==(v)}
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ let _lbv2 = apply length  (, _lbv0 )
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  Case : f (ei) Case length l
+ Finding Already seen tree for apply length  (, l )
+ Typechecking apply length  (, l )
+ Against {var_v3:int | true}
+ Typechecking the Term apply length  (, l )
+ Against {var_v3:int | true}
+ Argument l :: {var_v4:Ty_list int a | true} | true
+ AppType Type {v:int | (llen)(l) ==(v)}
+# of Final Z3 expressions 2
+ OutBuf:unsat
+:unsat
+
+ $$$$$$$$$$$$ Returned $$$$$$$$$$$$$$$$$$$
+ $$$$$$$$$$$$$ Success SMT $$$$$$$$$$$$$$
+  Show *************** TypeChecking Succsessful {v:int | (llen)(l) ==(v)}
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ let _lbv3 = apply length  (, l )
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  ###################################################
+  The Choice of Function length Was Succefull for {var_v3:int | true} Continuing for completeness
+  ###################################################
+ >>>>>>>>>>>>>>>>>>> 1th Args option for take : n1
+ >>>>>>>>>>>>>>>>>>> 1th Args option for take : apply length  (, l )
+ >>>>>>>>>>>>>>>>>>> 1th Args option for take : apply length  (, apply take  (, n1 ), z ) )
+ >>>>>>>>>>>>>>>>>>> 1th Args option for take : apply length  (, z )
+  DEPTH vs MAX  0 vs 2
+ ##################################################################################
+  Synthesizing the 2th argument for Function take
+  Trying Arguments in Scalars 
+ esynthesizeScalar for {var_v4:Ty_list int a | true}
+ 
+ Enumerating a Scalar Term l
+ 
+ Type of the Scalar Term {var_v4:Ty_list int a | true}
+ ################################################
+ Skipping Variable l As this a  Formal Parameter to the current function Call
+ Outer Function calls take
+ ################################################
+ 
+ Enumerating a Scalar Term _lbv0
+ 
+ Type of the Scalar Term {v:Ty_list int a | Forall 
+ 	 
+ Key =u Value = int a{ 
+ 	 Conj <c (llen)(v) ==(n1)
+ 	 , 
+ 	 Impl < (lmem)( , v, u ) = (true)
+ 	 (lmem)( , z, u ) = (true) > >c  }}
+ ################################################
+ Skipping Variable _lbv0 As Outer Function Call is take
+ 
+ Enumerating a Scalar Term z
+ 
+ Type of the Scalar Term {v:Ty_list int a | true}
+# of Final Z3 expressions 2
+ OutBuf:unsat
+:unsat
+
+ $$$$$$$$$$$$ Returned $$$$$$$$$$$$$$$$$$$
+ $$$$$$$$$$$$$ Success SMT $$$$$$$$$$$$$$
+ 
+ Enumerating a Scalar Term x
+ 
+ Type of the Scalar Term {var_v1:Ty_list int a | true}
+ ################################################
+ Skipping Variable x as it is bound variable for Cons constructor
+ ################################################
+ Show :: Found a Few Macthing Scalars 
+ ##################################################################################
+  Next Trying Arguments of the form f (ei...) 
+ ##################################################################################
+  Entering Pure Fun Application: esynthesizePureApp 
+ Show Potential Functions
+  , 
+ goal, 
+ take, 
+ init
+ ############################################################
+  Synthesizing the Function application Pure Component goal
+  *************** Trying Arrow Component ************goal :  Arrow ( ( n1 : {var_v5:int | 
+ 	 Conj <c true
+ 	 , n > var_v5 >c } ) ->  Arrow ( ( z : {v:Ty_list int a | true} ) -> {v:Ty_list int a | (llen)(v) ==((n1) -- (1))}
+  *************** Synthesizing Args ei : ti for ************goal
+ ##################################################################################
+  Synthesizing the 1th argument for Function goal
+  Trying Arguments in Scalars 
+ esynthesizeScalar for {var_v5:int | 
+ 	 Conj <c true
+ 	 , n > var_v5 >c }
+ 
+ Enumerating a Scalar Term n1
+ 
+ Type of the Scalar Term {var_v5:int | 
+ 	 Conj <c true
+ 	 , n > var_v5 >c }                   
+# of Final Z3 expressions 4
+ OutBuf:unsat
+:unsat
+
+ $$$$$$$$$$$$ Returned $$$$$$$$$$$$$$$$$$$
+ $$$$$$$$$$$$$ Success SMT $$$$$$$$$$$$$$
+ 
+ Enumerating a Scalar Term _lbv1
+ 
+ Type of the Scalar Term {v:int | (llen)(z) ==(v)}
+ standardized VC STANDARD VC_BEGIN TyDBINDS  
+ 
+ goal --->  Function type  
+ take --->  Function type  
+ init --->  Function type  
+ length --->  Function type  
+ ep --->  int a  
+ n1 --->  int  
+ l --->  Ty_list int a  
+ _lbv0 --->  Ty_list int a  
+ z --->  Ty_list int a  
+ x --->  Ty_list int a  
+ _lbv2 --->  int  
+ _lbv3 --->  int  
+ n --->  int  
+ _lbv1 --->  int  
+ var_u8 --->  int a 
+ 	 ANTE \Forall (TyDBINDS  
+ 
+ var_u8 --->  int a ).Conj  AND 
+ 	 Base n > n1 AND 
+ 	 Rel (llen)(_lbv0) ==(n1) AND 
+ 	 Rel (lmem)( , _lbv0, var_u8 ) = (true) => 
+ 	 Rel (lmem)( , z, var_u8 ) = (true) AND 
+ 	 Rel (llen)(_lbv0) ==(_lbv2) AND 
+ 	 Rel (llen)(l) ==(_lbv3) AND 
+ 	 Rel (llen)(z) ==(_lbv1) AND 
+ 	 Rel (llen)(z) ==(_lbv1) 
+ 	 ------------------------
+
+	 CONS Base n > _lbv1
+ 
+VC_END              
+# of Final Z3 expressions 4
+ OutBuf:sat
+:sat
+
+ $$$$$$$$$$$$ Returned $$$$$$$$$$$$$$$$$$$
+ $$$$$$$$$$$$$ Failed SMT $$$$$$$$$$$$$$
+ Returned Successfully
+ 
+ FaileD the subtype check T_vi <: T_goal
+ 
+ Enumerating a Scalar Term _lbv2
+ 
+ Type of the Scalar Term {v:int | (llen)(_lbv0) ==(v)}
+ standardized VC STANDARD VC_BEGIN TyDBINDS  
+ 
+ goal --->  Function type  
+ take --->  Function type  
+ init --->  Function type  
+ length --->  Function type  
+ ep --->  int a  
+ n1 --->  int  
+ l --->  Ty_list int a  
+ _lbv0 --->  Ty_list int a  
+ z --->  Ty_list int a  
+ x --->  Ty_list int a  
+ _lbv1 --->  int  
+ _lbv3 --->  int  
+ n --->  int  
+ _lbv2 --->  int  
+ var_u9 --->  int a 
+ 	 ANTE \Forall (TyDBINDS  
+ 
+ var_u9 --->  int a ).Conj  AND 
+ 	 Base n > n1 AND 
+ 	 Rel (llen)(_lbv0) ==(n1) AND 
+ 	 Rel (lmem)( , _lbv0, var_u9 ) = (true) => 
+ 	 Rel (lmem)( , z, var_u9 ) = (true) AND 
+ 	 Rel (llen)(z) ==(_lbv1) AND 
+ 	 Rel (llen)(l) ==(_lbv3) AND 
+ 	 Rel (llen)(_lbv0) ==(_lbv2) AND 
+ 	 Rel (llen)(_lbv0) ==(_lbv2) 
+ 	 ------------------------
+
+	 CONS Base n > _lbv2
+ 
+VC_END              
+# of Final Z3 expressions 4
+ OutBuf:unsat
+:unsat
+
+ $$$$$$$$$$$$ Returned $$$$$$$$$$$$$$$$$$$
+ $$$$$$$$$$$$$ Success SMT $$$$$$$$$$$$$$
+ Returned Successfully
+ 
+ Enumerating a Scalar Term _lbv3
+ 
+ Type of the Scalar Term {v:int | (llen)(l) ==(v)}
+ standardized VC STANDARD VC_BEGIN TyDBINDS  
+ 
+ goal --->  Function type  
+ take --->  Function type  
+ init --->  Function type  
+ length --->  Function type  
+ ep --->  int a  
+ n1 --->  int  
+ l --->  Ty_list int a  
+ _lbv0 --->  Ty_list int a  
+ z --->  Ty_list int a  
+ x --->  Ty_list int a  
+ _lbv1 --->  int  
+ _lbv2 --->  int  
+ n --->  int  
+ _lbv3 --->  int  
+ var_u10 --->  int a 
+ 	 ANTE \Forall (TyDBINDS  
+ 
+ var_u10 --->  int a ).Conj  AND 
+ 	 Base n > n1 AND 
+ 	 Rel (llen)(_lbv0) ==(n1) AND 
+ 	 Rel (lmem)( , _lbv0, var_u10 ) = (true) => 
+ 	 Rel (lmem)( , z, var_u10 ) = (true) AND 
+ 	 Rel (llen)(z) ==(_lbv1) AND 
+ 	 Rel (llen)(_lbv0) ==(_lbv2) AND 
+ 	 Rel (llen)(l) ==(_lbv3) AND 
+ 	 Rel (llen)(l) ==(_lbv3) 
+ 	 ------------------------
+
+	 CONS Base n > _lbv3
+ 
+VC_END              
+# of Final Z3 expressions 4
+ OutBuf:sat
+:sat
+
+ $$$$$$$$$$$$ Returned $$$$$$$$$$$$$$$$$$$
+ $$$$$$$$$$$$$ Failed SMT $$$$$$$$$$$$$$
+ Returned Successfully
+ 
+ FaileD the subtype check T_vi <: T_goal
+ 
+ Enumerating a Scalar Term n
+ 
+ Type of the Scalar Term {var_v3:int | true}              
+# of Final Z3 expressions 4
+ OutBuf:sat
+:sat
+
+ $$$$$$$$$$$$ Returned $$$$$$$$$$$$$$$$$$$
+ $$$$$$$$$$$$$ Failed SMT $$$$$$$$$$$$$$
+ 
+ FaileD the subtype check T_vi <: T_goal
+ Show :: Found a Few Macthing Scalars 
+ ##################################################################################
+  Next Trying Arguments of the form f (ei...) 
+ ##################################################################################
+  Entering Pure Fun Application: esynthesizePureApp 
+ ############################################################
+ Max depth reached
+ ############################################################
+ >>>>>>>>>>>>>>>>>>> 1th Args option for goal : apply length  (, apply take  (, n1 ), z ) )
+ >>>>>>>>>>>>>>>>>>> 1th Args option for goal : n1
+  DEPTH vs MAX  1 vs 2
+ ##################################################################################
+  Synthesizing the 2th argument for Function goal
+  Trying Arguments in Scalars 
+ esynthesizeScalar for {v:Ty_list int a | true}
+ 
+ Enumerating a Scalar Term l
+ 
+ Type of the Scalar Term {var_v4:Ty_list int a | true}
+# of Final Z3 expressions 2
+ OutBuf:unsat
+:unsat
+
+ $$$$$$$$$$$$ Returned $$$$$$$$$$$$$$$$$$$
+ $$$$$$$$$$$$$ Success SMT $$$$$$$$$$$$$$
+ 
+ Enumerating a Scalar Term _lbv0
+ 
+ Type of the Scalar Term {v:Ty_list int a | Forall 
+ 	 
+ Key =u Value = int a{ 
+ 	 Conj <c (llen)(v) ==(n1)
+ 	 , 
+ 	 Impl < (lmem)( , v, u ) = (true)
+ 	 (lmem)( , z, u ) = (true) > >c  }}
+ standardized VC STANDARD VC_BEGIN TyDBINDS  
+
+ 	 ANTE False 
+ 	 ------------------------
+
+	 CONS True
+ 
+VC_END
+# of Final Z3 expressions 2
+ OutBuf:unsat
+:unsat
+
+ $$$$$$$$$$$$ Returned $$$$$$$$$$$$$$$$$$$
+ $$$$$$$$$$$$$ Success SMT $$$$$$$$$$$$$$
+ Returned Successfully
+ 
+ Enumerating a Scalar Term z
+ 
+ Type of the Scalar Term {v:Ty_list int a | true}
+# of Final Z3 expressions 2
+ OutBuf:unsat
+:unsat
+
+ $$$$$$$$$$$$ Returned $$$$$$$$$$$$$$$$$$$
+ $$$$$$$$$$$$$ Success SMT $$$$$$$$$$$$$$
+ 
+ Enumerating a Scalar Term x
+ 
+ Type of the Scalar Term {var_v1:Ty_list int a | true}
+ ################################################
+ Skipping Variable x as it is bound variable for Cons constructor
+ ################################################
+ Show :: Found a Few Macthing Scalars 
+ ##################################################################################
+  Next Trying Arguments of the form f (ei...) 
+ ##################################################################################
+  Entering Pure Fun Application: esynthesizePureApp 
+ ############################################################
+ Max depth reached
+ ############################################################
+ >>>>>>>>>>>>>>>>>>> 2th Args option for goal : z
+ >>>>>>>>>>>>>>>>>>> 2th Args option for goal : apply take  (, n1 ), z )
+ >>>>>>>>>>>>>>>>>>> 2th Args option for goal : l
+  DEPTH vs MAX  1 vs 2
+ ##################################################################################
+  *************** Successfully Synthesized Args ei Forall i 
+ 1 th Argument Options for goal
+ EI apply length  (, apply take  (, n1 ), z ) )
+ EI n1
+ 2 th Argument Options for goal
+ EI z
+ EI apply take  (, n1 ), z )
+ EI l
+ # of Possible Argument Options for goal 6
+ # of Possible Argument Options for goal 6
+ Possible Arg Options 
+ EI apply length  (, apply take  (, n1 ), z ) )
+ EI z
+ Possible Arg Options 
+ EI apply length  (, apply take  (, n1 ), z ) )
+ EI apply take  (, n1 ), z )
+ Possible Arg Options 
+ EI apply length  (, apply take  (, n1 ), z ) )
+ EI l
+ Possible Arg Options 
+ EI n1
+ EI z
+ Possible Arg Options 
+ EI n1
+ EI apply take  (, n1 ), z )
+ Possible Arg Options 
+ EI n1
+ EI l
+ Show f (ei, e2, ....en) Case
+ Finding Already seen tree for apply goal  (, _lbv2 ), z )
+ Typechecking apply goal  (, apply length  (, apply take  (, n1 ), z ) ) ), z )
+ Against {var_v4:Ty_list int a | true}
+ Typechecking the Term apply goal  (, _lbv2 ), z )
+ Against {var_v4:Ty_list int a | true}
+ Argument _lbv2 :: {v:int | (llen)(_lbv0) ==(v)} | (llen)(_lbv0) ==(_lbv2)
+ Argument z :: {v:Ty_list int a | true} | true
+ AppType Type {v:Ty_list int a | (llen)(v) ==((_lbv2) -- (1))}
+# of Final Z3 expressions 2
+ OutBuf:unsat
+:unsat
+
+ $$$$$$$$$$$$ Returned $$$$$$$$$$$$$$$$$$$
+ $$$$$$$$$$$$$ Success SMT $$$$$$$$$$$$$$
+  Show *************** TypeChecking Succsessful {v:Ty_list int a | (llen)(v) ==((_lbv2) -- (1))}
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ let _lbv4 = apply goal  (, _lbv2 ), z )
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ Finding Already seen tree for apply goal  (, _lbv2 ), _lbv0 )
+ Typechecking apply goal  (, apply length  (, apply take  (, n1 ), z ) ) ), apply take  (, n1 ), z ) )
+ Against {var_v4:Ty_list int a | true}
+ Typechecking the Term apply goal  (, _lbv2 ), _lbv0 )
+ Against {var_v4:Ty_list int a | true}
+ Argument _lbv2 :: {v:int | (llen)(_lbv0) ==(v)} | (llen)(_lbv0) ==(_lbv2)
+ Argument _lbv0 :: {v:Ty_list int a | Forall 
+ 	 
+ Key =u Value = int a{ 
+ 	 Conj <c (llen)(v) ==(n1)
+ 	 , 
+ 	 Impl < (lmem)( , v, u ) = (true)
+ 	 (lmem)( , z, u ) = (true) > >c  }} | Forall 
+ 	 
+ Key =u Value = int a{ 
+ 	 Conj <c (llen)(_lbv0) ==(n1)
+ 	 , 
+ 	 Impl < (lmem)( , _lbv0, u ) = (true)
+ 	 (lmem)( , z, u ) = (true) > >c  }
+ AppType Type {v:Ty_list int a | (llen)(v) ==((_lbv2) -- (1))}
+# of Final Z3 expressions 2
+ OutBuf:unsat
+:unsat
+
+ $$$$$$$$$$$$ Returned $$$$$$$$$$$$$$$$$$$
+ $$$$$$$$$$$$$ Success SMT $$$$$$$$$$$$$$
+  Show *************** TypeChecking Succsessful {v:Ty_list int a | (llen)(v) ==((_lbv2) -- (1))}
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ let _lbv5 = apply goal  (, _lbv2 ), _lbv0 )
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ Finding Already seen tree for apply goal  (, _lbv2 ), l )
+ Typechecking apply goal  (, apply length  (, apply take  (, n1 ), z ) ) ), l )
+ Against {var_v4:Ty_list int a | true}
+ Typechecking the Term apply goal  (, _lbv2 ), l )
+ Against {var_v4:Ty_list int a | true}
+ Argument _lbv2 :: {v:int | (llen)(_lbv0) ==(v)} | (llen)(_lbv0) ==(_lbv2)
+ Argument l :: {var_v4:Ty_list int a | true} | true
+ AppType Type {v:Ty_list int a | (llen)(v) ==((_lbv2) -- (1))}
+# of Final Z3 expressions 2
+ OutBuf:unsat
+:unsat
+
+ $$$$$$$$$$$$ Returned $$$$$$$$$$$$$$$$$$$
+ $$$$$$$$$$$$$ Success SMT $$$$$$$$$$$$$$
+  Show *************** TypeChecking Succsessful {v:Ty_list int a | (llen)(v) ==((_lbv2) -- (1))}
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ let _lbv6 = apply goal  (, _lbv2 ), l )
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ Finding Already seen tree for apply goal  (, n1 ), z )
+ Typechecking apply goal  (, n1 ), z )
+ Against {var_v4:Ty_list int a | true}
+ Typechecking the Term apply goal  (, n1 ), z )
+ Against {var_v4:Ty_list int a | true}
+ Argument n1 :: {var_v5:int | 
+ 	 Conj <c true
+ 	 , n > var_v5 >c } | 
+ 	 Conj <c true
+ 	 , n > n1 >c 
+ Argument z :: {v:Ty_list int a | true} | true
+ AppType Type {v:Ty_list int a | (llen)(v) ==((n1) -- (1))}
+# of Final Z3 expressions 2
+ OutBuf:unsat
+:unsat
+
+ $$$$$$$$$$$$ Returned $$$$$$$$$$$$$$$$$$$
+ $$$$$$$$$$$$$ Success SMT $$$$$$$$$$$$$$
+  Show *************** TypeChecking Succsessful {v:Ty_list int a | (llen)(v) ==((n1) -- (1))}
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ let _lbv7 = apply goal  (, n1 ), z )
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ Finding Already seen tree for apply goal  (, n1 ), _lbv0 )
+ Typechecking apply goal  (, n1 ), apply take  (, n1 ), z ) )
+ Against {var_v4:Ty_list int a | true}
+ Typechecking the Term apply goal  (, n1 ), _lbv0 )
+ Against {var_v4:Ty_list int a | true}
+ Argument n1 :: {var_v5:int | 
+ 	 Conj <c true
+ 	 , n > var_v5 >c } | 
+ 	 Conj <c true
+ 	 , n > n1 >c 
+ Argument _lbv0 :: {v:Ty_list int a | Forall 
+ 	 
+ Key =u Value = int a{ 
+ 	 Conj <c (llen)(v) ==(n1)
+ 	 , 
+ 	 Impl < (lmem)( , v, u ) = (true)
+ 	 (lmem)( , z, u ) = (true) > >c  }} | Forall 
+ 	 
+ Key =u Value = int a{ 
+ 	 Conj <c (llen)(_lbv0) ==(n1)
+ 	 , 
+ 	 Impl < (lmem)( , _lbv0, u ) = (true)
+ 	 (lmem)( , z, u ) = (true) > >c  }
+ AppType Type {v:Ty_list int a | (llen)(v) ==((n1) -- (1))}
+# of Final Z3 expressions 2
+ OutBuf:unsat
+:unsat
+
+ $$$$$$$$$$$$ Returned $$$$$$$$$$$$$$$$$$$
+ $$$$$$$$$$$$$ Success SMT $$$$$$$$$$$$$$
+  Show *************** TypeChecking Succsessful {v:Ty_list int a | (llen)(v) ==((n1) -- (1))}
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ let _lbv8 = apply goal  (, n1 ), _lbv0 )
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ Finding Already seen tree for apply goal  (, n1 ), l )
+ Typechecking apply goal  (, n1 ), l )
+ Against {var_v4:Ty_list int a | true}
+ Typechecking the Term apply goal  (, n1 ), l )
+ Against {var_v4:Ty_list int a | true}
+ Argument n1 :: {var_v5:int | 
+ 	 Conj <c true
+ 	 , n > var_v5 >c } | 
+ 	 Conj <c true
+ 	 , n > n1 >c 
+ Argument l :: {var_v4:Ty_list int a | true} | true
+ AppType Type {v:Ty_list int a | (llen)(v) ==((n1) -- (1))}
+# of Final Z3 expressions 2
+ OutBuf:unsat
+:unsat
+
+ $$$$$$$$$$$$ Returned $$$$$$$$$$$$$$$$$$$
+ $$$$$$$$$$$$$ Success SMT $$$$$$$$$$$$$$
+  Show *************** TypeChecking Succsessful {v:Ty_list int a | (llen)(v) ==((n1) -- (1))}
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ let _lbv9 = apply goal  (, n1 ), l )
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  ###################################################
+  The Choice of Function goal Was Successfull for {var_v4:Ty_list int a | true} Continuing for completeness
+  ###################################################
+ >>>>>>>>>>>>>>>>>>> 2th Args option for take : z
+ >>>>>>>>>>>>>>>>>>> 2th Args option for take : apply goal  (, n1 ), l )
+ >>>>>>>>>>>>>>>>>>> 2th Args option for take : apply goal  (, n1 ), apply take  (, n1 ), z ) )
+ >>>>>>>>>>>>>>>>>>> 2th Args option for take : apply goal  (, n1 ), z )
+ >>>>>>>>>>>>>>>>>>> 2th Args option for take : apply goal  (, apply length  (, apply take  (, n1 ), z ) ) ), l )
+ >>>>>>>>>>>>>>>>>>> 2th Args option for take : apply goal  (, apply length  (, apply take  (, n1 ), z ) ) ), apply take  (, n1 ), z ) )
+ >>>>>>>>>>>>>>>>>>> 2th Args option for take : apply goal  (, apply length  (, apply take  (, n1 ), z ) ) ), z )
+  DEPTH vs MAX  0 vs 2
+ ##################################################################################
+  *************** Successfully Synthesized Args ei Forall i 
+ 1 th Argument Options for take
+ EI n1
+ EI apply length  (, l )
+ EI apply length  (, apply take  (, n1 ), z ) )
+ EI apply length  (, z )
+ 2 th Argument Options for take
+ EI z
+ EI apply goal  (, n1 ), l )
+ EI apply goal  (, n1 ), apply take  (, n1 ), z ) )
+ EI apply goal  (, n1 ), z )
+ EI apply goal  (, apply length  (, apply take  (, n1 ), z ) ) ), l )
+ EI apply goal  (, apply length  (, apply take  (, n1 ), z ) ) ), apply take  (, n1 ), z ) )
+ EI apply goal  (, apply length  (, apply take  (, n1 ), z ) ) ), z )
+ # of Possible Argument Options for take 28
+ # of Possible Argument Options for take 20
+ Possible Arg Options 
+ EI apply length  (, l )
+ EI apply goal  (, apply length  (, apply take  (, n1 ), z ) ) ), apply take  (, n1 ), z ) )
+ Possible Arg Options 
+ EI apply length  (, z )
+ EI apply goal  (, apply length  (, apply take  (, n1 ), z ) ) ), apply take  (, n1 ), z ) )
+ Possible Arg Options 
+ EI n1
+ EI apply goal  (, n1 ), apply take  (, n1 ), z ) )
+ Possible Arg Options 
+ EI n1
+ EI apply goal  (, apply length  (, apply take  (, n1 ), z ) ) ), z )
+ Possible Arg Options 
+ EI apply length  (, l )
+ EI z
+ Possible Arg Options 
+ EI n1
+ EI z
+ Possible Arg Options 
+ EI apply length  (, l )
+ EI apply goal  (, apply length  (, apply take  (, n1 ), z ) ) ), l )
+ Possible Arg Options 
+ EI apply length  (, z )
+ EI apply goal  (, apply length  (, apply take  (, n1 ), z ) ) ), l )
+ Possible Arg Options 
+ EI n1
+ EI apply goal  (, apply length  (, apply take  (, n1 ), z ) ) ), apply take  (, n1 ), z ) )
+ Possible Arg Options 
+ EI apply length  (, l )
+ EI apply goal  (, n1 ), apply take  (, n1 ), z ) )
+ Possible Arg Options 
+ EI n1
+ EI apply goal  (, apply length  (, apply take  (, n1 ), z ) ) ), l )
+ Possible Arg Options 
+ EI apply length  (, apply take  (, n1 ), z ) )
+ EI apply goal  (, apply length  (, apply take  (, n1 ), z ) ) ), l )
+ Possible Arg Options 
+ EI apply length  (, z )
+ EI z
+ Possible Arg Options 
+ EI apply length  (, z )
+ EI apply goal  (, n1 ), z )
+ Possible Arg Options 
+ EI apply length  (, z )
+ EI apply goal  (, n1 ), l )
+ Possible Arg Options 
+ EI apply length  (, apply take  (, n1 ), z ) )
+ EI z
+ Possible Arg Options 
+ EI apply length  (, apply take  (, n1 ), z ) )
+ EI apply goal  (, apply length  (, apply take  (, n1 ), z ) ) ), apply take  (, n1 ), z ) )
+ Possible Arg Options 
+ EI apply length  (, apply take  (, n1 ), z ) )
+ EI apply goal  (, n1 ), l )
+ Possible Arg Options 
+ EI apply length  (, l )
+ EI apply goal  (, n1 ), l )
+ Possible Arg Options 
+ EI apply length  (, apply take  (, n1 ), z ) )
+ EI apply goal  (, n1 ), apply take  (, n1 ), z ) )
+ Show f (ei, e2, ....en) Case
+ Finding Already seen tree for apply take  (, _lbv3 ), _lbv5 )
+ Typechecking apply take  (, apply length  (, l ) ), apply goal  (, apply length  (, apply take  (, n1 ), z ) ) ), apply take  (, n1 ), z ) ) )
+ Against {v:Ty_list int a | (llen)(v) ==((n) -- (1))}
+ Typechecking the Term apply take  (, _lbv3 ), _lbv5 )
+ Against {v:Ty_list int a | (llen)(v) ==((n) -- (1))}
+ Argument _lbv3 :: {v:int | (llen)(l) ==(v)} | (llen)(l) ==(_lbv3)
+ Argument _lbv5 :: {v:Ty_list int a | (llen)(v) ==((_lbv2) -- (1))} | (llen)(_lbv5) ==((_lbv2) -- (1))
+ AppType Type {v:Ty_list int a | Forall 
+ 	 
+ Key =u Value = int a{ 
+ 	 Conj <c (llen)(v) ==(_lbv3)
+ 	 , 
+ 	 Impl < (lmem)( , v, u ) = (true)
+ 	 (lmem)( , z, u ) = (true) > >c  }}                 
+# of Final Z3 expressions 8
+ OutBuf:sat
+:sat
+
+ $$$$$$$$$$$$ Returned $$$$$$$$$$$$$$$$$$$
+ $$$$$$$$$$$$$ Failed SMT $$$$$$$$$$$$$$
+  FAILED Typechecking PURE APP For apply take  (, _lbv3 ), _lbv5 )
+ Finding Already seen tree for apply take  (, _lbv1 ), _lbv5 )
+ Typechecking apply take  (, apply length  (, z ) ), apply goal  (, apply length  (, apply take  (, n1 ), z ) ) ), apply take  (, n1 ), z ) ) )
+ Against {v:Ty_list int a | (llen)(v) ==((n) -- (1))}
+ Typechecking the Term apply take  (, _lbv1 ), _lbv5 )
+ Against {v:Ty_list int a | (llen)(v) ==((n) -- (1))}
+ Argument _lbv1 :: {v:int | (llen)(z) ==(v)} | (llen)(z) ==(_lbv1)
+ Argument _lbv5 :: {v:Ty_list int a | (llen)(v) ==((_lbv2) -- (1))} | (llen)(_lbv5) ==((_lbv2) -- (1))
+ AppType Type {v:Ty_list int a | Forall 
+ 	 
+ Key =u Value = int a{ 
+ 	 Conj <c (llen)(v) ==(_lbv1)
+ 	 , 
+ 	 Impl < (lmem)( , v, u ) = (true)
+ 	 (lmem)( , z, u ) = (true) > >c  }}                 
+# of Final Z3 expressions 8
+ OutBuf:sat
+:sat
+
+ $$$$$$$$$$$$ Returned $$$$$$$$$$$$$$$$$$$
+ $$$$$$$$$$$$$ Failed SMT $$$$$$$$$$$$$$
+  FAILED Typechecking PURE APP For apply take  (, _lbv1 ), _lbv5 )
+ Finding Already seen tree for apply take  (, n1 ), _lbv8 )
+ Typechecking apply take  (, n1 ), apply goal  (, n1 ), apply take  (, n1 ), z ) ) )
+ Against {v:Ty_list int a | (llen)(v) ==((n) -- (1))}
+ Typechecking the Term apply take  (, n1 ), _lbv8 )
+ Against {v:Ty_list int a | (llen)(v) ==((n) -- (1))}
+ Argument n1 :: {var_v5:int | 
+ 	 Conj <c true
+ 	 , n > var_v5 >c } | 
+ 	 Conj <c true
+ 	 , n > n1 >c 
+ Argument _lbv8 :: {v:Ty_list int a | (llen)(v) ==((n1) -- (1))} | (llen)(_lbv8) ==((n1) -- (1))
+ AppType Type {v:Ty_list int a | Forall 
+ 	 
+ Key =u Value = int a{ 
+ 	 Conj <c (llen)(v) ==(n1)
+ 	 , 
+ 	 Impl < (lmem)( , v, u ) = (true)
+ 	 (lmem)( , z, u ) = (true) > >c  }}                      
+# of Final Z3 expressions 8
+ OutBuf:sat
+:sat
+
+ $$$$$$$$$$$$ Returned $$$$$$$$$$$$$$$$$$$
+ $$$$$$$$$$$$$ Failed SMT $$$$$$$$$$$$$$
+  FAILED Typechecking PURE APP For apply take  (, n1 ), _lbv8 )
+ Finding Already seen tree for apply take  (, n1 ), _lbv4 )
+ Typechecking apply take  (, n1 ), apply goal  (, apply length  (, apply take  (, n1 ), z ) ) ), z ) )
+ Against {v:Ty_list int a | (llen)(v) ==((n) -- (1))}
+ Typechecking the Term apply take  (, n1 ), _lbv4 )
+ Against {v:Ty_list int a | (llen)(v) ==((n) -- (1))}
+ Argument n1 :: {var_v5:int | 
+ 	 Conj <c true
+ 	 , n > var_v5 >c } | 
+ 	 Conj <c true
+ 	 , n > n1 >c 
+ Argument _lbv4 :: {v:Ty_list int a | (llen)(v) ==((_lbv2) -- (1))} | (llen)(_lbv4) ==((_lbv2) -- (1))
+ AppType Type {v:Ty_list int a | Forall 
+ 	 
+ Key =u Value = int a{ 
+ 	 Conj <c (llen)(v) ==(n1)
+ 	 , 
+ 	 Impl < (lmem)( , v, u ) = (true)
+ 	 (lmem)( , z, u ) = (true) > >c  }}                      
+# of Final Z3 expressions 8
+ OutBuf:sat
+:sat
+
+ $$$$$$$$$$$$ Returned $$$$$$$$$$$$$$$$$$$
+ $$$$$$$$$$$$$ Failed SMT $$$$$$$$$$$$$$
+  FAILED Typechecking PURE APP For apply take  (, n1 ), _lbv4 )
+ Finding Already seen tree for apply take  (, _lbv3 ), z )
+ Typechecking apply take  (, apply length  (, l ) ), z )
+ Against {v:Ty_list int a | (llen)(v) ==((n) -- (1))}
+ Typechecking the Term apply take  (, _lbv3 ), z )
+ Against {v:Ty_list int a | (llen)(v) ==((n) -- (1))}
+ Argument _lbv3 :: {v:int | (llen)(l) ==(v)} | (llen)(l) ==(_lbv3)
+ Argument z :: {v:Ty_list int a | true} | true
+ AppType Type {v:Ty_list int a | Forall 
+ 	 
+ Key =u Value = int a{ 
+ 	 Conj <c (llen)(v) ==(_lbv3)
+ 	 , 
+ 	 Impl < (lmem)( , v, u ) = (true)
+ 	 (lmem)( , z, u ) = (true) > >c  }}                 
+# of Final Z3 expressions 8
+ OutBuf:sat
+:sat
+
+ $$$$$$$$$$$$ Returned $$$$$$$$$$$$$$$$$$$
+ $$$$$$$$$$$$$ Failed SMT $$$$$$$$$$$$$$
+  FAILED Typechecking PURE APP For apply take  (, _lbv3 ), z )
+ Finding Already seen tree for apply take  (, n1 ), z )
+ Found _lbv0
+ Finding Already seen tree for apply take  (, _lbv3 ), _lbv6 )
+ Typechecking apply take  (, apply length  (, l ) ), apply goal  (, apply length  (, apply take  (, n1 ), z ) ) ), l ) )
+ Against {v:Ty_list int a | (llen)(v) ==((n) -- (1))}
+ Typechecking the Term apply take  (, _lbv3 ), _lbv6 )
+ Against {v:Ty_list int a | (llen)(v) ==((n) -- (1))}
+ Argument _lbv3 :: {v:int | (llen)(l) ==(v)} | (llen)(l) ==(_lbv3)
+ Argument _lbv6 :: {v:Ty_list int a | (llen)(v) ==((_lbv2) -- (1))} | (llen)(_lbv6) ==((_lbv2) -- (1))
+ AppType Type {v:Ty_list int a | Forall 
+ 	 
+ Key =u Value = int a{ 
+ 	 Conj <c (llen)(v) ==(_lbv3)
+ 	 , 
+ 	 Impl < (lmem)( , v, u ) = (true)
+ 	 (lmem)( , z, u ) = (true) > >c  }}                 
+# of Final Z3 expressions 8
+ OutBuf:sat
+:sat
+
+ $$$$$$$$$$$$ Returned $$$$$$$$$$$$$$$$$$$
+ $$$$$$$$$$$$$ Failed SMT $$$$$$$$$$$$$$
+  FAILED Typechecking PURE APP For apply take  (, _lbv3 ), _lbv6 )
+ Finding Already seen tree for apply take  (, _lbv1 ), _lbv6 )
+ Typechecking apply take  (, apply length  (, z ) ), apply goal  (, apply length  (, apply take  (, n1 ), z ) ) ), l ) )
+ Against {v:Ty_list int a | (llen)(v) ==((n) -- (1))}
+ Typechecking the Term apply take  (, _lbv1 ), _lbv6 )
+ Against {v:Ty_list int a | (llen)(v) ==((n) -- (1))}
+ Argument _lbv1 :: {v:int | (llen)(z) ==(v)} | (llen)(z) ==(_lbv1)
+ Argument _lbv6 :: {v:Ty_list int a | (llen)(v) ==((_lbv2) -- (1))} | (llen)(_lbv6) ==((_lbv2) -- (1))
+ AppType Type {v:Ty_list int a | Forall 
+ 	 
+ Key =u Value = int a{ 
+ 	 Conj <c (llen)(v) ==(_lbv1)
+ 	 , 
+ 	 Impl < (lmem)( , v, u ) = (true)
+ 	 (lmem)( , z, u ) = (true) > >c  }}                 
+# of Final Z3 expressions 8
+ OutBuf:sat
+:sat
+
+ $$$$$$$$$$$$ Returned $$$$$$$$$$$$$$$$$$$
+ $$$$$$$$$$$$$ Failed SMT $$$$$$$$$$$$$$
+  FAILED Typechecking PURE APP For apply take  (, _lbv1 ), _lbv6 )
+ Finding Already seen tree for apply take  (, n1 ), _lbv5 )
+ Typechecking apply take  (, n1 ), apply goal  (, apply length  (, apply take  (, n1 ), z ) ) ), apply take  (, n1 ), z ) ) )
+ Against {v:Ty_list int a | (llen)(v) ==((n) -- (1))}
+ Typechecking the Term apply take  (, n1 ), _lbv5 )
+ Against {v:Ty_list int a | (llen)(v) ==((n) -- (1))}
+ Argument n1 :: {var_v5:int | 
+ 	 Conj <c true
+ 	 , n > var_v5 >c } | 
+ 	 Conj <c true
+ 	 , n > n1 >c 
+ Argument _lbv5 :: {v:Ty_list int a | (llen)(v) ==((_lbv2) -- (1))} | (llen)(_lbv5) ==((_lbv2) -- (1))
+ AppType Type {v:Ty_list int a | Forall 
+ 	 
+ Key =u Value = int a{ 
+ 	 Conj <c (llen)(v) ==(n1)
+ 	 , 
+ 	 Impl < (lmem)( , v, u ) = (true)
+ 	 (lmem)( , z, u ) = (true) > >c  }}                      
+# of Final Z3 expressions 8
+ OutBuf:sat
+:sat
+
+ $$$$$$$$$$$$ Returned $$$$$$$$$$$$$$$$$$$
+ $$$$$$$$$$$$$ Failed SMT $$$$$$$$$$$$$$
+  FAILED Typechecking PURE APP For apply take  (, n1 ), _lbv5 )
+ Finding Already seen tree for apply take  (, _lbv3 ), _lbv8 )
+ Typechecking apply take  (, apply length  (, l ) ), apply goal  (, n1 ), apply take  (, n1 ), z ) ) )
+ Against {v:Ty_list int a | (llen)(v) ==((n) -- (1))}
+ Typechecking the Term apply take  (, _lbv3 ), _lbv8 )
+ Against {v:Ty_list int a | (llen)(v) ==((n) -- (1))}
+ Argument _lbv3 :: {v:int | (llen)(l) ==(v)} | (llen)(l) ==(_lbv3)
+ Argument _lbv8 :: {v:Ty_list int a | (llen)(v) ==((n1) -- (1))} | (llen)(_lbv8) ==((n1) -- (1))
+ AppType Type {v:Ty_list int a | Forall 
+ 	 
+ Key =u Value = int a{ 
+ 	 Conj <c (llen)(v) ==(_lbv3)
+ 	 , 
+ 	 Impl < (lmem)( , v, u ) = (true)
+ 	 (lmem)( , z, u ) = (true) > >c  }}                 
+# of Final Z3 expressions 8
+ OutBuf:sat
+:sat
+
+ $$$$$$$$$$$$ Returned $$$$$$$$$$$$$$$$$$$
+ $$$$$$$$$$$$$ Failed SMT $$$$$$$$$$$$$$
+  FAILED Typechecking PURE APP For apply take  (, _lbv3 ), _lbv8 )
+ Finding Already seen tree for apply take  (, n1 ), _lbv6 )
+ Typechecking apply take  (, n1 ), apply goal  (, apply length  (, apply take  (, n1 ), z ) ) ), l ) )
+ Against {v:Ty_list int a | (llen)(v) ==((n) -- (1))}
+ Typechecking the Term apply take  (, n1 ), _lbv6 )
+ Against {v:Ty_list int a | (llen)(v) ==((n) -- (1))}
+ Argument n1 :: {var_v5:int | 
+ 	 Conj <c true
+ 	 , n > var_v5 >c } | 
+ 	 Conj <c true
+ 	 , n > n1 >c 
+ Argument _lbv6 :: {v:Ty_list int a | (llen)(v) ==((_lbv2) -- (1))} | (llen)(_lbv6) ==((_lbv2) -- (1))
+ AppType Type {v:Ty_list int a | Forall 
+ 	 
+ Key =u Value = int a{ 
+ 	 Conj <c (llen)(v) ==(n1)
+ 	 , 
+ 	 Impl < (lmem)( , v, u ) = (true)
+ 	 (lmem)( , z, u ) = (true) > >c  }}                      
+# of Final Z3 expressions 8
+ OutBuf:sat
+:sat
+
+ $$$$$$$$$$$$ Returned $$$$$$$$$$$$$$$$$$$
+ $$$$$$$$$$$$$ Failed SMT $$$$$$$$$$$$$$
+  FAILED Typechecking PURE APP For apply take  (, n1 ), _lbv6 )
+ Finding Already seen tree for apply take  (, _lbv2 ), _lbv6 )
+ Typechecking apply take  (, apply length  (, apply take  (, n1 ), z ) ) ), apply goal  (, apply length  (, apply take  (, n1 ), z ) ) ), l ) )
+ Against {v:Ty_list int a | (llen)(v) ==((n) -- (1))}
+ Typechecking the Term apply take  (, _lbv2 ), _lbv6 )
+ Against {v:Ty_list int a | (llen)(v) ==((n) -- (1))}
+ Argument _lbv2 :: {v:int | (llen)(_lbv0) ==(v)} | (llen)(_lbv0) ==(_lbv2)
+ Argument _lbv6 :: {v:Ty_list int a | (llen)(v) ==((_lbv2) -- (1))} | (llen)(_lbv6) ==((_lbv2) -- (1))
+ AppType Type {v:Ty_list int a | Forall 
+ 	 
+ Key =u Value = int a{ 
+ 	 Conj <c (llen)(v) ==(_lbv2)
+ 	 , 
+ 	 Impl < (lmem)( , v, u ) = (true)
+ 	 (lmem)( , z, u ) = (true) > >c  }}                 
+# of Final Z3 expressions 8
+ OutBuf:sat
+:sat
+
+ $$$$$$$$$$$$ Returned $$$$$$$$$$$$$$$$$$$
+ $$$$$$$$$$$$$ Failed SMT $$$$$$$$$$$$$$
+  FAILED Typechecking PURE APP For apply take  (, _lbv2 ), _lbv6 )
+ Finding Already seen tree for apply take  (, _lbv1 ), z )
+ Typechecking apply take  (, apply length  (, z ) ), z )
+ Against {v:Ty_list int a | (llen)(v) ==((n) -- (1))}
+ Typechecking the Term apply take  (, _lbv1 ), z )
+ Against {v:Ty_list int a | (llen)(v) ==((n) -- (1))}
+ Argument _lbv1 :: {v:int | (llen)(z) ==(v)} | (llen)(z) ==(_lbv1)
+ Argument z :: {v:Ty_list int a | true} | true
+ AppType Type {v:Ty_list int a | Forall 
+ 	 
+ Key =u Value = int a{ 
+ 	 Conj <c (llen)(v) ==(_lbv1)
+ 	 , 
+ 	 Impl < (lmem)( , v, u ) = (true)
+ 	 (lmem)( , z, u ) = (true) > >c  }}                 
+# of Final Z3 expressions 8
+ OutBuf:sat
+:sat
+
+ $$$$$$$$$$$$ Returned $$$$$$$$$$$$$$$$$$$
+ $$$$$$$$$$$$$ Failed SMT $$$$$$$$$$$$$$
+  FAILED Typechecking PURE APP For apply take  (, _lbv1 ), z )
+ Finding Already seen tree for apply take  (, _lbv1 ), _lbv7 )
+ Typechecking apply take  (, apply length  (, z ) ), apply goal  (, n1 ), z ) )
+ Against {v:Ty_list int a | (llen)(v) ==((n) -- (1))}
+ Typechecking the Term apply take  (, _lbv1 ), _lbv7 )
+ Against {v:Ty_list int a | (llen)(v) ==((n) -- (1))}
+ Argument _lbv1 :: {v:int | (llen)(z) ==(v)} | (llen)(z) ==(_lbv1)
+ Argument _lbv7 :: {v:Ty_list int a | (llen)(v) ==((n1) -- (1))} | (llen)(_lbv7) ==((n1) -- (1))
+ AppType Type {v:Ty_list int a | Forall 
+ 	 
+ Key =u Value = int a{ 
+ 	 Conj <c (llen)(v) ==(_lbv1)
+ 	 , 
+ 	 Impl < (lmem)( , v, u ) = (true)
+ 	 (lmem)( , z, u ) = (true) > >c  }}                 
+# of Final Z3 expressions 8
+ OutBuf:sat
+:sat
+
+ $$$$$$$$$$$$ Returned $$$$$$$$$$$$$$$$$$$
+ $$$$$$$$$$$$$ Failed SMT $$$$$$$$$$$$$$
+  FAILED Typechecking PURE APP For apply take  (, _lbv1 ), _lbv7 )
+ Finding Already seen tree for apply take  (, _lbv1 ), _lbv9 )
+ Typechecking apply take  (, apply length  (, z ) ), apply goal  (, n1 ), l ) )
+ Against {v:Ty_list int a | (llen)(v) ==((n) -- (1))}
+ Typechecking the Term apply take  (, _lbv1 ), _lbv9 )
+ Against {v:Ty_list int a | (llen)(v) ==((n) -- (1))}
+ Argument _lbv1 :: {v:int | (llen)(z) ==(v)} | (llen)(z) ==(_lbv1)
+ Argument _lbv9 :: {v:Ty_list int a | (llen)(v) ==((n1) -- (1))} | (llen)(_lbv9) ==((n1) -- (1))
+ AppType Type {v:Ty_list int a | Forall 
+ 	 
+ Key =u Value = int a{ 
+ 	 Conj <c (llen)(v) ==(_lbv1)
+ 	 , 
+ 	 Impl < (lmem)( , v, u ) = (true)
+ 	 (lmem)( , z, u ) = (true) > >c  }}                 
+# of Final Z3 expressions 8
+ OutBuf:sat
+:sat
+
+ $$$$$$$$$$$$ Returned $$$$$$$$$$$$$$$$$$$
+ $$$$$$$$$$$$$ Failed SMT $$$$$$$$$$$$$$
+  FAILED Typechecking PURE APP For apply take  (, _lbv1 ), _lbv9 )
+ Finding Already seen tree for apply take  (, _lbv2 ), z )
+ Typechecking apply take  (, apply length  (, apply take  (, n1 ), z ) ) ), z )
+ Against {v:Ty_list int a | (llen)(v) ==((n) -- (1))}
+ Typechecking the Term apply take  (, _lbv2 ), z )
+ Against {v:Ty_list int a | (llen)(v) ==((n) -- (1))}
+ Argument _lbv2 :: {v:int | (llen)(_lbv0) ==(v)} | (llen)(_lbv0) ==(_lbv2)
+ Argument z :: {v:Ty_list int a | true} | true
+ AppType Type {v:Ty_list int a | Forall 
+ 	 
+ Key =u Value = int a{ 
+ 	 Conj <c (llen)(v) ==(_lbv2)
+ 	 , 
+ 	 Impl < (lmem)( , v, u ) = (true)
+ 	 (lmem)( , z, u ) = (true) > >c  }}                 
+# of Final Z3 expressions 8
+ OutBuf:sat
+:sat
+
+ $$$$$$$$$$$$ Returned $$$$$$$$$$$$$$$$$$$
+ $$$$$$$$$$$$$ Failed SMT $$$$$$$$$$$$$$
+  FAILED Typechecking PURE APP For apply take  (, _lbv2 ), z )
+ Finding Already seen tree for apply take  (, _lbv2 ), _lbv5 )
+ Typechecking apply take  (, apply length  (, apply take  (, n1 ), z ) ) ), apply goal  (, apply length  (, apply take  (, n1 ), z ) ) ), apply take  (, n1 ), z ) ) )
+ Against {v:Ty_list int a | (llen)(v) ==((n) -- (1))}
+ Typechecking the Term apply take  (, _lbv2 ), _lbv5 )
+ Against {v:Ty_list int a | (llen)(v) ==((n) -- (1))}
+ Argument _lbv2 :: {v:int | (llen)(_lbv0) ==(v)} | (llen)(_lbv0) ==(_lbv2)
+ Argument _lbv5 :: {v:Ty_list int a | (llen)(v) ==((_lbv2) -- (1))} | (llen)(_lbv5) ==((_lbv2) -- (1))
+ AppType Type {v:Ty_list int a | Forall 
+ 	 
+ Key =u Value = int a{ 
+ 	 Conj <c (llen)(v) ==(_lbv2)
+ 	 , 
+ 	 Impl < (lmem)( , v, u ) = (true)
+ 	 (lmem)( , z, u ) = (true) > >c  }}                 
+# of Final Z3 expressions 8
+ OutBuf:sat
+:sat
+
+ $$$$$$$$$$$$ Returned $$$$$$$$$$$$$$$$$$$
+ $$$$$$$$$$$$$ Failed SMT $$$$$$$$$$$$$$
+  FAILED Typechecking PURE APP For apply take  (, _lbv2 ), _lbv5 )
+ Finding Already seen tree for apply take  (, _lbv2 ), _lbv9 )
+ Typechecking apply take  (, apply length  (, apply take  (, n1 ), z ) ) ), apply goal  (, n1 ), l ) )
+ Against {v:Ty_list int a | (llen)(v) ==((n) -- (1))}
+ Typechecking the Term apply take  (, _lbv2 ), _lbv9 )
+ Against {v:Ty_list int a | (llen)(v) ==((n) -- (1))}
+ Argument _lbv2 :: {v:int | (llen)(_lbv0) ==(v)} | (llen)(_lbv0) ==(_lbv2)
+ Argument _lbv9 :: {v:Ty_list int a | (llen)(v) ==((n1) -- (1))} | (llen)(_lbv9) ==((n1) -- (1))
+ AppType Type {v:Ty_list int a | Forall 
+ 	 
+ Key =u Value = int a{ 
+ 	 Conj <c (llen)(v) ==(_lbv2)
+ 	 , 
+ 	 Impl < (lmem)( , v, u ) = (true)
+ 	 (lmem)( , z, u ) = (true) > >c  }}                 
+# of Final Z3 expressions 8
+ OutBuf:sat
+:sat
+
+ $$$$$$$$$$$$ Returned $$$$$$$$$$$$$$$$$$$
+ $$$$$$$$$$$$$ Failed SMT $$$$$$$$$$$$$$
+  FAILED Typechecking PURE APP For apply take  (, _lbv2 ), _lbv9 )
+ Finding Already seen tree for apply take  (, _lbv3 ), _lbv9 )
+ Typechecking apply take  (, apply length  (, l ) ), apply goal  (, n1 ), l ) )
+ Against {v:Ty_list int a | (llen)(v) ==((n) -- (1))}
+ Typechecking the Term apply take  (, _lbv3 ), _lbv9 )
+ Against {v:Ty_list int a | (llen)(v) ==((n) -- (1))}
+ Argument _lbv3 :: {v:int | (llen)(l) ==(v)} | (llen)(l) ==(_lbv3)
+ Argument _lbv9 :: {v:Ty_list int a | (llen)(v) ==((n1) -- (1))} | (llen)(_lbv9) ==((n1) -- (1))
+ AppType Type {v:Ty_list int a | Forall 
+ 	 
+ Key =u Value = int a{ 
+ 	 Conj <c (llen)(v) ==(_lbv3)
+ 	 , 
+ 	 Impl < (lmem)( , v, u ) = (true)
+ 	 (lmem)( , z, u ) = (true) > >c  }}                 
+# of Final Z3 expressions 8
+ OutBuf:sat
+:sat
+
+ $$$$$$$$$$$$ Returned $$$$$$$$$$$$$$$$$$$
+ $$$$$$$$$$$$$ Failed SMT $$$$$$$$$$$$$$
+  FAILED Typechecking PURE APP For apply take  (, _lbv3 ), _lbv9 )
+ Finding Already seen tree for apply take  (, _lbv2 ), _lbv8 )
+ Typechecking apply take  (, apply length  (, apply take  (, n1 ), z ) ) ), apply goal  (, n1 ), apply take  (, n1 ), z ) ) )
+ Against {v:Ty_list int a | (llen)(v) ==((n) -- (1))}
+ Typechecking the Term apply take  (, _lbv2 ), _lbv8 )
+ Against {v:Ty_list int a | (llen)(v) ==((n) -- (1))}
+ Argument _lbv2 :: {v:int | (llen)(_lbv0) ==(v)} | (llen)(_lbv0) ==(_lbv2)
+ Argument _lbv8 :: {v:Ty_list int a | (llen)(v) ==((n1) -- (1))} | (llen)(_lbv8) ==((n1) -- (1))
+ AppType Type {v:Ty_list int a | Forall 
+ 	 
+ Key =u Value = int a{ 
+ 	 Conj <c (llen)(v) ==(_lbv2)
+ 	 , 
+ 	 Impl < (lmem)( , v, u ) = (true)
+ 	 (lmem)( , z, u ) = (true) > >c  }}                 
+# of Final Z3 expressions 8
+ OutBuf:sat
+:sat
+
+ $$$$$$$$$$$$ Returned $$$$$$$$$$$$$$$$$$$
+ $$$$$$$$$$$$$ Failed SMT $$$$$$$$$$$$$$
+  FAILED Typechecking PURE APP For apply take  (, _lbv2 ), _lbv8 )
+  ###################################################
+  The Choice of Function take Was Successfull for {v:Ty_list int a | (llen)(v) ==((n) -- (1))} Continuing for completeness
+  ###################################################
+ *************************
+ Success : 
+ Number of synthesized programs : 1
+ ************************* : 
+  EXPLORED Args.parser output 
+ EXPLORED learningOn  true
+ EXPLORED bidirectionality  true
+ EXPLORED effect-filter  false
+ EXPLORED specfile :: ./prudent_tests/unit/algorithmW/u_test2.spec
+ EXPLORED goal Number :: 0
+ EXPLORED Max path length :: 2
+ EXPLORED Nested If :: 1typewhitespace var: apair
+semicolon
+typewhitespace var: plist
+semicolon
+stexcwhitespace var: llen
+whitespace colon
+whitespace lbrace
+var: a
+rbrace
+whitespace colon
+whitespace var: int
+semicolon
+stexcwhitespace var: pllen
+whitespace colon
+whitespace lbrace
+var: apair
+rbrace
+whitespace colon
+whitespace var: int
+semicolon
+stexcwhitespace var: lmem
+whitespace colon
+whitespace lbrace
+var: a
+rbrace
+whitespace colon
+whitespace var: a
+whitespace colon
+whitespace var: bool
+semicolon
+stexcwhitespace var: lhd
+whitespace colon
+whitespace lbrace
+var: a
+rbrace
+whitespace colon
+whitespace var: a
+semicolon
+stexcwhitespace var: plhd
+whitespace colon
+whitespace lbrace
+var: apair
+rbrace
+whitespace colon
+whitespace var: apair
+semicolon
+stexcwhitespace var: last
+whitespace colon
+whitespace lbrace
+var: a
+rbrace
+whitespace colon
+whitespace var: a
+semicolon
+stexcwhitespace var: pllast
+whitespace colon
+whitespace lbrace
+var: apair
+rbrace
+whitespace colon
+whitespace var: apair
+semicolon
+stexcwhitespace var: ppr1
+whitespace colon
+whitespace var: apair
+whitespace colon
+whitespace var: a
+semicolon
+stexcwhitespace var: ppr2
+whitespace colon
+whitespace var: apair
+whitespace colon
+whitespace var: a
+semicolon
+stexcwhitespace var: nth
+whitespace colon
+whitespace lbrace
+var: a
+rbrace
+whitespace colon
+whitespace var: int
+whitespace colon
+whitespace var: a
+semicolon
+stexcwhitespace var: lsnd
+whitespace colon
+whitespace lbrace
+var: a
+rbrace
+whitespace colon
+whitespace var: a
+semicolon
+stexcwhitespace var: pen
+whitespace colon
+whitespace lbrace
+var: a
+rbrace
+whitespace colon
+whitespace var: a
+semicolon
+stexcwhitespace var: fst
+whitespace colon
+whitespace var: plist
+whitespace colon
+whitespace lbrace
+var: a
+rbrace
+semicolon
+stexcwhitespace var: snd
+whitespace colon
+whitespace var: plist
+whitespace colon
+whitespace lbrace
+var: a
+rbrace
+semicolon
+stexcwhitespace var: slen
+whitespace colon
+whitespace lbrace
+var: a
+rbrace
+whitespace colon
+whitespace var: int
+semicolon
+var: length
+whitespace colon
+whitespace lparen
+var: x
+whitespace colon
+whitespace lbrace
+var: a
+rbrace
+rparen
+whitespace arrow
+whitespace lcurly
+var: v
+whitespace colon
+whitespace var: int
+whitespace pipe
+whitespace var: llen
+whitespace lparen
+var: x
+rparen
+whitespace equalopwhitespace var: v
+rcurly
+semicolon
+whitespace var: length_prime
+whitespace colon
+whitespace lparen
+var: x
+whitespace colon
+whitespace lbrace
+var: a
+rbrace
+rparen
+whitespace arrow
+whitespace lcurly
+var: v
+whitespace colon
+whitespace lbrace
+var: a
+rbrace
+whitespace pipe
+whitespace var: llen
+whitespace lparen
+var: v
+rparen
+whitespace lessthanopwhitespace int: 2
+rcurly
+semicolon
+whitespace var: goal
+whitespace colon
+whitespace lparen
+var: z
+whitespace colon
+whitespace lcurly
+var: v
+whitespace colon
+whitespace lbrace
+var: a
+rbrace
+whitespace pipe
+whitespace truercurly
+rparen
+whitespace arrow
+whitespace lparen
+var: n
+colon
+var: int
+rparen
+whitespace whitespace arrow
+whitespace lcurly
+whitespace var: v
+whitespace colon
+whitespace lbrace
+var: a
+rbrace
+whitespace pipe
+whitespace var: llen
+whitespace lparen
+var: v
+rparen
+whitespace lessthanopwhitespace int: 2
+rcurly
+semicolon
+whitespace whitespace RelSpec {  SRs ;  PRs ;  TSs  
+ Assume false
+ name length : 
+ params :
+ Type  Arrow ( ( x : {var_v0:Ty_list int a | true} ) -> {v:int | (llen)(x) ==(v)} 
+ Assume false
+ name length_prime : 
+ params :
+ Type  Arrow ( ( x : {var_v1:Ty_list int a | true} ) -> {v:Ty_list int a | (llen)(v) > (2)} 
+ Assume false
+ name goal : 
+ params :
+ Type  Arrow ( ( z : {v:Ty_list int a | true} ) ->  Arrow ( ( n : {var_v2:int | true} ) -> {v:Ty_list int a | (llen)(v) > (2)};  Formulas  }
+ INITIAL GAMMA 
+ 
+ goal :  Arrow ( ( z : {v:Ty_list int a | true} ) ->  Arrow ( ( n : {var_v2:int | true} ) -> {v:Ty_list int a | (llen)(v) > (2)}
+ length_prime :  Arrow ( ( x : {var_v1:Ty_list int a | true} ) -> {v:Ty_list int a | (llen)(v) > (2)}
+ length :  Arrow ( ( x : {var_v0:Ty_list int a | true} ) -> {v:int | (llen)(x) ==(v)}
+ INITIAL SIGMA 
+ 
+ TypeNames 
+ 
+ plist
+ apair
+ Qualifiers 
+ 
+ Qual llen :  :-> Ty_list int a :-> int
+ Qual pllen :  :-> Ty_list int apair :-> int
+ Qual lmem :  :-> Ty_list int a :-> int a :-> Ty_bool
+ Qual lhd :  :-> Ty_list int a :-> int a
+ Qual plhd :  :-> Ty_list int apair :-> int apair
+ Qual last :  :-> Ty_list int a :-> int a
+ Qual pllast :  :-> Ty_list int apair :-> int apair
+ Qual ppr1 :  :-> int apair :-> int a
+ Qual ppr2 :  :-> int apair :-> int a
+ Qual nth :  :-> Ty_list int a :-> int :-> int a
+ Qual lsnd :  :-> Ty_list int a :-> int a
+ Qual pen :  :-> Ty_list int a :-> int a
+ Qual fst :  :-> int plist :-> Ty_list int a
+ Qual snd :  :-> int plist :-> Ty_list int a
+ Qual slen :  :-> Ty_list int a :-> int
+ Show ***********Calling S-FUNC synthesize***************
+ Show Uncurried , z:{v:Ty_list int a | true}, n:{var_v2:int | true} -> {v:Ty_list int a | (llen)(v) > (2)}
+ Decreasing Measure z
+ Decreasing Type {v:Ty_list int a | true}
+ Calculated Decreasing Predicate (slen)(z) > (slen)(v)
+ Calculated Decreased Goal Type  Arrow ( ( z1 : {v:Ty_list int a | 
+ 	 Conj <c true
+ 	 , (slen)(z) > (slen)(v) >c } ) ->  Arrow ( ( n : {var_v2:int | true} ) -> {v:Ty_list int a | (llen)(v) > (2)}
+ Show Trying :: Top-level Match
+ Show :: Synthesize Match {v:Ty_list int a | (llen)(v) > (2)}
+ Show :: List Ty_list int a
+ Show LIST CASE ??Ty_list int a PHI trueNil Length (slen)(z) =={(0)}
+ Show Predicate Cons branch :: 
+ 	 Conj <c (slen)(z) ==((slen)(var_xs4) + {(1)})
+ 	 , (slen)(z) > {(0)} >c 
+ Show Predicate Nil branch :: (slen)(z) =={(0)}
+ Show ***********Calling Scalar synthesize***************
+ esynthesizeScalar for {v:Ty_list int a | (llen)(v) > (2)}
+ 
+ Enumerating a Scalar Term z
+ 
+ Type of the Scalar Term {v:Ty_list int a | true}
+# of Final Z3 expressions 2
+ OutBuf:sat
+:sat
+
+ $$$$$$$$$$$$ Returned $$$$$$$$$$$$$$$$$$$
+ $$$$$$$$$$$$$ Failed SMT $$$$$$$$$$$$$$
+ 
+ FaileD the subtype check T_vi <: T_goal
+  Entering Pure Fun Application: esynthesizePureApp 
+ Show Potential Functions
+  , 
+ goal, 
+ length_prime
+ ############################################################
+  Synthesizing the Function application Pure Component goal
+  *************** Trying Arrow Component ************goal :  Arrow ( ( z1 : {v:Ty_list int a | 
+ 	 Conj <c true
+ 	 , (slen)(z) > (slen)(v) >c } ) ->  Arrow ( ( n : {var_v2:int | true} ) -> {v:Ty_list int a | (llen)(v) > (2)}
+  *************** Synthesizing Args ei : ti for ************goal
+ ##################################################################################
+  Synthesizing the 1th argument for Function goal
+  Trying Arguments in Scalars 
+ esynthesizeScalar for {v:Ty_list int a | 
+ 	 Conj <c true
+ 	 , (slen)(z) > (slen)(v) >c }
+ 
+ Enumerating a Scalar Term z
+ 
+ Type of the Scalar Term {v:Ty_list int a | true}
+# of Final Z3 expressions 2
+ OutBuf:sat
+:sat
+
+ $$$$$$$$$$$$ Returned $$$$$$$$$$$$$$$$$$$
+ $$$$$$$$$$$$$ Failed SMT $$$$$$$$$$$$$$
+ 
+ FaileD the subtype check T_vi <: T_goal
+  Entering Pure Fun Application: esynthesizePureApp 
+ ############################################################
+ Max depth reached
+ ############################################################
+ >>>>>>>>>>>>>>>>>>  No pureApp found, Call esynthesizeConsApp <<<<<<<<<<<<<< 
+ ##################################################################################
+  Next Trying Arguments of the form f (ei...) 
+ ##################################################################################
+  Entering Pure Fun Application: esynthesizePureApp 
+ ############################################################
+ Max depth reached
+ ############################################################
+  DEPTH vs MAX  1 vs 2
+ ##################################################################################
+  Synthesizing the 2th argument for Function goal
+  Trying Arguments in Scalars 
+ esynthesizeScalar for {var_v2:int | true}
+ 
+ Enumerating a Scalar Term n
+ 
+ Type of the Scalar Term {var_v2:int | true}
+# of Final Z3 expressions 2
+ OutBuf:unsat
+:unsat
+
+ $$$$$$$$$$$$ Returned $$$$$$$$$$$$$$$$$$$
+ $$$$$$$$$$$$$ Success SMT $$$$$$$$$$$$$$
+ Show :: Found a Few Macthing Scalars 
+ ##################################################################################
+  Next Trying Arguments of the form f (ei...) 
+ ##################################################################################
+  Entering Pure Fun Application: esynthesizePureApp 
+ ############################################################
+ Max depth reached
+ ############################################################
+ >>>>>>>>>>>>>>>>>>> 2th Args option for goal : n
+  DEPTH vs MAX  1 vs 2
+ ##################################################################################
+  *************** Synthesizing Args ei : Failed for some  arg
+ ############################################################
+  Synthesizing the Function application Pure Component length_prime
+  *************** Trying Arrow Component ************length_prime :  Arrow ( ( x : {var_v1:Ty_list int a | true} ) -> {v:Ty_list int a | (llen)(v) > (2)}
+  *************** Synthesizing Args ei : ti for ************length_prime
+ ##################################################################################
+  Synthesizing the 1th argument for Function length_prime
+  Trying Arguments in Scalars 
+ esynthesizeScalar for {var_v1:Ty_list int a | true}
+ 
+ Enumerating a Scalar Term z
+ 
+ Type of the Scalar Term {v:Ty_list int a | true}
+# of Final Z3 expressions 2
+ OutBuf:unsat
+:unsat
+
+ $$$$$$$$$$$$ Returned $$$$$$$$$$$$$$$$$$$
+ $$$$$$$$$$$$$ Success SMT $$$$$$$$$$$$$$
+ 
+ Enumerating a Scalar Term z1
+ 
+ Type of the Scalar Term {v:Ty_list int a | 
+ 	 Conj <c true
+ 	 , (slen)(z) > (slen)(v) >c }
+# of Final Z3 expressions 2
+ OutBuf:unsat
+:unsat
+
+ $$$$$$$$$$$$ Returned $$$$$$$$$$$$$$$$$$$
+ $$$$$$$$$$$$$ Success SMT $$$$$$$$$$$$$$
+ Show :: Found a Few Macthing Scalars 
+ ##################################################################################
+  Next Trying Arguments of the form f (ei...) 
+ ##################################################################################
+  Entering Pure Fun Application: esynthesizePureApp 
+ ############################################################
+ Max depth reached
+ ############################################################
+ >>>>>>>>>>>>>>>>>>> 1th Args option for length_prime : z1
+ >>>>>>>>>>>>>>>>>>> 1th Args option for length_prime : z
+  DEPTH vs MAX  1 vs 2
+ ##################################################################################
+  *************** Successfully Synthesized Args ei Forall i 
+ 1 th Argument Options for length_prime
+ EI z1
+ EI z
+ # of Possible Argument Options for length_prime 2
+ # of Possible Argument Options for length_prime 2
+ Possible Arg Options 
+ EI z1
+ Possible Arg Options 
+ EI z
+ Apply Single Argument Case : f (ei) Case length_prime
+  Case : f (ei) Case length_prime z1
+ Finding Already seen tree for apply length_prime  (, z1 )
+ Typechecking apply length_prime  (, z1 )
+ Against {v:Ty_list int a | (llen)(v) > (2)}
+ Typechecking the Term apply length_prime  (, z1 )
+ Against {v:Ty_list int a | (llen)(v) > (2)}
+ Argument z1 :: {v:Ty_list int a | 
+ 	 Conj <c true
+ 	 , (slen)(z) > (slen)(v) >c } | 
+ 	 Conj <c true
+ 	 , (slen)(z) > (slen)(z1) >c 
+ AppType Type {v:Ty_list int a | (llen)(v) > (2)}
+# of Final Z3 expressions 6
+ OutBuf:unsat
+:unsat
+
+ $$$$$$$$$$$$ Returned $$$$$$$$$$$$$$$$$$$
+ $$$$$$$$$$$$$ Success SMT $$$$$$$$$$$$$$
+  Show *************** TypeChecking Succsessful {v:Ty_list int a | (llen)(v) > (2)}
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ let _lbv0 = apply length_prime  (, z1 )
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  Case : f (ei) Case length_prime z
+ Finding Already seen tree for apply length_prime  (, z )
+ Typechecking apply length_prime  (, z )
+ Against {v:Ty_list int a | (llen)(v) > (2)}
+ Typechecking the Term apply length_prime  (, z )
+ Against {v:Ty_list int a | (llen)(v) > (2)}
+ Argument z :: {v:Ty_list int a | true} | true
+ AppType Type {v:Ty_list int a | (llen)(v) > (2)}
+# of Final Z3 expressions 6
+ OutBuf:unsat
+:unsat
+
+ $$$$$$$$$$$$ Returned $$$$$$$$$$$$$$$$$$$
+ $$$$$$$$$$$$$ Success SMT $$$$$$$$$$$$$$
+  Show *************** TypeChecking Succsessful {v:Ty_list int a | (llen)(v) > (2)}
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ let _lbv1 = apply length_prime  (, z )
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  ###################################################
+  The Choice of Function length_prime Was Succefull for {v:Ty_list int a | (llen)(v) > (2)} Continuing for completeness
+  ###################################################
+ Show :: Successfully Synthesisized Nil Branch 
+ Now Trying Cons
+ Show ***********Calling Scalar synthesize***************
+ esynthesizeScalar for {v:Ty_list int a | (llen)(v) > (2)}
+ 
+ Enumerating a Scalar Term z
+ 
+ Type of the Scalar Term {v:Ty_list int a | true}
+# of Final Z3 expressions 3
+ OutBuf:sat
+:sat
+
+ $$$$$$$$$$$$ Returned $$$$$$$$$$$$$$$$$$$
+ $$$$$$$$$$$$$ Failed SMT $$$$$$$$$$$$$$
+ 
+ FaileD the subtype check T_vi <: T_goal
+  Entering Pure Fun Application: esynthesizePureApp 
+ Show Potential Functions
+  , 
+ goal, 
+ length_prime
+ ############################################################
+  Synthesizing the Function application Pure Component goal
+  *************** Trying Arrow Component ************goal :  Arrow ( ( z1 : {v:Ty_list int a | 
+ 	 Conj <c true
+ 	 , (slen)(z) > (slen)(v) >c } ) ->  Arrow ( ( n : {var_v2:int | true} ) -> {v:Ty_list int a | (llen)(v) > (2)}
+  *************** Synthesizing Args ei : ti for ************goal
+ ##################################################################################
+  Synthesizing the 1th argument for Function goal
+  Trying Arguments in Scalars 
+ esynthesizeScalar for {v:Ty_list int a | 
+ 	 Conj <c true
+ 	 , (slen)(z) > (slen)(v) >c }
+ 
+ Enumerating a Scalar Term z
+ 
+ Type of the Scalar Term {v:Ty_list int a | true}
+# of Final Z3 expressions 3
+ OutBuf:sat
+:sat
+
+ $$$$$$$$$$$$ Returned $$$$$$$$$$$$$$$$$$$
+ $$$$$$$$$$$$$ Failed SMT $$$$$$$$$$$$$$
+ 
+ FaileD the subtype check T_vi <: T_goal
+  Entering Pure Fun Application: esynthesizePureApp 
+ ############################################################
+ Max depth reached
+ ############################################################
+ >>>>>>>>>>>>>>>>>>  No pureApp found, Call esynthesizeConsApp <<<<<<<<<<<<<< 
+ ##################################################################################
+  Next Trying Arguments of the form f (ei...) 
+ ##################################################################################
+  Entering Pure Fun Application: esynthesizePureApp 
+ ############################################################
+ Max depth reached
+ ############################################################
+  DEPTH vs MAX  1 vs 2
+ ##################################################################################
+  Synthesizing the 2th argument for Function goal
+  Trying Arguments in Scalars 
+ esynthesizeScalar for {var_v2:int | true}
+ 
+ Enumerating a Scalar Term var_x3
+ 
+ Type of the Scalar Term {v_0:int | true}
+ ################################################
+ Skipping Variable var_x3 As this a Ghost Variable
+ ################################################
+ 
+ Enumerating a Scalar Term n
+ 
+ Type of the Scalar Term {var_v2:int | true}
+# of Final Z3 expressions 2
+ OutBuf:unsat
+:unsat
+
+ $$$$$$$$$$$$ Returned $$$$$$$$$$$$$$$$$$$
+ $$$$$$$$$$$$$ Success SMT $$$$$$$$$$$$$$
+ Show :: Found a Few Macthing Scalars 
+ ##################################################################################
+  Next Trying Arguments of the form f (ei...) 
+ ##################################################################################
+  Entering Pure Fun Application: esynthesizePureApp 
+ ############################################################
+ Max depth reached
+ ############################################################
+ >>>>>>>>>>>>>>>>>>> 2th Args option for goal : n
+  DEPTH vs MAX  1 vs 2
+ ##################################################################################
+  *************** Synthesizing Args ei : Failed for some  arg
+ ############################################################
+  Synthesizing the Function application Pure Component length_prime
+  *************** Trying Arrow Component ************length_prime :  Arrow ( ( x : {var_v1:Ty_list int a | true} ) -> {v:Ty_list int a | (llen)(v) > (2)}
+  *************** Synthesizing Args ei : ti for ************length_prime
+ ##################################################################################
+  Synthesizing the 1th argument for Function length_prime
+  Trying Arguments in Scalars 
+ esynthesizeScalar for {var_v1:Ty_list int a | true}
+ 
+ Enumerating a Scalar Term z
+ 
+ Type of the Scalar Term {v:Ty_list int a | true}
+# of Final Z3 expressions 2
+ OutBuf:unsat
+:unsat
+
+ $$$$$$$$$$$$ Returned $$$$$$$$$$$$$$$$$$$
+ $$$$$$$$$$$$$ Success SMT $$$$$$$$$$$$$$
+ 
+ Enumerating a Scalar Term z1
+ 
+ Type of the Scalar Term {v:Ty_list int a | 
+ 	 Conj <c true
+ 	 , (slen)(z) > (slen)(v) >c }
+# of Final Z3 expressions 2
+ OutBuf:unsat
+:unsat
+
+ $$$$$$$$$$$$ Returned $$$$$$$$$$$$$$$$$$$
+ $$$$$$$$$$$$$ Success SMT $$$$$$$$$$$$$$
+ Show :: Found a Few Macthing Scalars 
+ ##################################################################################
+  Next Trying Arguments of the form f (ei...) 
+ ##################################################################################
+  Entering Pure Fun Application: esynthesizePureApp 
+ ############################################################
+ Max depth reached
+ ############################################################
+ >>>>>>>>>>>>>>>>>>> 1th Args option for length_prime : z1
+ >>>>>>>>>>>>>>>>>>> 1th Args option for length_prime : z
+  DEPTH vs MAX  1 vs 2
+ ##################################################################################
+  *************** Successfully Synthesized Args ei Forall i 
+ 1 th Argument Options for length_prime
+ EI z1
+ EI z
+ # of Possible Argument Options for length_prime 2
+ # of Possible Argument Options for length_prime 2
+ Possible Arg Options 
+ EI z1
+ Possible Arg Options 
+ EI z
+ Apply Single Argument Case : f (ei) Case length_prime
+  Case : f (ei) Case length_prime z1
+ Finding Already seen tree for apply length_prime  (, z1 )
+ Found _lbv0
+  Case : f (ei) Case length_prime z
+ Finding Already seen tree for apply length_prime  (, z )
+ Found _lbv1
+  ###################################################
+  The Choice of Function length_prime Was Succefull for {v:Ty_list int a | (llen)(v) > (2)} Continuing for completeness
+  ###################################################
+ Show :: Successfully Synthesized Cons Branch 2
+ EXPLORED :: Show Found Match match x with ... solution
+ *************************
+ Success : 
+ Number of synthesized programs : 1
+ ************************* : 
+  EXPLORED Args.parser output 
+ EXPLORED learningOn  true
+ EXPLORED bidirectionality  true
+ EXPLORED effect-filter  false
+ EXPLORED specfile :: ./prudent_tests/unit/algorithmW/u_test3.spec
+ EXPLORED goal Number :: 0
+ EXPLORED Max path length :: 2
+ EXPLORED Nested If :: 1typewhitespace var: apair
+semicolon
+typewhitespace var: plist
+semicolon
+stexcwhitespace var: llen
+whitespace colon
+whitespace lbrace
+var: a
+rbrace
+whitespace colon
+whitespace var: int
+semicolon
+stexcwhitespace var: pllen
+whitespace colon
+whitespace lbrace
+var: apair
+rbrace
+whitespace colon
+whitespace var: int
+semicolon
+stexcwhitespace var: lmem
+whitespace colon
+whitespace lbrace
+var: a
+rbrace
+whitespace colon
+whitespace var: a
+whitespace colon
+whitespace var: bool
+semicolon
+stexcwhitespace var: lhd
+whitespace colon
+whitespace lbrace
+var: a
+rbrace
+whitespace colon
+whitespace var: a
+semicolon
+stexcwhitespace var: plhd
+whitespace colon
+whitespace lbrace
+var: apair
+rbrace
+whitespace colon
+whitespace var: apair
+semicolon
+stexcwhitespace var: last
+whitespace colon
+whitespace lbrace
+var: a
+rbrace
+whitespace colon
+whitespace var: a
+semicolon
+stexcwhitespace var: pllast
+whitespace colon
+whitespace lbrace
+var: apair
+rbrace
+whitespace colon
+whitespace var: apair
+semicolon
+stexcwhitespace var: ppr1
+whitespace colon
+whitespace var: apair
+whitespace colon
+whitespace var: a
+semicolon
+stexcwhitespace var: ppr2
+whitespace colon
+whitespace var: apair
+whitespace colon
+whitespace var: a
+semicolon
+stexcwhitespace var: nth
+whitespace colon
+whitespace lbrace
+var: a
+rbrace
+whitespace colon
+whitespace var: int
+whitespace colon
+whitespace var: a
+semicolon
+stexcwhitespace var: lsnd
+whitespace colon
+whitespace lbrace
+var: a
+rbrace
+whitespace colon
+whitespace var: a
+semicolon
+stexcwhitespace var: pen
+whitespace colon
+whitespace lbrace
+var: a
+rbrace
+whitespace colon
+whitespace var: a
+semicolon
+stexcwhitespace var: fst
+whitespace colon
+whitespace var: plist
+whitespace colon
+whitespace lbrace
+var: a
+rbrace
+semicolon
+stexcwhitespace var: snd
+whitespace colon
+whitespace var: plist
+whitespace colon
+whitespace lbrace
+var: a
+rbrace
+semicolon
+stexcwhitespace var: slen
+whitespace colon
+whitespace lbrace
+var: a
+rbrace
+whitespace colon
+whitespace var: int
+semicolon
+var: add
+whitespace colon
+whitespace lparen
+var: x
+whitespace colon
+whitespace var: a
+rparen
+whitespace arrow
+whitespace lparen
+var: z
+whitespace colon
+whitespace lbrace
+var: a
+rbrace
+rparen
+whitespace arrow
+whitespace lcurly
+var: v
+whitespace colon
+whitespace lbrace
+var: a
+rbrace
+whitespace pipe
+whitespace var: llen
+whitespace lparen
+var: v
+rparen
+whitespace equalopwhitespace var: llen
+whitespace lparen
+var: z
+rparen
+whitespace pluswhitespace int: 1
+rcurly
+semicolon
+whitespace var: goal
+whitespace colon
+whitespace lparen
+var: el
+whitespace colon
+whitespace var: a
+rparen
+whitespace arrow
+whitespace lparen
+var: z
+whitespace colon
+whitespace lcurly
+var: v
+whitespace colon
+whitespace lbrace
+var: a
+rbrace
+whitespace pipe
+whitespace truercurly
+rparen
+whitespace arrow
+whitespace lcurly
+whitespace var: v
+whitespace colon
+whitespace lbrace
+var: a
+rbrace
+whitespace pipe
+whitespace var: llen
+whitespace lparen
+var: v
+rparen
+whitespace equalopwhitespace var: llen
+lparen
+var: z
+rparen
+whitespace pluswhitespace int: 2
+rcurly
+semicolon
+RelSpec {  SRs ;  PRs ;  TSs  
+ Assume false
+ name add : 
+ params :
+ Type  Arrow ( ( x : {var_v0:int a | true} ) ->  Arrow ( ( z : {var_v1:Ty_list int a | true} ) -> {v:Ty_list int a | (llen)(v) ==((llen)(z) + (1))} 
+ Assume false
+ name goal : 
+ params :
+ Type  Arrow ( ( el : {var_v2:int a | true} ) ->  Arrow ( ( z : {v:Ty_list int a | true} ) -> {v:Ty_list int a | (llen)(v) ==((llen)(z) + (2))};  Formulas  }
+ INITIAL GAMMA 
+ 
+ goal :  Arrow ( ( el : {var_v2:int a | true} ) ->  Arrow ( ( z : {v:Ty_list int a | true} ) -> {v:Ty_list int a | (llen)(v) ==((llen)(z) + (2))}
+ add :  Arrow ( ( x : {var_v0:int a | true} ) ->  Arrow ( ( z : {var_v1:Ty_list int a | true} ) -> {v:Ty_list int a | (llen)(v) ==((llen)(z) + (1))}
+ INITIAL SIGMA 
+ 
+ TypeNames 
+ 
+ plist
+ apair
+ Qualifiers 
+ 
+ Qual llen :  :-> Ty_list int a :-> int
+ Qual pllen :  :-> Ty_list int apair :-> int
+ Qual lmem :  :-> Ty_list int a :-> int a :-> Ty_bool
+ Qual lhd :  :-> Ty_list int a :-> int a
+ Qual plhd :  :-> Ty_list int apair :-> int apair
+ Qual last :  :-> Ty_list int a :-> int a
+ Qual pllast :  :-> Ty_list int apair :-> int apair
+ Qual ppr1 :  :-> int apair :-> int a
+ Qual ppr2 :  :-> int apair :-> int a
+ Qual nth :  :-> Ty_list int a :-> int :-> int a
+ Qual lsnd :  :-> Ty_list int a :-> int a
+ Qual pen :  :-> Ty_list int a :-> int a
+ Qual fst :  :-> int plist :-> Ty_list int a
+ Qual snd :  :-> int plist :-> Ty_list int a
+ Qual slen :  :-> Ty_list int a :-> int
+ Show ***********Calling S-FUNC synthesize***************
+ Show Uncurried , el:{var_v2:int a | true}, z:{v:Ty_list int a | true} -> {v:Ty_list int a | (llen)(v) ==((llen)(z) + (2))}
+ Decreasing Measure el
+ Decreasing Type {var_v2:int a | true}
+ Calculated Decreasing Predicate (slen)(el) > (slen)(var_v2)
+ Calculated Decreased Goal Type  Arrow ( ( el1 : {var_v2:int a | 
+ 	 Conj <c true
+ 	 , (slen)(el) > (slen)(var_v2) >c } ) ->  Arrow ( ( z : {v:Ty_list int a | true} ) -> {v:Ty_list int a | (llen)(v) ==((llen)(z) + (2))}
+ Show Trying :: Top-level Match
+ Show :: Synthesize Match {v:Ty_list int a | (llen)(v) ==((llen)(z) + (2))}
+ Show :: List int a
+ Match-case failed :: Try Top-level If-then-else 
+ **********************************************
+ iSynthesize If-THEN-ELSE {v:Ty_list int a | (llen)(v) ==((llen)(z) + (2))}
+ **********************************************
+  *********************Synthesizing the Guard*******************
+ iSynthesize Boolean Guard {var_v3:Ty_bool | true}
+  *********************Synthesizing the Guard*******************
+ esynthesizeScalar for {var_v3:Ty_bool | true}
+  Entering Pure Fun Application: esynthesizePureApp 
+ ############################################################
+ Max depth reached
+ ############################################################
+ >>>>>>>>>>>>>>>>>>  No pureApp found, Call esynthesizeConsApp <<<<<<<<<<<<<< 
+  *********************Guard Synthesized*******************
+ iSynthesize Following Boolean Guards Found 
+  ********************Guard Synthesized*******************
+  If then else Failed :: Try without subdivision
+ 
+  Entering Pure Fun Application: esynthesizePureApp 
+ Show Potential Functions
+  , 
+ goal, 
+ add
+ ############################################################
+  Synthesizing the Function application Pure Component goal
+  *************** Trying Arrow Component ************goal :  Arrow ( ( el1 : {var_v2:int a | 
+ 	 Conj <c true
+ 	 , (slen)(el) > (slen)(var_v2) >c } ) ->  Arrow ( ( z : {v:Ty_list int a | true} ) -> {v:Ty_list int a | (llen)(v) ==((llen)(z) + (2))}
+  *************** Synthesizing Args ei : ti for ************goal
+ ##################################################################################
+  Synthesizing the 1th argument for Function goal
+  Trying Arguments in Scalars 
+ esynthesizeScalar for {var_v2:int a | 
+ 	 Conj <c true
+ 	 , (slen)(el) > (slen)(var_v2) >c }
+ 
+ Enumerating a Scalar Term el
+ 
+ Type of the Scalar Term {var_v2:int a | true}
+# of Final Z3 expressions 2
+ OutBuf:sat
+:sat
+
+ $$$$$$$$$$$$ Returned $$$$$$$$$$$$$$$$$$$
+ $$$$$$$$$$$$$ Failed SMT $$$$$$$$$$$$$$
+ 
+ FaileD the subtype check T_vi <: T_goal
+  Entering Pure Fun Application: esynthesizePureApp 
+ Show Potential Functions
+  
+ >>>>>>>>>>>>>>>>>>  No pureApp found, Call esynthesizeConsApp <<<<<<<<<<<<<< 
+ Found Constructors with required return type
+  
+ ********************** HERE BEFORE 
+ Show No more choices for ConsApp
+ ##################################################################################
+  Next Trying Arguments of the form f (ei...) 
+ ##################################################################################
+  Entering Pure Fun Application: esynthesizePureApp 
+ Show Potential Functions
+  
+  DEPTH vs MAX  0 vs 2
+ ##################################################################################
+  Synthesizing the 2th argument for Function goal
+  Trying Arguments in Scalars 
+ esynthesizeScalar for {v:Ty_list int a | true}
+ 
+ Enumerating a Scalar Term z
+ 
+ Type of the Scalar Term {v:Ty_list int a | true}
+# of Final Z3 expressions 2
+ OutBuf:unsat
+:unsat
+
+ $$$$$$$$$$$$ Returned $$$$$$$$$$$$$$$$$$$
+ $$$$$$$$$$$$$ Success SMT $$$$$$$$$$$$$$
+ Show :: Found a Few Macthing Scalars 
+ ##################################################################################
+  Next Trying Arguments of the form f (ei...) 
+ ##################################################################################
+  Entering Pure Fun Application: esynthesizePureApp 
+ Show Potential Functions
+  , 
+ goal, 
+ add
+ ############################################################
+  Synthesizing the Function application Pure Component goal
+ ################################################
+ Skipping Variable goal As Outer Function Call is goal
+ ################################################
+ ############################################################
+  Synthesizing the Function application Pure Component add
+  *************** Trying Arrow Component ************add :  Arrow ( ( x : {var_v0:int a | true} ) ->  Arrow ( ( z : {var_v1:Ty_list int a | true} ) -> {v:Ty_list int a | (llen)(v) ==((llen)(z) + (1))}
+  *************** Synthesizing Args ei : ti for ************add
+ ##################################################################################
+  Synthesizing the 1th argument for Function add
+  Trying Arguments in Scalars 
+ esynthesizeScalar for {var_v0:int a | true}
+ 
+ Enumerating a Scalar Term el
+ 
+ Type of the Scalar Term {var_v2:int a | true}
+# of Final Z3 expressions 2
+ OutBuf:unsat
+:unsat
+
+ $$$$$$$$$$$$ Returned $$$$$$$$$$$$$$$$$$$
+ $$$$$$$$$$$$$ Success SMT $$$$$$$$$$$$$$
+ 
+ Enumerating a Scalar Term el1
+ 
+ Type of the Scalar Term {var_v2:int a | 
+ 	 Conj <c true
+ 	 , (slen)(el) > (slen)(var_v2) >c }
+# of Final Z3 expressions 2
+ OutBuf:unsat
+:unsat
+
+ $$$$$$$$$$$$ Returned $$$$$$$$$$$$$$$$$$$
+ $$$$$$$$$$$$$ Success SMT $$$$$$$$$$$$$$
+ Show :: Found a Few Macthing Scalars 
+ ##################################################################################
+  Next Trying Arguments of the form f (ei...) 
+ ##################################################################################
+  Entering Pure Fun Application: esynthesizePureApp 
+ ############################################################
+ Max depth reached
+ ############################################################
+ >>>>>>>>>>>>>>>>>>> 1th Args option for add : el1
+ >>>>>>>>>>>>>>>>>>> 1th Args option for add : el
+  DEPTH vs MAX  1 vs 2
+ ##################################################################################
+  Synthesizing the 2th argument for Function add
+  Trying Arguments in Scalars 
+ esynthesizeScalar for {var_v1:Ty_list int a | true}
+ 
+ Enumerating a Scalar Term z
+ 
+ Type of the Scalar Term {v:Ty_list int a | true}
+ ################################################
+ Skipping Variable z As this a  Formal Parameter to the current function Call
+ Outer Function calls add
+ ################################################
+  Entering Pure Fun Application: esynthesizePureApp 
+ ############################################################
+ Max depth reached
+ ############################################################
+ >>>>>>>>>>>>>>>>>>  No pureApp found, Call esynthesizeConsApp <<<<<<<<<<<<<< 
+ ##################################################################################
+  Next Trying Arguments of the form f (ei...) 
+ ##################################################################################
+  Entering Pure Fun Application: esynthesizePureApp 
+ ############################################################
+ Max depth reached
+ ############################################################
+  DEPTH vs MAX  1 vs 2
+ ##################################################################################
+  *************** Synthesizing Args ei : Failed for some  arg
+ >>>>>>>>>>>>>>>>>>> 2th Args option for goal : z
+  DEPTH vs MAX  0 vs 2
+ ##################################################################################
+  *************** Synthesizing Args ei : Failed for some  arg
+ ############################################################
+  Synthesizing the Function application Pure Component add
+  *************** Trying Arrow Component ************add :  Arrow ( ( x : {var_v0:int a | true} ) ->  Arrow ( ( z : {var_v1:Ty_list int a | true} ) -> {v:Ty_list int a | (llen)(v) ==((llen)(z) + (1))}
+  *************** Synthesizing Args ei : ti for ************add
+ ##################################################################################
+  Synthesizing the 1th argument for Function add
+  Trying Arguments in Scalars 
+ esynthesizeScalar for {var_v0:int a | true}
+ 
+ Enumerating a Scalar Term el
+ 
+ Type of the Scalar Term {var_v2:int a | true}
+# of Final Z3 expressions 2
+ OutBuf:unsat
+:unsat
+
+ $$$$$$$$$$$$ Returned $$$$$$$$$$$$$$$$$$$
+ $$$$$$$$$$$$$ Success SMT $$$$$$$$$$$$$$
+ 
+ Enumerating a Scalar Term el1
+ 
+ Type of the Scalar Term {var_v2:int a | 
+ 	 Conj <c true
+ 	 , (slen)(el) > (slen)(var_v2) >c }
+# of Final Z3 expressions 2
+ OutBuf:unsat
+:unsat
+
+ $$$$$$$$$$$$ Returned $$$$$$$$$$$$$$$$$$$
+ $$$$$$$$$$$$$ Success SMT $$$$$$$$$$$$$$
+ 
+ Enumerating a Scalar Term x
+ 
+ Type of the Scalar Term {var_v0:int a | true}
+ ################################################
+ Skipping Variable x As this a  Formal Parameter to the current function Call
+ Outer Function calls add
+ ################################################
+ Show :: Found a Few Macthing Scalars 
+ ##################################################################################
+  Next Trying Arguments of the form f (ei...) 
+ ##################################################################################
+  Entering Pure Fun Application: esynthesizePureApp 
+ Show Potential Functions
+  
+ >>>>>>>>>>>>>>>>>>> 1th Args option for add : el1
+ >>>>>>>>>>>>>>>>>>> 1th Args option for add : el
+  DEPTH vs MAX  0 vs 2
+ ##################################################################################
+  Synthesizing the 2th argument for Function add
+  Trying Arguments in Scalars 
+ esynthesizeScalar for {var_v1:Ty_list int a | true}
+ 
+ Enumerating a Scalar Term z
+ 
+ Type of the Scalar Term {v:Ty_list int a | true}
+ ################################################
+ Skipping Variable z As this a  Formal Parameter to the current function Call
+ Outer Function calls add
+ ################################################
+  Entering Pure Fun Application: esynthesizePureApp 
+ Show Potential Functions
+  , 
+ goal, 
+ add
+ ############################################################
+  Synthesizing the Function application Pure Component goal
+  *************** Trying Arrow Component ************goal :  Arrow ( ( el1 : {var_v2:int a | 
+ 	 Conj <c true
+ 	 , (slen)(el) > (slen)(var_v2) >c } ) ->  Arrow ( ( z : {v:Ty_list int a | true} ) -> {v:Ty_list int a | (llen)(v) ==((llen)(z) + (2))}
+  *************** Synthesizing Args ei : ti for ************goal
+ ##################################################################################
+  Synthesizing the 1th argument for Function goal
+  Trying Arguments in Scalars 
+ esynthesizeScalar for {var_v2:int a | 
+ 	 Conj <c true
+ 	 , (slen)(el) > (slen)(var_v2) >c }
+ 
+ Enumerating a Scalar Term el
+ 
+ Type of the Scalar Term {var_v2:int a | true}
+# of Final Z3 expressions 2
+ OutBuf:sat
+:sat
+
+ $$$$$$$$$$$$ Returned $$$$$$$$$$$$$$$$$$$
+ $$$$$$$$$$$$$ Failed SMT $$$$$$$$$$$$$$
+ 
+ FaileD the subtype check T_vi <: T_goal
+ 
+ Enumerating a Scalar Term el1
+ 
+ Type of the Scalar Term {var_v2:int a | 
+ 	 Conj <c true
+ 	 , (slen)(el) > (slen)(var_v2) >c }
+# of Final Z3 expressions 3
+ OutBuf:unsat
+:unsat
+
+ $$$$$$$$$$$$ Returned $$$$$$$$$$$$$$$$$$$
+ $$$$$$$$$$$$$ Success SMT $$$$$$$$$$$$$$
+ 
+ Enumerating a Scalar Term x
+ 
+ Type of the Scalar Term {var_v0:int a | true}
+ ################################################
+ Skipping Variable x as it is bound variable for Cons constructor
+ ################################################
+ Show :: Found a Few Macthing Scalars 
+ ##################################################################################
+  Next Trying Arguments of the form f (ei...) 
+ ##################################################################################
+  Entering Pure Fun Application: esynthesizePureApp 
+ ############################################################
+ Max depth reached
+ ############################################################
+ >>>>>>>>>>>>>>>>>>> 1th Args option for goal : el1
+  DEPTH vs MAX  1 vs 2
+ ##################################################################################
+  Synthesizing the 2th argument for Function goal
+  Trying Arguments in Scalars 
+ esynthesizeScalar for {v:Ty_list int a | true}
+ 
+ Enumerating a Scalar Term z
+ 
+ Type of the Scalar Term {v:Ty_list int a | true}
+# of Final Z3 expressions 2
+ OutBuf:unsat
+:unsat
+
+ $$$$$$$$$$$$ Returned $$$$$$$$$$$$$$$$$$$
+ $$$$$$$$$$$$$ Success SMT $$$$$$$$$$$$$$
+ Show :: Found a Few Macthing Scalars 
+ ##################################################################################
+  Next Trying Arguments of the form f (ei...) 
+ ##################################################################################
+  Entering Pure Fun Application: esynthesizePureApp 
+ ############################################################
+ Max depth reached
+ ############################################################
+ >>>>>>>>>>>>>>>>>>> 2th Args option for goal : z
+  DEPTH vs MAX  1 vs 2
+ ##################################################################################
+  *************** Successfully Synthesized Args ei Forall i 
+ 1 th Argument Options for goal
+ EI el1
+ 2 th Argument Options for goal
+ EI z
+ # of Possible Argument Options for goal 1
+ # of Possible Argument Options for goal 1
+ Possible Arg Options 
+ EI el1
+ EI z
+ Show f (ei, e2, ....en) Case
+ Finding Already seen tree for apply goal  (, el1 ), z )
+ Typechecking apply goal  (, el1 ), z )
+ Against {var_v1:Ty_list int a | true}
+ Typechecking the Term apply goal  (, el1 ), z )
+ Against {var_v1:Ty_list int a | true}
+ Argument el1 :: {var_v2:int a | 
+ 	 Conj <c true
+ 	 , (slen)(el) > (slen)(var_v2) >c } | 
+ 	 Conj <c true
+ 	 , (slen)(el) > (slen)(el1) >c 
+ Argument z :: {v:Ty_list int a | true} | true
+ AppType Type {v:Ty_list int a | (llen)(v) ==((llen)(z) + (2))}
+# of Final Z3 expressions 2
+ OutBuf:unsat
+:unsat
+
+ $$$$$$$$$$$$ Returned $$$$$$$$$$$$$$$$$$$
+ $$$$$$$$$$$$$ Success SMT $$$$$$$$$$$$$$
+  Show *************** TypeChecking Succsessful {v:Ty_list int a | (llen)(v) ==((llen)(z) + (2))}
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ let _lbv0 = apply goal  (, el1 ), z )
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  ###################################################
+  The Choice of Function goal Was Successfull for {var_v1:Ty_list int a | true} Continuing for completeness
+  ###################################################
+ ##################################################################################
+  Next Trying Arguments of the form f (ei...) 
+ ##################################################################################
+  Entering Pure Fun Application: esynthesizePureApp 
+ Show Potential Functions
+  , 
+ goal, 
+ add
+ ############################################################
+  Synthesizing the Function application Pure Component goal
+  *************** Trying Arrow Component ************goal :  Arrow ( ( el1 : {var_v2:int a | 
+ 	 Conj <c true
+ 	 , (slen)(el) > (slen)(var_v2) >c } ) ->  Arrow ( ( z : {v:Ty_list int a | true} ) -> {v:Ty_list int a | (llen)(v) ==((llen)(z) + (2))}
+  *************** Synthesizing Args ei : ti for ************goal
+ ##################################################################################
+  Synthesizing the 1th argument for Function goal
+  Trying Arguments in Scalars 
+ esynthesizeScalar for {var_v2:int a | 
+ 	 Conj <c true
+ 	 , (slen)(el) > (slen)(var_v2) >c }
+ 
+ Enumerating a Scalar Term el
+ 
+ Type of the Scalar Term {var_v2:int a | true}
+# of Final Z3 expressions 3
+ OutBuf:sat
+:sat
+
+ $$$$$$$$$$$$ Returned $$$$$$$$$$$$$$$$$$$
+ $$$$$$$$$$$$$ Failed SMT $$$$$$$$$$$$$$
+ 
+ FaileD the subtype check T_vi <: T_goal
+ 
+ Enumerating a Scalar Term x
+ 
+ Type of the Scalar Term {var_v0:int a | true}
+ ################################################
+ Skipping Variable x as it is bound variable for Cons constructor
+ ################################################
+ 
+ Enumerating a Scalar Term el1
+ 
+ Type of the Scalar Term {var_v2:int a | 
+ 	 Conj <c true
+ 	 , (slen)(el) > (slen)(var_v2) >c }
+# of Final Z3 expressions 4
+ OutBuf:unsat
+:unsat
+
+ $$$$$$$$$$$$ Returned $$$$$$$$$$$$$$$$$$$
+ $$$$$$$$$$$$$ Success SMT $$$$$$$$$$$$$$
+ Show :: Found a Few Macthing Scalars 
+ ##################################################################################
+  Next Trying Arguments of the form f (ei...) 
+ ##################################################################################
+  Entering Pure Fun Application: esynthesizePureApp 
+ ############################################################
+ Max depth reached
+ ############################################################
+ >>>>>>>>>>>>>>>>>>> 1th Args option for goal : el1
+  DEPTH vs MAX  1 vs 2
+ ##################################################################################
+  Synthesizing the 2th argument for Function goal
+  Trying Arguments in Scalars 
+ esynthesizeScalar for {v:Ty_list int a | true}
+ 
+ Enumerating a Scalar Term z
+ 
+ Type of the Scalar Term {v:Ty_list int a | true}
+# of Final Z3 expressions 2
+ OutBuf:unsat
+:unsat
+
+ $$$$$$$$$$$$ Returned $$$$$$$$$$$$$$$$$$$
+ $$$$$$$$$$$$$ Success SMT $$$$$$$$$$$$$$
+ 
+ Enumerating a Scalar Term _lbv0
+ 
+ Type of the Scalar Term {v:Ty_list int a | (llen)(v) ==((llen)(z) + (2))}
+ ################################################
+ Skipping Variable _lbv0 As Outer Function Call is goal
+ Show :: Found a Few Macthing Scalars 
+ ##################################################################################
+  Next Trying Arguments of the form f (ei...) 
+ ##################################################################################
+  Entering Pure Fun Application: esynthesizePureApp 
+ ############################################################
+ Max depth reached
+ ############################################################
+ >>>>>>>>>>>>>>>>>>> 2th Args option for goal : z
+  DEPTH vs MAX  1 vs 2
+ ##################################################################################
+  *************** Successfully Synthesized Args ei Forall i 
+ 1 th Argument Options for goal
+ EI el1
+ 2 th Argument Options for goal
+ EI z
+ # of Possible Argument Options for goal 1
+ # of Possible Argument Options for goal 1
+ Possible Arg Options 
+ EI el1
+ EI z
+ Show f (ei, e2, ....en) Case
+ Finding Already seen tree for apply goal  (, el1 ), z )
+ Found _lbv0
+  ###################################################
+  The Choice of Function goal Was Successfull for {var_v1:Ty_list int a | true} Continuing for completeness
+  ###################################################
+ >>>>>>>>>>>>>>>>>>> 2th Args option for add : apply goal  (, el1 ), z )
+ >>>>>>>>>>>>>>>>>>> 2th Args option for add : apply goal  (, el1 ), z )
+  DEPTH vs MAX  0 vs 2
+ ##################################################################################
+  *************** Successfully Synthesized Args ei Forall i 
+ 1 th Argument Options for add
+ EI el1
+ EI el
+ 2 th Argument Options for add
+ EI apply goal  (, el1 ), z )
+ EI apply goal  (, el1 ), z )
+ # of Possible Argument Options for add 4
+ # of Possible Argument Options for add 4
+ Possible Arg Options 
+ EI el1
+ EI apply goal  (, el1 ), z )
+ Possible Arg Options 
+ EI el1
+ EI apply goal  (, el1 ), z )
+ Possible Arg Options 
+ EI el
+ EI apply goal  (, el1 ), z )
+ Possible Arg Options 
+ EI el
+ EI apply goal  (, el1 ), z )
+ Show f (ei, e2, ....en) Case
+ Finding Already seen tree for apply add  (, el1 ), _lbv0 )
+ Typechecking apply add  (, el1 ), apply goal  (, el1 ), z ) )
+ Against {v:Ty_list int a | (llen)(v) ==((llen)(z) + (2))}
+ Typechecking the Term apply add  (, el1 ), _lbv0 )
+ Against {v:Ty_list int a | (llen)(v) ==((llen)(z) + (2))}
+ Argument el1 :: {var_v2:int a | 
+ 	 Conj <c true
+ 	 , (slen)(el) > (slen)(var_v2) >c } | 
+ 	 Conj <c true
+ 	 , (slen)(el) > (slen)(el1) >c 
+ Argument _lbv0 :: {v:Ty_list int a | (llen)(v) ==((llen)(z) + (2))} | (llen)(_lbv0) ==((llen)(z) + (2))
+ AppType Type {v:Ty_list int a | (llen)(v) ==((llen)(_lbv0) + (1))}
+# of Final Z3 expressions 7
+ OutBuf:sat
+:sat
+
+ $$$$$$$$$$$$ Returned $$$$$$$$$$$$$$$$$$$
+ $$$$$$$$$$$$$ Failed SMT $$$$$$$$$$$$$$
+  FAILED Typechecking PURE APP For apply add  (, el1 ), _lbv0 )
+ Finding Already seen tree for apply add  (, el1 ), _lbv0 )
+ Typechecking apply add  (, el1 ), apply goal  (, el1 ), z ) )
+ Against {v:Ty_list int a | (llen)(v) ==((llen)(z) + (2))}
+ Typechecking the Term apply add  (, el1 ), _lbv0 )
+ Against {v:Ty_list int a | (llen)(v) ==((llen)(z) + (2))}
+ Argument el1 :: {var_v2:int a | 
+ 	 Conj <c true
+ 	 , (slen)(el) > (slen)(var_v2) >c } | 
+ 	 Conj <c true
+ 	 , (slen)(el) > (slen)(el1) >c 
+ Argument _lbv0 :: {v:Ty_list int a | (llen)(v) ==((llen)(z) + (2))} | (llen)(_lbv0) ==((llen)(z) + (2))
+ AppType Type {v:Ty_list int a | (llen)(v) ==((llen)(_lbv0) + (1))}
+# of Final Z3 expressions 7
+ OutBuf:sat
+:sat
+
+ $$$$$$$$$$$$ Returned $$$$$$$$$$$$$$$$$$$
+ $$$$$$$$$$$$$ Failed SMT $$$$$$$$$$$$$$
+  FAILED Typechecking PURE APP For apply add  (, el1 ), _lbv0 )
+ Finding Already seen tree for apply add  (, el ), _lbv0 )
+ Typechecking apply add  (, el ), apply goal  (, el1 ), z ) )
+ Against {v:Ty_list int a | (llen)(v) ==((llen)(z) + (2))}
+ Typechecking the Term apply add  (, el ), _lbv0 )
+ Against {v:Ty_list int a | (llen)(v) ==((llen)(z) + (2))}
+ Argument el :: {var_v2:int a | true} | true
+ Argument _lbv0 :: {v:Ty_list int a | (llen)(v) ==((llen)(z) + (2))} | (llen)(_lbv0) ==((llen)(z) + (2))
+ AppType Type {v:Ty_list int a | (llen)(v) ==((llen)(_lbv0) + (1))}
+# of Final Z3 expressions 6
+ OutBuf:sat
+:sat
+
+ $$$$$$$$$$$$ Returned $$$$$$$$$$$$$$$$$$$
+ $$$$$$$$$$$$$ Failed SMT $$$$$$$$$$$$$$
+  FAILED Typechecking PURE APP For apply add  (, el ), _lbv0 )
+ Finding Already seen tree for apply add  (, el ), _lbv0 )
+ Typechecking apply add  (, el ), apply goal  (, el1 ), z ) )
+ Against {v:Ty_list int a | (llen)(v) ==((llen)(z) + (2))}
+ Typechecking the Term apply add  (, el ), _lbv0 )
+ Against {v:Ty_list int a | (llen)(v) ==((llen)(z) + (2))}
+ Argument el :: {var_v2:int a | true} | true
+ Argument _lbv0 :: {v:Ty_list int a | (llen)(v) ==((llen)(z) + (2))} | (llen)(_lbv0) ==((llen)(z) + (2))
+ AppType Type {v:Ty_list int a | (llen)(v) ==((llen)(_lbv0) + (1))}
+# of Final Z3 expressions 6
+ OutBuf:sat
+:sat
+
+ $$$$$$$$$$$$ Returned $$$$$$$$$$$$$$$$$$$
+ $$$$$$$$$$$$$ Failed SMT $$$$$$$$$$$$$$
+  FAILED Typechecking PURE APP For apply add  (, el ), _lbv0 )
+  ###################################################
+  The Choice of Function add Was Ill Fated Try Next Choice of function {v:Ty_list int a | (llen)(v) ==((llen)(z) + (2))}
+ *************************
+ Failed without Result : 
+ ************************* : 
+  EXPLORED Args.parser output 
+ EXPLORED learningOn  true
+ EXPLORED bidirectionality  true
+ EXPLORED effect-filter  false
+ EXPLORED specfile :: ./prudent_tests/unit/algorithmW/u_test_failed.spec
+ EXPLORED goal Number :: 0
+ EXPLORED Max path length :: 2
+ EXPLORED Nested If :: 1typewhitespace var: apair
+semicolon
+typewhitespace var: plist
+semicolon
+stexcwhitespace var: llen
+whitespace colon
+whitespace lbrace
+var: a
+rbrace
+whitespace colon
+whitespace var: int
+semicolon
+stexcwhitespace var: pllen
+whitespace colon
+whitespace lbrace
+var: apair
+rbrace
+whitespace colon
+whitespace var: int
+semicolon
+stexcwhitespace var: lmem
+whitespace colon
+whitespace lbrace
+var: a
+rbrace
+whitespace colon
+whitespace var: a
+whitespace colon
+whitespace var: bool
+semicolon
+stexcwhitespace var: lhd
+whitespace colon
+whitespace lbrace
+var: a
+rbrace
+whitespace colon
+whitespace var: a
+semicolon
+stexcwhitespace var: plhd
+whitespace colon
+whitespace lbrace
+var: apair
+rbrace
+whitespace colon
+whitespace var: apair
+semicolon
+stexcwhitespace var: last
+whitespace colon
+whitespace lbrace
+var: a
+rbrace
+whitespace colon
+whitespace var: a
+semicolon
+stexcwhitespace var: pllast
+whitespace colon
+whitespace lbrace
+var: apair
+rbrace
+whitespace colon
+whitespace var: apair
+semicolon
+stexcwhitespace var: ppr1
+whitespace colon
+whitespace var: apair
+whitespace colon
+whitespace var: a
+semicolon
+stexcwhitespace var: ppr2
+whitespace colon
+whitespace var: apair
+whitespace colon
+whitespace var: a
+semicolon
+stexcwhitespace var: nth
+whitespace colon
+whitespace lbrace
+var: a
+rbrace
+whitespace colon
+whitespace var: int
+whitespace colon
+whitespace var: a
+semicolon
+stexcwhitespace var: lsnd
+whitespace colon
+whitespace lbrace
+var: a
+rbrace
+whitespace colon
+whitespace var: a
+semicolon
+stexcwhitespace var: pen
+whitespace colon
+whitespace lbrace
+var: a
+rbrace
+whitespace colon
+whitespace var: a
+semicolon
+stexcwhitespace var: fst
+whitespace colon
+whitespace var: plist
+whitespace colon
+whitespace lbrace
+var: a
+rbrace
+semicolon
+stexcwhitespace var: snd
+whitespace colon
+whitespace var: plist
+whitespace colon
+whitespace lbrace
+var: a
+rbrace
+semicolon
+var: goal
+whitespace colon
+whitespace lparen
+var: n
+colon
+var: int
+rparen
+whitespace arrow
+whitespace lparen
+var: z
+whitespace colon
+whitespace lcurly
+var: v
+whitespace colon
+whitespace lbrace
+var: a
+rbrace
+whitespace pipe
+whitespace truercurly
+rparen
+whitespace arrow
+whitespace lparen
+var: z'
+whitespace colon
+whitespace lcurly
+var: v
+whitespace colon
+whitespace lbrace
+var: a
+rbrace
+whitespace pipe
+whitespace truercurly
+rparen
+whitespace whitespace arrow
+whitespace lcurly
+whitespace var: v
+whitespace colon
+whitespace var: apair
+whitespace pipe
+whitespace truercurly
+semicolon
+whitespace whitespace RelSpec {  SRs ;  PRs ;  TSs  
+ Assume false
+ name goal : 
+ params :
+ Type  Arrow ( ( n : {var_v0:int | true} ) ->  Arrow ( ( z : {v:Ty_list int a | true} ) ->  Arrow ( ( z' : {v:Ty_list int a | true} ) -> {v:int apair | true};  Formulas  }
+ INITIAL GAMMA 
+ 
+ goal :  Arrow ( ( n : {var_v0:int | true} ) ->  Arrow ( ( z : {v:Ty_list int a | true} ) ->  Arrow ( ( z' : {v:Ty_list int a | true} ) -> {v:int apair | true}
+ INITIAL SIGMA 
+ 
+ TypeNames 
+ 
+ plist
+ apair
+ Qualifiers 
+ 
+ Qual llen :  :-> Ty_list int a :-> int
+ Qual pllen :  :-> Ty_list int apair :-> int
+ Qual lmem :  :-> Ty_list int a :-> int a :-> Ty_bool
+ Qual lhd :  :-> Ty_list int a :-> int a
+ Qual plhd :  :-> Ty_list int apair :-> int apair
+ Qual last :  :-> Ty_list int a :-> int a
+ Qual pllast :  :-> Ty_list int apair :-> int apair
+ Qual ppr1 :  :-> int apair :-> int a
+ Qual ppr2 :  :-> int apair :-> int a
+ Qual nth :  :-> Ty_list int a :-> int :-> int a
+ Qual lsnd :  :-> Ty_list int a :-> int a
+ Qual pen :  :-> Ty_list int a :-> int a
+ Qual fst :  :-> int plist :-> Ty_list int a
+ Qual snd :  :-> int plist :-> Ty_list int a
+ Show ***********Calling S-FUNC synthesize***************
+ Show Uncurried , n:{var_v0:int | true}, z:{v:Ty_list int a | true}, z':{v:Ty_list int a | true} -> {v:int apair | true}
+ Decreasing Measure n
+ Decreasing Type {var_v0:int | true}
+ Calculated Decreasing Predicate n > var_v0
+ Calculated Decreased Goal Type  Arrow ( ( n1 : {var_v0:int | 
+ 	 Conj <c true
+ 	 , n > var_v0 >c } ) ->  Arrow ( ( z : {v:Ty_list int a | true} ) ->  Arrow ( ( z' : {v:Ty_list int a | true} ) -> {v:int apair | true}
+ Show Trying :: Top-level Match
+ Show :: Synthesize Match {v:int apair | true}
+ Show :: List int
+ Show :: Non List Case
+ Match-case failed :: Try Top-level If-then-else 
+ **********************************************
+ iSynthesize If-THEN-ELSE {v:int apair | true}
+ **********************************************
+  *********************Synthesizing the Guard*******************
+ iSynthesize Boolean Guard {var_v1:Ty_bool | true}
+  *********************Synthesizing the Guard*******************
+ esynthesizeScalar for {var_v1:Ty_bool | true}
+  Entering Pure Fun Application: esynthesizePureApp 
+ ############################################################
+ Max depth reached
+ ############################################################
+ >>>>>>>>>>>>>>>>>>  No pureApp found, Call esynthesizeConsApp <<<<<<<<<<<<<< 
+  *********************Guard Synthesized*******************
+ iSynthesize Following Boolean Guards Found 
+  ********************Guard Synthesized*******************
+  If then else Failed :: Try without subdivision
+ 
+  Entering Pure Fun Application: esynthesizePureApp 
+ Show Potential Functions
+  , 
+ goal
+ ############################################################
+  Synthesizing the Function application Pure Component goal
+  *************** Trying Arrow Component ************goal :  Arrow ( ( n1 : {var_v0:int | 
+ 	 Conj <c true
+ 	 , n > var_v0 >c } ) ->  Arrow ( ( z : {v:Ty_list int a | true} ) ->  Arrow ( ( z' : {v:Ty_list int a | true} ) -> {v:int apair | true}
+  *************** Synthesizing Args ei : ti for ************goal
+ ##################################################################################
+  Synthesizing the 1th argument for Function goal
+  Trying Arguments in Scalars 
+ esynthesizeScalar for {var_v0:int | 
+ 	 Conj <c true
+ 	 , n > var_v0 >c }
+ 
+ Enumerating a Scalar Term n
+ 
+ Type of the Scalar Term {var_v0:int | true}     
+# of Final Z3 expressions 2
+ OutBuf:sat
+:sat
+
+ $$$$$$$$$$$$ Returned $$$$$$$$$$$$$$$$$$$
+ $$$$$$$$$$$$$ Failed SMT $$$$$$$$$$$$$$
+ 
+ FaileD the subtype check T_vi <: T_goal
+  Entering Pure Fun Application: esynthesizePureApp 
+ Show Potential Functions
+  
+ >>>>>>>>>>>>>>>>>>  No pureApp found, Call esynthesizeConsApp <<<<<<<<<<<<<< 
+ Found Constructors with required return type
+  
+ ********************** HERE BEFORE 
+ Show No more choices for ConsApp
+ ##################################################################################
+  Next Trying Arguments of the form f (ei...) 
+ ##################################################################################
+  Entering Pure Fun Application: esynthesizePureApp 
+ Show Potential Functions
+  
+  DEPTH vs MAX  0 vs 2
+ ##################################################################################
+  Synthesizing the 2th argument for Function goal
+  Trying Arguments in Scalars 
+ esynthesizeScalar for {v:Ty_list int a | true}
+ 
+ Enumerating a Scalar Term z
+ 
+ Type of the Scalar Term {v:Ty_list int a | true}
+# of Final Z3 expressions 2
+ OutBuf:unsat
+:unsat
+
+ $$$$$$$$$$$$ Returned $$$$$$$$$$$$$$$$$$$
+ $$$$$$$$$$$$$ Success SMT $$$$$$$$$$$$$$
+ 
+ Enumerating a Scalar Term z'
+ 
+ Type of the Scalar Term {v:Ty_list int a | true}
+# of Final Z3 expressions 2
+ OutBuf:unsat
+:unsat
+
+ $$$$$$$$$$$$ Returned $$$$$$$$$$$$$$$$$$$
+ $$$$$$$$$$$$$ Success SMT $$$$$$$$$$$$$$
+ Show :: Found a Few Macthing Scalars 
+ ##################################################################################
+  Next Trying Arguments of the form f (ei...) 
+ ##################################################################################
+  Entering Pure Fun Application: esynthesizePureApp 
+ Show Potential Functions
+  
+ >>>>>>>>>>>>>>>>>>> 2th Args option for goal : z'
+ >>>>>>>>>>>>>>>>>>> 2th Args option for goal : z
+  DEPTH vs MAX  0 vs 2
+ ##################################################################################
+  Synthesizing the 3th argument for Function goal
+  Trying Arguments in Scalars 
+ esynthesizeScalar for {v:Ty_list int a | true}
+ 
+ Enumerating a Scalar Term z'
+ 
+ Type of the Scalar Term {v:Ty_list int a | true}
+# of Final Z3 expressions 2
+ OutBuf:unsat
+:unsat
+
+ $$$$$$$$$$$$ Returned $$$$$$$$$$$$$$$$$$$
+ $$$$$$$$$$$$$ Success SMT $$$$$$$$$$$$$$
+ 
+ Enumerating a Scalar Term z
+ 
+ Type of the Scalar Term {v:Ty_list int a | true}
+# of Final Z3 expressions 2
+ OutBuf:unsat
+:unsat
+
+ $$$$$$$$$$$$ Returned $$$$$$$$$$$$$$$$$$$
+ $$$$$$$$$$$$$ Success SMT $$$$$$$$$$$$$$
+ Show :: Found a Few Macthing Scalars 
+ ##################################################################################
+  Next Trying Arguments of the form f (ei...) 
+ ##################################################################################
+  Entering Pure Fun Application: esynthesizePureApp 
+ Show Potential Functions
+  
+ >>>>>>>>>>>>>>>>>>> 3th Args option for goal : z
+ >>>>>>>>>>>>>>>>>>> 3th Args option for goal : z'
+  DEPTH vs MAX  0 vs 2
+ ##################################################################################
+  *************** Synthesizing Args ei : Failed for some  arg
+
+
+
+goal :: x:Int -> xs:List Int -> u:Int -> {Int|_v == u + 1 && sel xs x == u}
+./synquid/test/hegel/nth.sq:53: Error:
+  Cannot match shape 'Int'
+  with shape '_'
+  when checking goal ::
+  X2:_ -> X1:_ -> X0:_ -> _ in
+  \x . \xs . \u . 
+        match goal ?? ?? ?? with
+
+
+
+
+
+goal :: n:Int -> z:List a -> {List a|len _v == n - 1}

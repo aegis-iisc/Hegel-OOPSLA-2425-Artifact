@@ -1,3 +1,4 @@
+
 type ipair;
 type plist;
 
@@ -102,18 +103,15 @@ null : (l : [int]) -> {v : bool | [v=true] <=> llen (l) == 0};
 last : (l : [int]) -> { v : int | last (l) == v}; 
 
 init : (l : [int]) -> { v : [int] | llen (v) == llen (v) --1}; 
-
 take : (n : int) -> (l : [int]) -> { v : [int] | \(u : int). 
                                             llen (v) == n /\ 
                                             (lmem (v, u) = true) => lmem (l, u) = true}; 
 
-qualifier slen : [a] :-> int;
-qualifier ord : int :-> int :-> [int] :-> bool;
 
 
-goal : (z : [int]) -> 
-    {v : [int] | \(u : int), (w : int). lmem (v, u) = true => lmem (z, u) = true /\
-                        llen (v) == llen (z) +  llen (z) /\
-                        ord (u, w, z) = true => 
-                        (ord (u, w, v) = true /\ ord (w, u, v) = true)
-                        };
+
+
+goal : (x : int) -> (xs : [int]) -> 
+  {v : int |  \(u : int), (x1 : int). ( x1 == x + 1 /\ nth (xs, x1) = u) => v  == u+1 };
+
+

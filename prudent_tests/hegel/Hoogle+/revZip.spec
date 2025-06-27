@@ -108,7 +108,12 @@ take : (n : int) -> (l : [int]) -> { v : [int] | \(u : int).
                                             (lmem (v, u) = true) => lmem (l, u) = true}; 
 
 
-goal : (x : [a]) -> (y : [a]) -> 
-{v : [pair] |  \(u : [a]), (w : a), (z : a). sndlist (v, u) = true => 
+goal : (x : [a]) -> 
+(y : [a]) -> 
+{v : [pair] |  \(u : [a]), (w : a), (z : a). 
+sndlist (v, u) = true => 
 (mem (w, u) = true => mem (w, y) = true) /\ 
-(ord (w, z, u) = true => ord (z, w, y))};
+(ord (w, z, u) = true => ord (z, w, y) = true)};
+
+
+

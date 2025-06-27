@@ -107,21 +107,14 @@ take : (n : int) -> (l : [int]) -> { v : [int] | \(u : int).
                                             llen (v) == n /\ 
                                             (lmem (v, u) = true) => lmem (l, u) = true}; 
 
-goal = (s : string) -> (c : char) -> { v : (String, String) |
-                                      f = fst (v) /\ sn = snd (v) /\
-                                       mem (c, f) = true  /\
-                                \(u : char). mem (u, f) = true => mem (u , s) /\
-                                \(u : chat). mem (u, sn) = true => mem (u, s) }
+type spair;
+qualifier sfst : spair :-> string;
+qualifier ssnd : spair :-> string;
+qualifier smem : char :-> string :-> bool;
 
-goal = (s : string) -> (c : char) -> { v : (String, String) |
-                                f = fst (v) /\ sn = snd (v) /\
-                                 mem (c, f) = true  /\
-                          \(u : char). mem (u, f) = true => mem (u , s) /\
-                          \(u : char). mem (u, sn) = true => mem (u, s) /\
-                          \(u : char), (u1 : char). order (u, u1, s) => order (u1, u, sn) }
+goal : (s : string) -> (c : char) -> { v : spair |
+                                      f = sfst (v) /\ sn = ssnd (v) /\
+                                       smem (c, f) = true  /\
+                                \(u : char). smem (u, f) = true => smem (u , s) = true /\
+                                \(u : char). smem (u, sn) = true => smem (u, s) = true };
 
-goal = (s : string) -> (c : char) -> { v : (String, String) |
-                          f = fst (v) /\ sn = snd (v) /\
-                           mem (c, sn) = true  /\
-                    \(u : char). mem (u, f) = true => mem (u , s) /\
-                    \(u : chat). mem (u, s) = true => mem (u, s) }

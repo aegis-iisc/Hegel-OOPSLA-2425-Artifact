@@ -107,13 +107,25 @@ take : (n : int) -> (l : [int]) -> { v : [int] | \(u : int).
                                             llen (v) == n /\ 
                                             (lmem (v, u) = true) => lmem (l, u) = true}; 
 
-qualifier slen : [a] :-> int;
-qualifier ord : int :-> int :-> [int] :-> bool;
+
+goal : (z : [int]) -> 
+    {v : [int] | \(u : int), (w : int). mem (u, v) = true => mem (u , z) /\
+                        len (v) == len (z) +  len (z) /\
+                        ord (u, w, z) = true => 
+                        (ord (u, w, v) = true /\ ord (w, u, v) = true)
+                        };
 
 
 goal : (z : [int]) -> 
-    {v : [int] | \(u : int), (w : int). lmem (v, u) = true => lmem (z, u) = true /\
-                        llen (v) == llen (z) +  llen (z) /\
+    {v : [int] | \(u : int), (w : int). mem (u, v) = true => mem (u , z) /\
+                        len (v) == len (z) +  len (z) /\
                         ord (u, w, z) = true => 
                         (ord (u, w, v) = true /\ ord (w, u, v) = true)
+                        };
+
+goal : (z : [int]) -> 
+    {v : [int] | \(u : int), (w : int). mem (u, v) = true => mem (u , z) /\
+                        len (v) == len (z) +  len (z) /\
+                        ord (u, w, z) = true => 
+                        (ord (u, w, v) = true /\ ord (u, w, v) = true)
                         };

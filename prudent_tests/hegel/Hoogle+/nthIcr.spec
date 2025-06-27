@@ -106,17 +106,10 @@ init : (l : [int]) -> { v : [int] | llen (v) == llen (v) --1};
 
 take : (n : int) -> (l : [int]) -> { v : [int] | \(u : int). 
                                             llen (v) == n /\ 
-                                            (lmem (v, u) = true) => lmem (z, u) = true}; 
+                                            (lmem (v, u) = true) => lmem (l, u) = true}; 
 
 
 
-goal : (x : Int) -> (xs : [int]) -> 
-  {v : Int |  \(u : Int). (nth (xs, x) = u) => v = u };
+goal : (x : int) -> (xs : [int]) -> 
+  {v : int |  \(u : int). (nth (xs, x) = u) => [v = u] };
 
-
-goal : (x : Int) -> (xs : [int]) -> 
-  {v : Int |  \(u : Int). (nth (xs, x+1) = u) => v = u };
-
-
-goal : (x : Int) -> (xs : [int]) -> 
-  {v : Int |  \(u : Int). (nth (xs, x+1) = u) => v = u + 1 };

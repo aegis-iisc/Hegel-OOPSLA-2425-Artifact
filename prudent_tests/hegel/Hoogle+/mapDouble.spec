@@ -106,29 +106,20 @@ init : (l : [int]) -> { v : [int] | llen (v) == llen (v) --1};
 take : (n : int) -> (l : [int]) -> { v : [int] | \(u : int). 
                                             llen (v) == n /\ 
                                             (lmem (v, u) = true) => lmem (l, u) = true}; 
-goal: p, q : (f : (x : int) -> { v : int | p}) -> 
-            (g : (x : int) -> { v : int | q}) -> 
+
+
+
+qualifier slen : [a] :-> int;
+qualifier ord : int :-> int :-> [int] :-> bool;
+qualifier p : int :-> int :-> bool;
+qualifier q : int :-> int :-> bool;
+
+
+goal: (f : (x : int) -> { v : int | p (x, v) = true}) -> 
+            (g : (x : int) -> { v : int | q (x, v) = true}) -> 
             (l : [int]) -> 
-              {v : [int] | \(u : int). mem (u , v) = true => 
-                            \( w : int ). mem (w, l) = true => 
-                            \(z : int).   p (z) = true /\ q (w) = true  
-              }
-
-    goal: p, q : (f : (x : int) -> { v : int | p}) -> 
-                (g : (x : int) -> { v : int | q}) -> 
-                (l : [int]) -> 
-                  {v : [int] | \(u : int). mem (u , v) = true => 
-                                \( w : int ). mem (w, l) = true => 
-                                \ (z : int).  q (z) = true /\ p (w) = true  
-                  }
-    
-
-
-    goal: p, q : (f : (x : int) -> { v : int | p}) -> 
-                    (g : (x : int) -> { v : int | q}) -> 
-                    (l : [int]) -> 
-                      {v : [int] | \(u : int). mem (u , v) = true => 
-                                    \( w : int ). mem (w, l) = true => 
-                                    \ (z : int).  q (z) = true /\ p (w) = true  
-                      }
-                          
+              {v : [int] | \(u : int), (w : int), (z : int), (l1: [int]). 
+                            (lmem (u, l) = true /\ lmem (z , v) = true /\ 
+                            lmem (w, l1) = true) => 
+                            ( p (u , w) = true /\ q (w , z) = true )
+              };
