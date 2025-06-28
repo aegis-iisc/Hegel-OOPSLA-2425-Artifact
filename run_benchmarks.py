@@ -86,21 +86,21 @@ Hplus_BENCHMARKS = [
     ]),    
 ]
 
-
 class SynthesisResultRQ2:
     def __init__(self, tool, name, time, spec_size, code_size, branches):
         self.name = name
         self.tool = tool
         self.time = time        
+        # self.time_hegel_s = time_hegel_s
+        # self.time_hegel_p = time_hegel_p
+        # self.time_hegel_a = time_hegel_a
         self.spec_size = spec_size
         self.code_size = code_size
         self.branches = branches
     
     def __str__(self):
-        return self.name + ', ' + self.tool + ', ' \
-               '{0:0.2f}'.format(self.time) + ', ' + \
-               str(self.code_size) + ', ' + str(self.spec_size) + ', ' + str(self.branches)
-
+        return self.name + ', ' + self.tool + ', ' + '{0:0.2f}'.format(self.time) 
+              # str(self.code_size) + ', ' + str(self.spec_size) + ', ' + str(self.branches)
 
 # Run a single benchmark
 def run_benchmark_variants(file, variant):

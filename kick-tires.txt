@@ -1,0 +1,14 @@
+
+ ******************************** 
+Hegel, ./prudent_tests/hegel/Hoogle+/nth, 7.24
+Hegel, ./prudent_tests/unit/algorithmW/u_test1, 2.24
+Hegel, ./prudent_tests/unit/algorithmW/u_test2, 0.37
+Hegel, ./prudent_tests/unit/algorithmW/u_test3, 0.51
+Synuid, ./synquid/test/hegel/nth, 3.07
+Synuid, ./synquid/test/hegel/u_test1, 1000.00
+Synuid, ./synquid/test/hegel/u_test2, 1000.00
+Synuid, ./synquid/test/hegel/u_test3, 1000.00
+Hoogle, ./prudent_tests/hegel/Hoogle+/json/nth, 1000.00
+Hoogle, ./prudent_tests/hegel/Hoogle+/json/u_test1, 1000.00
+Hoogle, ./prudent_tests/hegel/Hoogle+/json/u_test2, 1000.00
+Hoogle, ./prudent_tests/hegel/Hoogle+/json/u_test3, 35.05

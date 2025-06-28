@@ -1,13 +1,87 @@
 
  ********************************
+ ./prudent_tests/unit/algorithmW/u_test1.spec_Hegel : 1.6445940000000001
  ********************************
- ./prudent_tests/unit/algorithmW/u_test1.spec_Hegel : 1.736599
+ ./prudent_tests/unit/algorithmW/u_test2.spec_Hegel : 0.3053389999999998
  ********************************
- ./prudent_tests/unit/algorithmW/u_test2.spec_Hegel : 0.35665900000000006
+ ./prudent_tests/unit/algorithmW/u_test3.spec_Hegel : 0.4681170000000001
  ********************************
- ./prudent_tests/unit/algorithmW/u_test3.spec_Hegel : 0.5367000000000002
+ ./prudent_tests/unit/algorithmW/u_test_failed.spec_Hegel : 0.11703099999999989
  ********************************
- ./prudent_tests/unit/algorithmW/u_test_failed.spec_Hegel : 0.1451239999999996
+ ./synquid/test/hegel/nth.sq_Synquid : 2.4816380000000002
  ********************************
- ./synquid/test/hegel/nth.sq_Synquid : 2.789261
+ ./synquid/test/hegel/u_test1.sq_Synquid : 1000
  ********************************
+ ./synquid/test/hegel/u_test2.sq_Synquid : 1000
+ ********************************
+ ./synquid/test/hegel/u_test3.sq_Synquid : 1000
+ ********************************
+ ********************************
+ ********************************
+ ./prudent_tests/unit/algorithmW/u_test1.spec_Hegel : 1.829775
+ ********************************
+ ./prudent_tests/unit/algorithmW/u_test2.spec_Hegel : 0.35749799999999987
+ ********************************
+ ./prudent_tests/unit/algorithmW/u_test3.spec_Hegel : 0.5070490000000003
+ ********************************
+ ./prudent_tests/unit/algorithmW/u_test_failed.spec_Hegel : 0.15279299999999996
+ ********************************
+ ./synquid/test/hegel/nth.sq_Synquid : 2.758969
+ ********************************
+ ./synquid/test/hegel/u_test1.sq_Synquid : 1000
+ ********************************
+ ./synquid/test/hegel/u_test2.sq_Synquid : 1000
+ ********************************
+ ./synquid/test/hegel/u_test3.sq_Synquid : 1000
+ ********************************
+ ********************************
+ ./prudent_tests/hegel/Hoogle+/nth.spec_Hegel : 7.461814
+ ********************************
+ ./prudent_tests/unit/algorithmW/u_test1.spec_Hegel : 1.9944930000000003
+ ********************************
+ ./prudent_tests/unit/algorithmW/u_test2.spec_Hegel : 0.3958579999999987
+ ********************************
+ ./prudent_tests/unit/algorithmW/u_test3.spec_Hegel : 0.5719190000000012
+ ********************************
+ ./prudent_tests/unit/algorithmW/u_test_failed.spec_Hegel : 0.1393519999999988
+ ********************************
+ ./synquid/test/hegel/nth.sq_Synquid : 3.0158430000000003
+ ********************************
+ ********************************
+ ./prudent_tests/hegel/Hoogle+/nth.spec_Hegel : 7.056221
+ ********************************
+ ./prudent_tests/unit/algorithmW/u_test1.spec_Hegel : 2.0900609999999995
+ ********************************
+ ./prudent_tests/unit/algorithmW/u_test2.spec_Hegel : 0.39875600000000055
+ ********************************
+ ./prudent_tests/unit/algorithmW/u_test3.spec_Hegel : 0.5034550000000007
+ ********************************
+ ./prudent_tests/unit/algorithmW/u_test_failed.spec_Hegel : 0.16284100000000024
+ ********************************
+ ./synquid/test/hegel/nth.sq_Synquid : 3.194706
+ ********************************
+ ********************************
+ ********************************
+ ./prudent_tests/hegel/Hoogle+/nth.spec_Hegel : 7.237239
+ ********************************
+ ./prudent_tests/unit/algorithmW/u_test1.spec_Hegel : 2.236504000000001
+ ********************************
+ ./prudent_tests/unit/algorithmW/u_test2.spec_Hegel : 0.3745599999999989
+ ********************************
+ ./prudent_tests/unit/algorithmW/u_test3.spec_Hegel : 0.5081040000000012
+ ********************************
+ ./synquid/test/hegel/nth.sq_Synquid : 3.0729739999999985
+ ********************************
+ ./synquid/test/hegel/u_test1.sq_Synquid : 1000
+ ********************************
+ ./synquid/test/hegel/u_test2.sq_Synquid : 1000
+ ********************************
+ ./synquid/test/hegel/u_test3.sq_Synquid : 1000
+ ********************************
+ ./prudent_tests/hegel/Hoogle+/json/nth.json_Hooogle+ : 1000
+ ********************************
+ ./prudent_tests/hegel/Hoogle+/json/u_test1.json_Hooogle+ : 1000
+ ********************************
+ ./prudent_tests/hegel/Hoogle+/json/u_test2.json_Hooogle+ : 1000
+ ********************************
+ ./prudent_tests/hegel/Hoogle+/json/u_test3.json_Hooogle+ : 35.04551900000001

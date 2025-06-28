@@ -115,7 +115,7 @@ Once, all the dependences, and the three tools are built as discussed above,
 $ python3 quick_test.py
 
 ```
-
+The run will take in total around `7 minutes`, as Synquid and Hoogle timesout on various tests.
 This should produce files `./kick-tires.txt` and `./kick-tires-timings.txt`. The file `./kick-tires.txt` has rows of the following form:
 
 ```
@@ -128,8 +128,14 @@ The above row reflects a testcase similar to the benchmakrs in Figure 11 in the 
 
 The `./kick-tires-timings.txt` contains only the synthesis timings for the runs.
 
-The synthesized programs are located under the `./output/<test-location>` directory in the projects root directory.
+The synthesized programs are located under the `./output/<test-location>` directory in the projects root directory. For instance, you will see a single program generated for `u_test2.spec` at `output/u_test2.spec` with a single branch:
+```
+let rec goal    (z : Ty_list int a)  (size : int) : (Ty_list int a) = 
+ 	  match z with   
+ | Nil    -> _lbv1 
+ | Cons    var_x3 var_xs4 -> _lbv1
 
+```
 
 
 

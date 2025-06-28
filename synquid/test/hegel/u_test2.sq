@@ -62,7 +62,7 @@ take :: n : Int -> l : List a -> {List a | len _v == n &&
 
 
 
-goal :: n : Int -> z : List a -> { List a | len (_v) > n }
+goal :: n : Int -> z : List a -> { List a | len (_v) = n }
 goal = ??      
            
        

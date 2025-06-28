@@ -1,5 +1,18 @@
-;; 4
-(assert false)
-(assert (not true))
+;; 16
+(declare-sort T250 0)
+(declare-sort T249 0)
+(declare-fun llen (T250) Int)
+(declare-fun z () T250)
+(declare-fun _lbv0 () T250)
+(declare-fun slen (T249) Int)
+(declare-fun el1 () T249)
+(declare-fun el () T249)
+(declare-fun v () T250)
+(assert (= (llen _lbv0) (+ (llen z) 2)))
+(assert (> (slen el) (slen el1)))
+(assert (= (llen v) (+ (llen _lbv0) 1)))
+(assert (= (llen _lbv0) (+ (llen z) 2)))
+(assert (= (llen v) (+ (llen _lbv0) 1)))
+(assert (not (= (llen v) (+ (llen z) 2))))
 
  (check-sat)

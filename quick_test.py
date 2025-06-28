@@ -9,7 +9,7 @@ import resource
 import shlex
 
 prudent       = './prudent.native'
-TIMEOUT      = 120                            # Timeout in secs
+TIMEOUT      = 60                           # Timeout in secs
 TEST_DIR     = './prudent_tests/'   # Root directory for the tests   
 SYNQUID_TEST_DIR = './synquid/test/' # Root directory for synquid tests
 VARIANTS     = ['hegel']#, 'prudent-s', 'prudent-p','prudent-all']    # Configurations
@@ -39,11 +39,10 @@ class BenchmarkGroup:
 
 ALL_BENCHMARKS = [
   BenchmarkGroup("Hegel",  [
-     #Benchmark('hegel/Hoogle+/nth', 'Nth incr'),
+     Benchmark('hegel/Hoogle+/nth', 'Nth incr'),
      Benchmark('unit/algorithmW/u_test1', 'Test1'),
      Benchmark('unit/algorithmW/u_test2', 'Test2'),
      Benchmark('unit/algorithmW/u_test3', 'Test3'),
-     Benchmark('unit/algorithmW/u_test_failed', 'Test4'),
      
      
      ]),    
@@ -84,9 +83,8 @@ class SynthesisResultRQ2:
         self.branches = branches
     
     def __str__(self):
-        return self.name + ', ' + self.tool + ', ' \
-               '{0:0.2f}'.format(self.time) + ', ' + \
-               str(self.code_size) + ', ' + str(self.spec_size) + ', ' + str(self.branches)
+        return self.name + ', ' + self.tool + ', ' + '{0:0.2f}'.format(self.time) 
+              # str(self.code_size) + ', ' + str(self.spec_size) + ', ' + str(self.branches)
 
 
 # Run a single benchmark
@@ -98,7 +96,7 @@ def run_benchmark_variants(file, variant):
     if variant == 'hegel':
         usage_start = resource.getrusage(resource.RUSAGE_CHILDREN)
         try:
-            run(['time', prudent,  '-bi', '-cdcl', '-k', '3', file], timeout =TIMEOUT,  stdout=outfile)
+            run(['time', prudent,  '-bi', '-cdcl', '-k', '2', file], timeout =TIMEOUT,  stdout=outfile)
             usage_end = resource.getrusage(resource.RUSAGE_CHILDREN)    
             cpu_time = usage_end.ru_utime - usage_start.ru_utime    
         except TimeoutExpired:
@@ -137,7 +135,7 @@ def run_benchmark_variants(file, variant):
     else:
         usage_start = resource.getrusage(resource.RUSAGE_CHILDREN)
         try:
-            run(['time', prudent, '-bi', '-cdcl', '-k', '4', file], timeout =TIMEOUT,  stdout=outfile)
+            run(['time', prudent, '-bi', '-cdcl', '-k', '3', file], timeout =TIMEOUT,  stdout=outfile)
             usage_end = resource.getrusage(resource.RUSAGE_CHILDREN)    
             cpu_time = usage_end.ru_utime - usage_start.ru_utime    
         except TimeoutExpired:
@@ -215,7 +213,7 @@ def run_benchmark_hoogle(json_file):
             cwd = HOOGLE_ROOT,
             text=True,
             timeout=TIMEOUT,  # You can set a timeout if needed
-            #stdout=outfile
+            stdout=outfile
         )
         usage_end = resource.getrusage(resource.RUSAGE_CHILDREN)    
         cpu_time = usage_end.ru_utime - usage_start.ru_utime    
@@ -333,5 +331,3 @@ if __name__ == '__main__':
       f.write (str(csvres[row]))   
       f.write ('\n')
     f.close ()    
-
-TODO:: Update the initial numbers to just show the timings
