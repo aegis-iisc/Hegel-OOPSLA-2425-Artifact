@@ -99,7 +99,7 @@ $ stack setup && stack build
 ```
 
 ### Building Hoogle+
-The details for building `Synquid` are provided by the authors in [1]. Following are a series of steps necessary steps.
+The details for building `Synquid` are provided by the authors in [2]. Following are a series of steps necessary steps.
 
 ```
 $ cd hoogle_plus
@@ -227,3 +227,9 @@ $  ./prudent.native -k <maximum-path-length> file.spec
 
 ### Note about the paper under Major Revision
 The paper is under `major revision` and we will be subnitting a new version of the artifact with experiments showing the number of SMT queries and size reductions for QTAs.
+
+
+### References
+[1] https://github.com/nadia-polikarpova/synquid.git
+
+[2] https://github.com/davidmrdavid/hoogle_plus#readme

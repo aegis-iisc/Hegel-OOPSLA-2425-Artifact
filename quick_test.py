@@ -330,4 +330,4 @@ if __name__ == '__main__':
     for row in csvres:
       f.write (str(csvres[row]))   
       f.write ('\n')
-    f.close ()    
+      f.close ()    
